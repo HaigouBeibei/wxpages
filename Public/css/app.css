@@ -5,16 +5,30 @@
 
 .header .cameraButton,
 .header .searchInput,
-.header .messageButton {
+.header .messageButton,
+.header .cameraButton a,
+.header .messageButton a {
   height: 50px;
   color: white;
+}
+.header > .cameraButton {
+  background: url(../img/header-cameraButton.png) center center no-repeat;
+}
+.header > .messageButton {
+  background: url(../img/header-messageButton.png) center center no-repeat;
+}
+.header > .cameraButton,
+.header > .messageButton {
+  background-size: 28px 28px;
 }
 
 .header .searchInput input {
   color: #808080;
   width: 100%;
   height: 30px;
-  text-indent: 1.5em;
+  line-height: 30px;
+  font-size: 15px;
+  text-indent: 1.7em;
   border: none;
   background: url(../img/search.png) no-repeat 7px center;
   background-color: white;
