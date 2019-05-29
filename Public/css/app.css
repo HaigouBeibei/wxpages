@@ -1,0 +1,198 @@
+.header {
+  height: 50px;
+  background-color: #f0250f;
+}
+
+.header .cameraButton,
+.header .searchInput,
+.header .messageButton {
+  height: 50px;
+  color: white;
+}
+
+.header .searchInput input {
+  color: #808080;
+  width: 100%;
+  height: 30px;
+  text-indent: 1.5em;
+  border: none;
+  background: url(../img/search.png) no-repeat 7px center;
+  background-color: white;
+}
+
+.am-slider-default {
+  margin: 0px;
+}
+
+.notice {
+  background-color: #c5c5c5;
+  height: 40px;
+  line-height: 40px;
+}
+
+.notice > .title {
+  color: #e82d01;
+  padding-left: 1em;
+}
+
+.notice > .content {
+  color: black;
+}
+
+.classNav {
+  background-color: #f3f3f3;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  /* border-bottom: 1px dashed #BABABA; */
+}
+
+.classNav > .am-avg-sm-2 > li > img.am-thumbnail {
+  margin-bottom: 0px;
+}
+
+.classNav > .am-u-sm-6 > .am-thumbnail {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.classNav > .am-u-sm-6 > .am-thumbnail > .am-thumbnail-caption > span.price {
+  color: red;
+}
+
+.recommendArea {
+  background: url(../img/recommend.png) no-repeat center 10px;
+  background-size: 60%;
+  padding-top: 40px;
+  background-color: #f3f3f3;
+}
+
+footer {
+  background-color: #f7f7f7;
+  height: 50px;
+}
+
+footer > .am-avg-sm-5 > li > a {
+  height: 50px;
+  line-height: 80px;
+  background-size: 25px 25px;
+  color: #1e1e1e;
+}
+
+footer > .am-avg-sm-5 > li > a.selected {
+  color: #f0250f;
+}
+
+.footer-home {
+  background: url(../img/footer-home.png) no-repeat center 4px;
+}
+
+.footer-customer {
+  background: url(../img/footer-customer.png) no-repeat center 4px;
+}
+
+.footer-class {
+  background: url(../img/footer-class.png) no-repeat center 4px;
+}
+
+.footer-shoppingcat {
+  background: url(../img/footer-shoppingcat.png) no-repeat center 4px;
+}
+
+.footer-i {
+  background: url(../img/footer-i.png) no-repeat center 4px;
+}
+
+.i-header {
+  height: 120px;
+  background: url(../img/i-background.png) repeat-x;
+  background-size: 100% 100%;
+}
+.i-header > .settings {
+  height: 20px;
+  line-height: 20px;
+}
+.i-header > .settings a {
+  color: white;
+}
+.settingsButton {
+  width: 20px;
+  height: 20px;
+  background: url(../img/settings.png) center center no-repeat;
+  background-size: 18px 18px;
+}
+.i-header > .personal {
+  height: 85px;
+}
+.i-header > .personal > .headimg img {
+  width: 60px;
+  height: 60px;
+}
+.i-header > .personal > .personalInfo ul li {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.orderArea,
+.personalTools {
+  width: 95%;
+  background-color: white;
+  border-radius: 15px;
+  height: 65px;
+}
+.orderArea > .am-avg-sm-5 > li > a {
+  height: 80px;
+  line-height: 100px;
+  background-size: 30px 30px !important;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.orderArea > .am-avg-sm-5 > li > a.orderArea-allOrder {
+  background: url(../img/orderArea-allOrder.png) no-repeat center 6px;
+}
+.orderArea > .am-avg-sm-5 > li > a.orderArea-unPay {
+  background: url(../img/orderArea-unPay.png) no-repeat center 6px;
+}
+.orderArea > .am-avg-sm-5 > li > a.orderArea-unTake {
+  background: url(../img/orderArea-unTake.png) no-repeat center 6px;
+}
+.orderArea > .am-avg-sm-5 > li > a.orderArea-unAppraise {
+  background: url(../img/orderArea-unAppraise.png) no-repeat center 6px;
+}
+.orderArea > .am-avg-sm-5 > li > a.orderArea-afterSale {
+  background: url(../img/orderArea-afterSale.png) no-repeat center 6px;
+}
+.personalTools {
+  height: 170px;
+}
+.personalTools > .am-avg-sm-4 > li > a {
+  height: 90px;
+  line-height: 120px;
+  background-size: 40px 40px !important;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.personalTools > .am-avg-sm-4 > li > a.personalTools-collect {
+  background: url(../img/personalTools-collect.png) no-repeat center 6px;
+}
+.personalTools > .am-avg-sm-4 > li > a.personalTools-iWant {
+  background: url(../img/personalTools-iWant.png) no-repeat center 6px;
+}
+.personalTools > .am-avg-sm-4 > li > a.personalTools-mySubordinate {
+  background: url(../img/personalTools-mySubordinate.png) no-repeat center 6px;
+}
+.personalTools > .am-avg-sm-4 > li > a.personalTools-myWallet {
+  background: url(../img/personalTools-myWallet.png) no-repeat center 6px;
+}
+.personalTools > .am-avg-sm-4 > li > a.personalTools-myCard {
+  background: url(../img/personalTools-myCard.png) no-repeat center 6px;
+}
+.personalTools > .am-avg-sm-4 > li > a.personalTools-myQR {
+  background: url(../img/personalTools-myQR.png) no-repeat center 6px;
+}
+.personalTools > .am-avg-sm-4 > li > a.personalTools-myAddress {
+  background: url(../img/personalTools-myAddress.png) no-repeat center 6px;
+}

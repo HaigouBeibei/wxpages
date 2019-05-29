@@ -1,0 +1,46 @@
+
+.wh-uiContaneter{
+    width: 100%;
+    height: 100%;
+}
+.wh-price{
+    color: red;
+}
+.wh-width{
+    width: 49%;
+}
+.wh-tip{
+    position: relative;
+    display: block;
+    padding: .4em 1em;
+    border-radius: 0;
+    text-align: center;
+    color: gray;
+}
+
+.wh-nav{
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none; 
+}
+.wh-nav>li>a:hover{
+  color: gray;
+}
+.wh-nav>li>img{
+    width: 60;
+    height: 60;
+}
+.wh-imgSelect{
+    width: 15px;
+    height: 15px;
+}
+.wh-height{
+    margin: 0 0 1.6rem 0;
+    font-weight: 600;
+    font-size: 100%;
+    height: 14rem; 
+}
+.wh-labelContaner{
+   width: 100%;
+  text-align: center;
+}
