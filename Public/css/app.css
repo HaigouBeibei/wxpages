@@ -71,7 +71,11 @@
   margin-top: 10px;
 }
 
-.recommendArea > .am-u-sm-6 > .am-thumbnail > .am-thumbnail-caption > span.price {
+.recommendArea
+  > .am-u-sm-6
+  > .am-thumbnail
+  > .am-thumbnail-caption
+  > span.price {
   color: red;
 }
 
@@ -209,4 +213,30 @@ footer > .am-avg-sm-5 > li > a.selected {
 }
 .personalTools > .am-avg-sm-4 > li > a.personalTools-myAddress {
   background: url(../img/personalTools-myAddress.png) no-repeat center 6px;
+}
+.settle {
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  bottom: 50px;
+  background-color: white;
+}
+.settle > div {
+  height: 50px;
+}
+.settle > div > a {
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  background-color: #f0250f;
+  border: none;
+}
+.cartProductArea {
+  background-color: white;
+  border-radius: 15px;
+  width: 95%;
+}
+.cartProductArea > .storeInfo,
+.cartProductArea > .cartProductList {
+  height: 30px;
 }

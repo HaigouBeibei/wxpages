@@ -12,27 +12,27 @@
     <meta name="renderer" content="webkit">
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="../../Addons/AmazeUI/i/favicon.png">
+    <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="../../Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <link rel="apple-touch-icon-precomposed" href="../../Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
     <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="../../Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
     <meta name="msapplication-TileColor" content="#0e90d2">
-    <link rel="stylesheet" href="../../Addons/AmazeUI/css/amazeui.min.css">
-    <link rel="stylesheet" href="../../css/app.css">
+    <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="../Public/css/app.css">
     <link rel="stylesheet" href="./css/wh-goodsClassfyDetail.css">
     <!--[if (gte IE 9)|!(IE)]><!-->
-    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script src="../Public/js/jquery-1.12.4.min.js"></script>
     <script src="./js/wh-goodsClassfyDetail.js"></script>
-    <script src="../../js/app.js"></script>
+    <script src="../Public/js/app.js"></script>
     <!--<![endif]-->
-    <script src="../../Addons/AmazeUI/js/amazeui.min.js"></script>
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
 </head>
 
 <body>
@@ -40,21 +40,21 @@
         <ul class=" wh-nav am-nav-pills">
             <li class=" wh-width">
                 <a id='timeItem' class="wh-tip" href="#">按时间排序
-                    <img id='timeUp' class="wh-imgSelect" src="../../img/icon_up.png" alt="" />
-                    <img id='timeDown' class="wh-imgSelect" src="../../img/icon_down.png" alt="" />
+                    <img id='timeUp' class="wh-imgSelect" src="../Public/img/icon_up.png" alt="" />
+                    <img id='timeDown' class="wh-imgSelect" src="../Public/img/icon_down.png" alt="" />
                 </a>
             </li>
             <li class=" wh-width">
                 <a id='priceItem' class="wh-tip" href="#">按价格排序
-                    <img id='priceUp' class="wh-imgSelect" src="../../img/icon_up.png" alt="" />
-                    <img id='priceDown' class="wh-imgSelect" src="../../img/icon_down.png" alt="" />
+                    <img id='priceUp' class="wh-imgSelect" src="../Public/img/icon_up.png" alt="" />
+                    <img id='priceDown' class="wh-imgSelect" src="../Public/img/icon_down.png" alt="" />
                 </a>
             </li>
         </ul>
         <div class="am-g wrapper">
             <div class="am-u-sm-6">
                 <div class="am-thumbnail">
-                    <img src="../../img/product.png" alt="" />
+                    <img src="../Public/img/product.png" alt="" />
                     <div class="am-thumbnail-caption">
                         <h4 class="wh-height">英国代购英国代购英国代购英国代购</h4>
                         <span class="wh-price am-text-lg">￥9.9</span>
@@ -65,7 +65,7 @@
             </div>
             <div class="am-u-sm-6">
                 <div class="am-thumbnail">
-                    <img src="../../img/product.png" alt="" />
+                    <img src="../Public/img/product.png" alt="" />
                     <div class="am-thumbnail-caption">
                         <h4 class="wh-height">英国代购英国代购英国代购英国代购</h4>
                         <span class="wh-price am-text-lg">￥9.9</span>
@@ -98,16 +98,16 @@
                
             }
             function setCurrentSelectImag() {
-                $("ul.wh-nav li a img#timeUp").attr("src", "../../img/icon_up.png");
-                $("ul.wh-nav li a img#timeDown").attr("src", "../../img/icon_down.png");
-                $("ul.wh-nav li a img#priceUp").attr("src", "../../img/icon_up.png");
-                $("ul.wh-nav li a img#priceDown").attr("src", "../../img/icon_down.png");
+                $("ul.wh-nav li a img#timeUp").attr("src", "../Public/img/icon_up.png");
+                $("ul.wh-nav li a img#timeDown").attr("src", "../Public/img/icon_down.png");
+                $("ul.wh-nav li a img#priceUp").attr("src", "../Public/img/icon_up.png");
+                $("ul.wh-nav li a img#priceDown").attr("src", "../Public/img/icon_down.png");
             }
             //时间排序
             $("ul.wh-nav li a#timeItem").click(function (event) {
                 event.stopPropagation();
                 setCurrentSelectImag();//初始化设置
-                $("ul.wh-nav li a img#timeUp").attr("src", "../../img/icon_up_cor.png")
+                $("ul.wh-nav li a img#timeUp").attr("src", "../Public/img/icon_up_cor.png")
                 timeClick(true,'asc') //请求方法
 
             })
@@ -115,16 +115,15 @@
                 // 获取子点击
                 event.stopPropagation();
                 setCurrentSelectImag();//初始化设置
-                $(this).attr("src", "../../img/icon_up_cor.png");
+                $(this).attr("src", "../Public/img/icon_up_cor.png");
                 //遍历获取除当前节点的所有子节点
                 timeClick(true,"asc");
-
             })
             $("ul.wh-nav li a img#timeDown").click(function (event) {
                 // 获取子点击
                 event.stopPropagation();
                 setCurrentSelectImag();//初始化设置
-                $(this).attr("src", "../../img/icon_down_cor.png");
+                $(this).attr("src", "../Public/img/icon_down_cor.png");
                 //遍历获取除当前节点的所有子节点
                 timeClick(true,"desc");
 
@@ -134,7 +133,7 @@
                 // 获取子点击
                 event.stopPropagation();
                 setCurrentSelectImag();//初始化设置
-                $("ul.wh-nav li a img#priceUp").attr("src", "../../img/icon_up_cor.png");
+                $("ul.wh-nav li a img#priceUp").attr("src", "../Public/img/icon_up_cor.png");
                 timeClick(false,"asc");
 
 
@@ -143,7 +142,7 @@
                 // 获取子点击
                 event.stopPropagation()
                 setCurrentSelectImag();//初始化设置
-                $(this).attr("src", "../../img/icon_up_cor.png");
+                $(this).attr("src", "../Public/img/icon_up_cor.png");
                 timeClick(false,"asc");
                 //遍历获取除当前节点的所有子节点
 
@@ -152,7 +151,7 @@
                 // 获取子点击
                 event.stopPropagation();
                 setCurrentSelectImag();//初始化设置
-                $(this).attr("src", "../../img/icon_down_cor.png");
+                $(this).attr("src", "../Public/img/icon_down_cor.png");
                 timeClick(false,"desc");
                 //遍历获取除当前节点的所有子节点
             })
