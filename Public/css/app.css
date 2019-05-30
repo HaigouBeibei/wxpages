@@ -220,6 +220,7 @@ footer > .am-avg-sm-5 > li > a.selected {
   position: fixed;
   bottom: 50px;
   background-color: white;
+  z-index: 999 !important;
 }
 .settle > div {
   height: 50px;
@@ -236,7 +237,16 @@ footer > .am-avg-sm-5 > li > a.selected {
   border-radius: 15px;
   width: 95%;
 }
-.cartProductArea > .storeInfo,
-.cartProductArea > .cartProductList {
-  height: 30px;
+.cartProductArea th,
+.cartProductArea td {
+  color: #333333;
+}
+.cartProductArea .storeIcon {
+  background: url(../img/shopcart-store.png) no-repeat left center;
+  background-size: 18px 18px;
+  text-align: left;
+  text-indent: 1.2em;
+}
+.cartProductArea .priceArea .am-input-group {
+  width: 120px;
 }
