@@ -34,7 +34,9 @@ function initLeftContaner() {
             console.log(element);
             getTypeWithData(element);
           }) 
-        } 
+        }else{
+          showError(data.m) 
+        }
       }
     });
   }

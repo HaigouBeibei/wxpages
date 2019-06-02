@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="keywords" content="">
+    <title>嗨购贝贝-收货地址</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="../Public/css/app.css">
+    <link rel="stylesheet" href="./css/wh-myAddress.css">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-1.12.4.min.js"></script>
+    <script src="../Public/js/app.js"></script>
+    <script src="./js/wh-myAddress.js"></script>
+    <!--<![endif]-->
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+</head>
+     
+<body style="background-color:#F3F3F3">
+        <div class="wh-contaner">  
+            <ul class="wh-nav">  
+                <li>
+                    <div class="wh-labalContaner">
+                        <label class="wh-leftLable"> 15637135203 </label>
+                        <label class="wh-rightLable"> 15637135203</label>  
+                    </div>
+                      <p class="wh-content">小葱奥骚骚骚骚搜啊骚骚骚骚阿嫂搜啊搜啊搜奥搜啊搜啊飒飒扫 asasasasasasasasasas </p>
+                      <div class="wh-item-foot">
+                            <!-- <img class="wh-defuatIco" src="../Public/img/icon_mark.png"> -->
+                            <div class="wh-div-tile">
+                                <img class="wh-defuatIco" src="../Public/img/icon_mark.png"> 
+                                默认地址 
+                            </div>
+                            <a class="wh-customerDelete">删除</a>
+                            <a class="wh-customerEdit"> 编辑 </a>
+                      </div>
+                </li> 
+                <li>
+                        <div class="wh-labalContaner">
+                            <label class="wh-leftLable"> 15637135203 </label>
+                            <label class="wh-rightLable"> 15637135203</label>  
+                        </div>
+                          <p class="wh-content">小葱奥骚骚骚骚搜啊骚骚骚骚阿嫂搜啊搜啊搜奥搜啊搜啊飒飒扫 asasasasasasasasasas </p>
+                          <div class="wh-item-foot">
+                               <!-- 用全角空格处理 -->
+                                <!-- <img class="wh-defuatIco" src=""> -->
+                                <div class="wh-div-tile"> 
+                                 <img class="wh-defuatIco" src="">   　　　　
+                                </div>
+                                <a class=" wh-customerDelete">删除</a>
+                                 <a class="wh-customerEdit"> 编辑 </a>
+                          </div>
+                 </li> 
+
+            </ul>        
+        </div>
+        <footer class="am-topbar-fixed-bottom am-g">
+            <div class="wh-adress">
+                 <img class="wh-addIco" src="../Public/img/icon_add.png">
+                 <a class="wh-customerAddressBtn">添加新地址</a>
+                 </div>
+    
+        </footer>
+        <script> 
+           $(document).ready(function (){
+              $(".wh-adress").click(function (){
+                 location.href="wh-newAdress.html"
+              })
+              $(".wh-customerEdit").click(function (){
+                location.href="wh-eidtAddress.html"
+              })
+              $(".wh-customerDelete").click(function(){
+                showDeltePop("删除地址","是否删除该地址?");
+              })
+
+           })
+        </script>
+</body>
+
+</html>

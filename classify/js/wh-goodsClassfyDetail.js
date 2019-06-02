@@ -34,8 +34,6 @@ function intiContaner() {
         if (data.c == 0) {
           // 取数据
           var datas = data.d.list;
-          console.log(data);
-          console.log(page);
           // 写入页面
           // 清空内容
           if (isEmpty == "1"){

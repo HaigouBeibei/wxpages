@@ -1,95 +1,31 @@
 var appid = "wxf950c87150710871";
 var baseURL = "https://tongmeng.haigoubeibei.com/hiGou/";
-$(function() {
-  initBanner();
-  initProduct();
-});
 
-// 初始化Banner
-function initBanner() {
-  // 请求数据
-  $.ajax({
-    url: baseURL + "action/GlobalSettingsAction/getCarousels",
-    success: function(data) {
-      //data = $.parseJSON(data);
-      //console.log(data);
-      if (data.c == 0) {
-        // 取数据
-        var datas = data.d.carousels.split(",");
-        // 写入页面
-        // 清空内容
-        $("#Banner .am-slides").empty();
-        for (const key in datas) {
-          if (datas.hasOwnProperty(key)) {
-            $("#Banner .am-slides").append(
-              '<li><img src="' + baseURL + datas[key] + '" /></li>'
-            );
-          }
-        }
-        // 生效
-        var $slider = $("#Banner").flexslider({
-          easing: "swing",
-          touch: true,
-          controlNav: false,
-          smoothHeight: true
-        });
-      } else {
-        console.log("initBanner error.");
+$.ajaxSetup({
+  cache: false,
+  xhrFields: {
+    withCredentials: true
+  },
+  complete: function(XMLHttpRequest, textStatus) {
+    var sessionstatus = XMLHttpRequest.getResponseHeader("sessionstatus");
+    if (sessionstatus == "TIMEOUT") {
+      var win = window;
+      while (win != win.top) {
+        win = win.top;
       }
+      getCode();
     }
-  });
+  }
+});
+//获取CODE
+function getCode() {
+  //记忆地址以
+  //开头---6个/
+  //结尾---8个/
+  var jummpURL = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appid + "&redirect_uri=" + encodeURIComponent(baseURL + "wxpages/doAuth.html" + "?toURL=//////" + window.location.href + "////////") + "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+  window.location.href = jummpURL;
 }
-//首页商品列表
-function initProduct() {
-  $(".recommendArea");
-  // 请求数据
-  $.ajax({
-    url: baseURL + "action/MerchantGoodsAction/list",
-    data: {
-      page: 1,
-      limit: 20,
-      condition: "time",
-      direction: "desc"
-    },
-    success: function(data) {
-      //data = $.parseJSON(data);
-      if (data.c == 0) {
-        // 取数据
-        var datas = data.d.list;
-        // 写入页面
-        // 清空内容
-        $(".recommendArea").empty();
-        for (const key in datas) {
-          if (datas.hasOwnProperty(key)) {
-            var appendText = "";
-            appendText += '<div class="am-u-sm-6">';
-            appendText += '<div class="am-thumbnail">';
-            appendText +=
-              '<img src="' + baseURL + datas[key].imgListPage + '" alt="" />';
-            appendText += '<div class="am-thumbnail-caption">';
-            appendText += "<h4>" + datas[key].name + "</h4>";
-            appendText +=
-              '<span class="price am-text-lg">￥' +
-              datas[key].listPagePriceCurrent +
-              "</span>";
-            appendText +=
-              '<span class="oldPrice am-text-sm"><del>￥' +
-              datas[key].listPagePriceOriginal +
-              "</del></span>";
-            appendText +=
-              '<a class="am-badge am-badge-warning am-round">包邮</a>';
-            appendText += "</div>";
-            appendText += "</div>";
-            appendText += "</div>";
-            $(".recommendArea").append(appendText);
-          }
-        }
-      } else {
-        console.log("initProduct error.");
-      }
-    }
-  });
-}
+
 // 获取地址栏参数
 function getQueryString(name) {
   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -105,4 +41,29 @@ function isWeiXin() {
   } else {
     return false;
   }
+}
+
+//显示错误信息
+function showError(showMessage) {
+  var errorForm = "";
+  errorForm += '<div class="am-modal am-modal-confirm" tabindex="-1" id="errorForm">';
+  errorForm += '<div class="am-modal-dialog">';
+  errorForm += '<div class="am-modal-hd">嗨购贝贝</div>';
+  errorForm += '<div class="am-modal-bd">';
+  errorForm += showMessage;
+  errorForm += "</div>";
+  errorForm += '<div class="am-modal-footer">';
+  errorForm += '<span class="am-modal-btn" data-am-modal-cancel>返回上一页</span>';
+  errorForm += '<span class="am-modal-btn" style="background-color:#f0250f;color:white" data-am-modal-confirm>刷新页面</span>';
+  errorForm += "</div></div></div>";
+  $("body").append(errorForm);
+  $("#errorForm").modal({
+    relatedTarget: this,
+    onConfirm: function(options) {
+      window.location.reload();
+    },
+    onCancel: function() {
+      history.back(-1);
+    }
+  });
 }

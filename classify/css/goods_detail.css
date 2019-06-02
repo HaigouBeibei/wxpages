@@ -1,0 +1,66 @@
+.cgd-header {
+  height: 40px;
+  line-height: 40px;
+  background-color: #f0250f;
+}
+
+.cgd-header > .share {
+  background: url(../images/cgd-share.png) no-repeat center center;
+}
+.cgd-header > .shopCart {
+  background: url(../images/cgd-shopCart.png) no-repeat center center;
+}
+.cgd-header > .share,
+.cgd-header > .shopCart {
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+.cgd-header > .title {
+  display: inline-block;
+  margin: 0px auto;
+  margin-left: 68px;
+  color: white;
+  font-weight: bold;
+}
+.price {
+  color: #f0250f;
+}
+.power {
+  background-color: #fafafa;
+  line-height: 40px;
+}
+.power > li {
+  display: inline-block;
+  list-style: none;
+  padding-left: 5px;
+}
+.power > li > a {
+  color: #333333;
+  font-size: 13px;
+}
+.addressShow {
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+}
+.addressShow > ul > li {
+  border: none;
+}
+.addressShow > ul > li > a {
+  color: #333333;
+  padding: 0px;
+  font-size: 14px;
+}
+.division {
+  height: 11px;
+  background: #fafafa;
+}
+.skuTouch {
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px;
+  padding: 0px 1.2em 0px 1.2em;
+}

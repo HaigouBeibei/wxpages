@@ -1,0 +1,50 @@
+.wh-form-group{
+    height: 4.5rem;
+    padding-top: 11px;
+    border-bottom: 1px solid #DDDDDD;
+    /* margin-top: 9px; */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.wh-form-group>label{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    width: 22%;
+    text-align:left;
+}
+.wh-content{
+    width: 74%;
+    /* border: 1px solid #F3F3F3; */
+    border: 0px;
+    background-color: #F3F3F3;
+    outline: none;
+    color: gray;
+    font-size: 1.3rem;
+}
+.wh-defuatIco{
+    width: 16px;
+    margin-top: -3px;
+}
+.wh-default-name{
+    font-size: 1.3rem; 
+    font-weight: 700;
+}
+.container_content_save {
+    width: 80%;
+    height: 34px;
+    background: linear-gradient(to right, #FE9A9C,#EB7BA5);
+    text-align: center;
+    border-radius: 10px;
+    color: #FFFFFF;
+    outline: none;
+    margin-top: 13%;
+    border: 0px;
+    font-size: 13px;
+}
+.wh-saveBtn{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+}
+    

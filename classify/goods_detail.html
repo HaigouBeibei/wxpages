@@ -26,15 +26,16 @@
     <meta name="msapplication-TileColor" content="#0e90d2">
     <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
     <link rel="stylesheet" href="../Public/css/app.css">
+    <link rel="stylesheet" href="css/goods_detail.css" />
     <!--[if (gte IE 9)|!(IE)]><!-->
     <script src="../Public/js/jquery-1.12.4.min.js"></script>
     <!--<![endif]-->
     <script src="../Public/js/app.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/goods_detail.js"></script>
     <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
 </head>
 
-<body style="background-color:#F3F3F3">
+<body>
     <!--[if lte IE 9]>
 <p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
   href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
@@ -49,50 +50,57 @@
     <!--
         嗨购贝贝
     -->
-    <!--Header-->
-    <div class="i-header am-padding-top-xs">
-        <div class="settings">
-            <a href="" class="am-fr settingsButton am-margin-right-sm"> </a>
-            <a href="" class="am-fr am-margin-right-sm">足迹</a>
-        </div>
-        <div class="personal am-g am-margin-top-sm">
-            <div class="am-u-sm-3 headimg">
-                <img src="../Public/img/headimg.jpg" class="am-center am-circle" id="avatar" />
-            </div>
-            <div class="am-u-sm-9 personalInfo">
-                <ul class="am-list">
-                    <li><strong id="nickName">Requiem</strong></li>
-                    <li><strong id="merchantState">会员等级：普通会员</strong></li>
-                </ul>
-            </div>
-        </div>
+    <div class="cgd-header am-text-center">
+        <h3 class="title">商品详情</h3>
+        <a href="../shopCart/index.html" class="shopCart"></a>
+        <a href="" class="share"></a>
     </div>
-
-    <!--Order-->
-    <div class="orderArea am-g am-margin-top-sm">
-        <ul class="am-avg-sm-5">
-            <li><a href="" class="orderArea-allOrder am-center am-text-center am-text-sm ">全部订单<strong
-                        class="am-text-danger">(66)</strong></a></li>
-            <li><a href="" class="orderArea-unPay am-center am-text-center am-text-sm">未付款</a></li>
-            <li><a href="" class="orderArea-unTake am-center am-text-center am-text-sm">待收货</a></li>
-            <li><a href="" class="orderArea-unAppraise am-center am-text-center am-text-sm">待评价</a></li>
-            <li><a href="" class="orderArea-afterSale am-center am-text-center am-text-sm selected">退款/售后</a></li>
+    <!--goodsImg-->
+    <!--Banner-->
+    <div class="am-slider am-slider-a1" id="Banner">
+        <ul class="am-slides">
+            <li><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
         </ul>
     </div>
-
-    <!--personalTools-->
-    <div class="personalTools am-g am-margin-top-sm">
-        <ul class="am-avg-sm-4">
-            <li><a href="" class="personalTools-collect am-center am-text-center am-text-sm ">收藏</a></li>
-            <li><a href="" class="personalTools-iWant am-center am-text-center am-text-sm">我要开店</a></li>
-            <li><a href="" class="personalTools-mySubordinate am-center am-text-center am-text-sm">我的会员</a></li>
-            <li><a href="" class="personalTools-myWallet am-center am-text-center am-text-sm">个人钱包</a></li>
-            <li><a href="" class="personalTools-myCard am-center am-text-center am-text-sm selected">个人卡包</a></li>
-            <li><a href="" class="personalTools-myQR am-center am-text-center am-text-sm">我的推广码</a></li>
-            <li><a href="" class="personalTools-myAddress am-center am-text-center am-text-sm selected">收货地址</a></li>
+    <!--title-->
+    <div class="am-g am-margin-top-xs">
+        <div class="am-u-sm-12">
+            <h3 class="am-margin-bottom-0">
+                新款潮版百搭斜跨小手提包稍后我待会要去吃饭了 真的好饿啊
+            </h3>
+        </div>
+    </div>
+    <!--price-->
+    <div class="am-g ">
+        <div class="am-u-sm-12">
+            <span class="price am-text-lg"><strong>￥100 <span class="am-icon-minus"></span>￥200</strong></span>
+            <!-- <del class="am-text-sm">￥</del> -->
+        </div>
+    </div>
+    <!--power-->
+    <ul class="power am-padding-left-0 am-margin-0">
+        <li><a><span class="am-icon-check am-text-warning"></span>包邮</a></li>
+        <li><a><span class="am-icon-check am-text-warning"></span>7天无理由退货</a></li>
+        <li><a><span class="am-icon-check am-text-warning"></span>极速发货</a></li>
+    </ul>
+    <!--addressShow-->
+    <div class="am-g addressShow">
+        <ul class="am-list am-margin-xs">
+            <li><a href="#">送至：河南省-新乡市-获嘉县</a></li>
+            <li><a href="#">运费：免运费</a></li>
         </ul>
     </div>
+    <div class="division am-g"></div>
+    <!--skuTouch-->
+    <div class="am-g skuTouch">
+        规格
+        <span class="am-icon-chevron-right am-fr"></span>
+    </div>
+    <div class="division am-g"></div>
+    <!--comment-->
+    <div class="ag-g comment">
 
+    </div>
 
 
     <!--footer-->
@@ -100,10 +108,10 @@
         <ul class="am-avg-sm-5">
             <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm ">首页</a></li>
             <li><a href="" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
-            <li><a href="" class="footer-class am-center am-text-center am-text-sm">分类</a></li>
+            <li><a href="" class="footer-class am-center am-text-center am-text-sm selected">分类</a></li>
             <li><a href="../shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
             </li>
-            <li><a href="" class="footer-i am-center am-text-center am-text-sm selected">我的</a></li>
+            <li><a href="../i/index.html" class="footer-i am-center am-text-center am-text-sm ">我的</a></li>
         </ul>
     </footer>
     <!--
