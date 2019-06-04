@@ -1,0 +1,25 @@
+.wh-contaner{
+    padding-left: 10px;
+    justify-content: space-between;
+    display: flex !important;
+    background-color: white !important;
+}
+.wh-color{
+    color: black;
+}
+.wh-color:focus ,.wh-color:hover{
+    color: black;
+}
+.wh-setting{
+    padding-top:1.2rem;
+}
+.wh-imgfloat{
+    margin-top: 5px;
+    margin-right: 1rem;
+}
+.wh-addMembers{
+    text-align: center;
+}
+.wh-rightAlign{
+    margin-right: 2.2rem;
+}

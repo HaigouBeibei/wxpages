@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
+  <meta name="keywords" content="">
+  <title>我的会员</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+  <link rel="stylesheet" href="../Public/css/app.css">
+  <link rel="stylesheet" href="./css/wh-myMembers.css">
+  <!--[if (gte IE 9)|!(IE)]><!-->
+  <script src="../Public/js/jquery-1.12.4.min.js"></script>
+  <script src="../Public/js/app.js"></script>
+  <!--<![endif]-->
+  <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+ 
+</head>
+
+<body style="background-color:white">
+  <ul class="am-list">
+    <li class="wh-contaner">
+      <a class="wh-color">一星会员</a>
+      <div class="wh-setting" id="firstTest">
+        <img class="am-fr wh-imgfloat" alt="" src="../Public/img/invite_friends_next.png" width="15" height="15" />
+        <a class="am-fr wh-color">0人</a>
+      </div>
+    </li>
+    <li class="wh-contaner">
+      <a class="wh-color">二星会员</a>
+      <div class="wh-setting">
+        <img class="am-fr wh-imgfloat" alt="" src="" width="15" height="15" />
+        <a class="am-fr wh-color">0人</a>
+      </div>
+    </li>
+    <li class="wh-contaner">
+      <a class="wh-color"> 三星会员</a>
+      <div class="wh-setting">
+        <img class="am-fr wh-imgfloat" alt="" src="" width="15" height="15" />
+        <a class="am-fr wh-color">0人</a>
+      </div>
+    </li>
+  </ul>
+  <div>
+      <h3 class="wh-addMembers"> 今日新增(0人) </h3>
+      <ul class="am-list">
+          <li class="wh-contaner">
+            <a class="wh-color">一星会员</a>
+            <div class="wh-setting">
+              <a class="am-fr wh-rightAlign wh-color">0人</a>
+            </div>
+          </li>
+          <li class="wh-contaner">
+            <a class="wh-color">二星会员</a>
+            <div class="wh-setting">
+              <a class="am-fr wh-rightAlign wh-color">0人</a>
+            </div>
+          </li>
+          <li class="wh-contaner">
+            <a class="wh-color"> 三星会员</a>
+            <div class="wh-setting">
+              <a class="am-fr wh-rightAlign wh-color">0人</a>
+            </div>
+          </li>
+  </div>
+
+
+  <script>
+    $(document).ready(function () {
+      $(".wh-setting#firstTest").click(function () {
+        location.href="wh-myHighStarMembers.html"
+      })
+
+    }) 
+  </script>
+</body>
+
+</html>

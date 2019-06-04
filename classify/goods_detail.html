@@ -35,7 +35,7 @@
     <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
 </head>
 
-<body>
+<body style="padding-bottom: 80px;">
     <!--[if lte IE 9]>
 <p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
   href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
@@ -59,13 +59,13 @@
     <!--Banner-->
     <div class="am-slider am-slider-a1" id="Banner">
         <ul class="am-slides">
-            <li><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
+            <li><img src="../Public/img/bitmap.png" /></li>
         </ul>
     </div>
     <!--title-->
     <div class="am-g am-margin-top-xs">
         <div class="am-u-sm-12">
-            <h3 class="am-margin-bottom-0">
+            <h3 class="am-margin-bottom-0" id="goods_title">
                 新款潮版百搭斜跨小手提包稍后我待会要去吃饭了 真的好饿啊
             </h3>
         </div>
@@ -73,12 +73,13 @@
     <!--price-->
     <div class="am-g ">
         <div class="am-u-sm-12">
-            <span class="price am-text-lg"><strong>￥100 <span class="am-icon-minus"></span>￥200</strong></span>
+            <span class="price am-text-lg"><strong>￥100 <span class="am-icon-minus"></span>￥200</strong>
+            </span>
             <!-- <del class="am-text-sm">￥</del> -->
         </div>
     </div>
     <!--power-->
-    <ul class="power am-padding-left-0 am-margin-0">
+    <ul class="power am-margin-0">
         <li><a><span class="am-icon-check am-text-warning"></span>包邮</a></li>
         <li><a><span class="am-icon-check am-text-warning"></span>7天无理由退货</a></li>
         <li><a><span class="am-icon-check am-text-warning"></span>极速发货</a></li>
@@ -96,24 +97,116 @@
         规格
         <span class="am-icon-chevron-right am-fr"></span>
     </div>
+    <!--divsion-->
     <div class="division am-g"></div>
     <!--comment-->
-    <div class="ag-g comment">
-
+    <div class="ag-g comment am-center">
+        评论（99+）
+        <a class="am-fr">查看全部&nbsp;<span class="am-icon-chevron-right"></span></a>
     </div>
+    <!--commentList-->
+    <div class="am-g commentList">
+        <ul class="am-comments-list am-comments-list-flip">
+            <li class="am-comment">
+                <a href="">
+                    <img class="am-comment-avatar" src="../Public/img/headimg.png" />
+                    <!-- 评论者头像 -->
+                </a>
+                <div class="am-comment-main">
+                    <!-- 评论内容容器 -->
+                    <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                            <!-- 评论元数据 -->
+                            <a href="#link-to-user" class="am-comment-author">AAA</a>
+                            <!-- 评论者 -->
+                            <time datetime="">2019-06-01 09:10:50</time>
+                        </div>
+                    </header>
 
-
-    <!--footer-->
-    <footer class="am-topbar-fixed-bottom am-g">
-        <ul class="am-avg-sm-5">
-            <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm ">首页</a></li>
-            <li><a href="" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
-            <li><a href="" class="footer-class am-center am-text-center am-text-sm selected">分类</a></li>
-            <li><a href="../shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
+                    <div class="am-comment-bd">棒棒哒</div>
+                    <!-- 评论内容 -->
+                </div>
             </li>
-            <li><a href="../i/index.html" class="footer-i am-center am-text-center am-text-sm ">我的</a></li>
+            <li class="am-comment">
+                <a href="">
+                    <img class="am-comment-avatar" src="../Public/img/headimg.png" />
+                    <!-- 评论者头像 -->
+                </a>
+                <div class="am-comment-main">
+                    <!-- 评论内容容器 -->
+                    <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                            <!-- 评论元数据 -->
+                            <a href="#link-to-user" class="am-comment-author">AAA</a>
+                            <!-- 评论者 -->
+                            <time datetime="">2019-06-01 09:10:50</time>
+                        </div>
+                    </header>
+
+                    <div class="am-comment-bd">棒棒哒</div>
+                    <!-- 评论内容 -->
+                </div>
+            </li>
         </ul>
-    </footer>
+    </div>
+    <!--divsion-->
+    <div class="division am-g"></div>
+    <div class="details">
+        <div class="header am-g">
+            <img src="images/details-header.png" class="am-center am-margin-top-xs" />
+        </div>
+        <div class="am-g" id="content">
+            <div style="width: 100%;height:100px;background-color:#999999"></div>
+        </div>
+    </div>
+    <div class="am-g footer-tips am-margin-0">
+        该商品在该地区暂不支持销售，非常抱歉
+    </div>
+    <!--cgd-footer-->
+    <div class="am-g cgd-footer am-topbar-fixed-bottom">
+        <div class="am-u-sm-6 am-padding-0 cgd-left">
+            <ul class="am-avg-sm-3">
+                <li>
+                    <a href="" class="cgd-footer-service">客服</a>
+                </li>
+                <li>
+                    <a href="" class="cgd-footer-collection">收藏</a>
+                </li>
+                <li>
+                    <a href="" class="cgd-footer-store">店铺</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="am-u-sm-6 am-padding-0 cgd-right">
+            <div class="am-u-sm-6 am-padding-0" id="joinCart" data-am-modal="{target: '#my-actions'}">
+                <strong>加入购物车</strong>
+            </div>
+            <div class="am-u-sm-6 am-padding-0" id="buyNow">
+                <strong>立即购买</strong>
+            </div>
+        </div>
+    </div>
+    <div class="am-modal-actions" id="my-actions">
+        <div class="am-g skuArea">
+            <div class="am-u-sm-5">
+                <img src="images/sku_goods.png" id="sku_goods_img" />
+            </div>
+            <div class="am-u-sm-7">2</div>
+        </div>
+        <div class="am-modal-actions-group">
+            <ul class="am-list">
+                <li class="am-modal-actions-header">...</li>
+                <li><a href="#"><span class="am-icon-wechat"></span> ...</a></li>
+                <li class="am-modal-actions-danger">
+                    <a href="#"><i class="am-icon-twitter"></i> ...</a>
+                </li>
+            </ul>
+        </div>
+        <div class="am-modal-actions-group">
+            <button class="am-btn am-btn-secondary am-btn-block" data-am-modal-close>取消</button>
+        </div>
+    </div>
     <!--
         嗨购贝贝
     -->

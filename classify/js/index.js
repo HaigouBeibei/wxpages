@@ -60,6 +60,7 @@ function  getTypeWithData(data){
         $("ul.wh-right-ul").append(appendText);
     } 
     $(".wh-right-ul li").click(function(){
+      console.log()
       location.href="wh-goodsClassfyDetail.html?goodType="+element.id
     })
   }
