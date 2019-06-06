@@ -187,24 +187,35 @@
             </div>
         </div>
     </div>
-    <div class="am-modal-actions" id="my-actions">
-        <div class="am-g skuArea">
-            <div class="am-u-sm-5">
-                <img src="images/sku_goods.png" id="sku_goods_img" />
+    <div class="am-modal-actions skuArea" id="my-actions">
+        <div class="am-g">
+            <div class="am-u-sm-5 am-padding-0 am-text-left">
+                <img src="images/sku_goods.png" id="sku_goods_img" class="am-margin-left-sm" />
             </div>
-            <div class="am-u-sm-7">2</div>
+            <div class="am-u-sm-7 am-text-left am-padding-0">
+                <p id="sku_price" class="am-margin-top-xs am-margin-bottom-xs am-text-lg">￥9999</p>
+                <p id="sku_stock" class="am-margin-top-xs am-margin-bottom-xs am-text-xs">库存：999</p>
+            </div>
         </div>
-        <div class="am-modal-actions-group">
-            <ul class="am-list">
-                <li class="am-modal-actions-header">...</li>
-                <li><a href="#"><span class="am-icon-wechat"></span> ...</a></li>
-                <li class="am-modal-actions-danger">
-                    <a href="#"><i class="am-icon-twitter"></i> ...</a>
-                </li>
-            </ul>
+        <div id="skuButtonsArea">
+            <div class="am-g am-margin-top-xs">
+                <p class="am-text-sm am-text-left am-padding-left-sm am-margin-bottom-xs"><strong>颜色</strong></p>
+            </div>
+            <div class="am-g">
+                <button type="button" class="am-btn am-btn-default am-round am-btn-xs selected">默认样式</button>
+            </div>
         </div>
-        <div class="am-modal-actions-group">
-            <button class="am-btn am-btn-secondary am-btn-block" data-am-modal-close>取消</button>
+        <div class="am-g am-margin-top-xs">
+            <p class="am-text-sm am-text-left am-padding-left-sm am-margin-bottom-xs"><strong>数量</strong></p>
+        </div>
+        <div class="am-g am-margin-bottom-lg">
+            <a id="sku_count_reduce">-</a>
+            <input type="number" id="sku_count_input" value="1" max-value="9" />
+            <a id="sku_count_plus">+</a>
+        </div>
+
+        <div class="am-g">
+            <button id="confirmButton" class="am-btn am-btn-default am-btn-block" data-am-modal-close>确定</button>
         </div>
     </div>
     <!--
