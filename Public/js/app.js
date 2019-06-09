@@ -68,6 +68,30 @@ function showError(showMessage) {
     });
 }
 
+//处理价格
 function handlePrice(price) {
     return Math.floor(parseInt(price)) / 100;
+}
+
+//重写alert
+function alert(content) {
+    my_alert = $('#my-alert');
+    console.log(my_alert);
+    if (my_alert.length != 0) {
+        my_alert.remove();
+    }
+    appendContent = '';
+    appendContent += '<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">';
+    appendContent += '<div class="am-modal-dialog">';
+    appendContent += '<div class="am-modal-hd">嗨购贝贝</div>';
+    appendContent += '<div class="am-modal-bd">';
+    appendContent += content;
+    appendContent += '</div>';
+    appendContent += '<div class="am-modal-footer">';
+    appendContent += '<span class="am-modal-btn">确定</span>';
+    appendContent += '</div>';
+    appendContent += '</div>';
+    appendContent += '</div>';
+    $('body').append(appendContent);
+    $('#my-alert').modal();
 }

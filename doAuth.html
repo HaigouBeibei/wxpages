@@ -1,14 +1,14 @@
 <script src="Public/js/jquery-1.12.4.min.js"></script>
 <script src="Public/js/app.js"></script>
 <script>
-    $(function () {
+    $(function() {
         $.ajax({
             url: baseURL + "action/WeiXinLogin/officialAccountUserInit",
             data: {
                 code: getQueryString("code"),
                 parentId: getQueryString("parentid")
             },
-            success: function (data) {
+            success: function(data) {
                 if (data.c == 0) {
                     var begin = window.location.href.indexOf('//////');
                     var end = window.location.href.indexOf('////////');
@@ -16,7 +16,6 @@
                     window.location.href = toURL;
                 }
             }
-        }
-        );
+        });
     });
 </script>

@@ -34,17 +34,19 @@
   <!--<![endif]-->
   <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
   <script src="../Public/dist/iscroll.min.js"></script>
-  <script src="../Public/dist/address.min.js"></script>
+  <script src="../Public/dist/address.js"></script>
+  <script src="./js/wh-eidtAddress.js"></script>
 </head>
 
 <body style="background-color:#F3F3F3">
+  <div class="wh-editContaner">
   <div class="wh-form-group">
     <label for="doc-vld-name-2">收货人：</label>
-    <input class="wh-content" type="text" placeholder="请输入名称" value="xiaocao"  />
+    <input class="wh-content" type="text" placeholder="请输入名称" value="xiaocao" />
   </div>
   <div class="wh-form-group">
     <label for="doc-vld-name-2">手机号码：</label>
-    <input class="wh-content" type="text" minlength="2" placeholder="请输入收货人手机号码" value="xiaocao"  />
+    <input class="wh-content" type="text" minlength="2" placeholder="请输入收货人手机号码" value="xiaocao" />
   </div>
   <div class="wh-form-group" id="localClass">
     <label for="doc-vld-name-2">所在地区：</label>
@@ -54,39 +56,32 @@
     <label for="doc-vld-name-2">详细地址：</label>
     <input class="wh-content" type="text" minlength="2" placeholder="请输入街道,小区等" value="xiaocao" />
   </div>
-  <div class="wh-form-group">
+</div>
+  <!-- <div class="wh-form-group">
     <img class="wh-defuatIco" src="../Public/img/icon_mark.png">
     <span class="wh-default-name"> 默认地址 </span>
-  </div>
-  <div class="wh-saveBtn"> 
+  </div> -->
+  <div class="wh-saveBtn">
     <button type="button" class="container_content_save"> 保存 </button>
   </div>
-  
 
-  <script>
-    var toggle = true;
-    $(document).ready(function () {
-      $("#localClass").address({
-        prov: "北京",
-        city: "北京市",
-        district: "朝阳区",
-        scrollToCenter: true,
-        footer: true,
-        selectEnd: function (json) {
-          console.log(JSON.stringify(json));
-        }
-      });
-      $(".wh-defuatIco").click(function (event) {
-        if (toggle) {
-          $(this).attr("src", "../Public/img/ico_unAdd.png")
-        } else {
-          $(this).attr("src", "../Public/img/icon_mark.png")
-        }
-        toggle = !toggle;
-      })
 
-    })
-  </script>
+  <!-- <script>
+
+    // $("#localClass").address({
+    //   prov: "北京",
+    //   city: "北京",
+    //   district: "朝阳区",
+    //   scrollToCenter: true,
+    //   footer: true,
+    //   selectEnd: function (json) {
+    //     var provText = json.prov
+    //     var cityText = json.city
+    //     var districtText = json.district
+    //     getProviceId(provText, cityText, districtText)
+    //   }
+    // });
+  </script> -->
 </body>
 
 </html>

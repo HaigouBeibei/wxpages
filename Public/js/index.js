@@ -1,6 +1,7 @@
 $(function() {
     initBanner();
     initProduct();
+    initSearch();
 });
 // 初始化Banner
 function initBanner() {
@@ -78,6 +79,17 @@ function initProduct() {
             } else {
                 console.log("initProduct error.");
             }
+        }
+    });
+}
+
+function initSearch() {
+    $('#searchSubmit').click(function() {
+        keyword = $('#searchInputTrue').val();
+        if (keyword != '' && keyword != null) {
+            window.location.href = baseURL + '/wxpages/classify/wh-goodsClassfyDetail.html?search=' + keyword;
+        } else {
+            alert('请输入搜索内容');
         }
     });
 }

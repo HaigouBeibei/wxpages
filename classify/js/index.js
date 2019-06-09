@@ -29,6 +29,10 @@ function initLeftContaner() {
           getFristData(datas[0]);
           //右侧的数据
           $(".wh-nav li").click(function(){
+            $(this).addClass("wh-nav-a-select")
+            $(this).children("a").addClass("wh-nav-selectColor")
+            $(this).siblings().removeClass("wh-nav-a-select")
+            $(this).siblings().children("a").removeClass("wh-nav-selectColor")
             var  index  = $(this).index();
             var element = datas[index];
             console.log(element);

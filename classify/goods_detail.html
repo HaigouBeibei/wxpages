@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>嗨购贝贝-我的</title>
+    <title>嗨购贝贝-商品详情</title>
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
     <!-- No Baidu Siteapp-->
@@ -179,7 +179,7 @@
             </ul>
         </div>
         <div class="am-u-sm-6 am-padding-0 cgd-right">
-            <div class="am-u-sm-6 am-padding-0" id="joinCart" data-am-modal="{target: '#my-actions'}">
+            <div class="am-u-sm-6 am-padding-0" id="joinCart">
                 <strong>加入购物车</strong>
             </div>
             <div class="am-u-sm-6 am-padding-0" id="buyNow">
@@ -201,8 +201,8 @@
             <div class="am-g am-margin-top-xs">
                 <p class="am-text-sm am-text-left am-padding-left-sm am-margin-bottom-xs"><strong>颜色</strong></p>
             </div>
-            <div class="am-g">
-                <button type="button" class="am-btn am-btn-default am-round am-btn-xs selected">默认样式</button>
+            <div class="am-g specsArea">
+                <button type="button" class="am-btn am-btn-default am-round am-btn-xs selected" spec_id="abc">默认样式</button>
             </div>
         </div>
         <div class="am-g am-margin-top-xs">
@@ -215,7 +215,7 @@
         </div>
 
         <div class="am-g">
-            <button id="confirmButton" class="am-btn am-btn-default am-btn-block" data-am-modal-close>确定</button>
+            <button id="confirmButton" class="am-btn am-btn-default am-btn-block" action="joinCart">确定</button>
         </div>
     </div>
     <!--

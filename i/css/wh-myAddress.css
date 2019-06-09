@@ -32,7 +32,8 @@
 
 }
 .wh-content{
-    height: 56px;
+    /* height: 56px; */
+    line-height: 36px;
     margin-top: 2px;
     margin-left: 3%;
     margin-right: 3%;

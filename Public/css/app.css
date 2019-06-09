@@ -276,3 +276,12 @@ footer>.am-avg-sm-5>li>a.selected {
 .cartProductArea .priceArea .am-input-group {
     width: 120px;
 }
+
+.historyArea a {
+    float: left;
+    padding: 4px 9px;
+    color: #333333;
+    background-color: #F8F8F8;
+    border-radius: 15px;
+    margin: 3px 6px;
+}

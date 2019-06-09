@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>嗨购贝贝-我的</title>
+    <title>嗨购贝贝-首页</title>
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
     <!-- No Baidu Siteapp-->
@@ -55,7 +55,7 @@
             <a href="" class="am-center"></a>
         </div>
         <div class="am-u-sm-8 searchInput am-vertical-align am-padding-0">
-            <input class="am-round am-center am-vertical-align-middle" placeholder="搜索你想要的内容" />
+            <input class="am-round am-center am-vertical-align-middle" placeholder="搜索你想要的内容" id="searchInput" data-am-modal="{target: '#searchModal'}" />
         </div>
         <div class="am-u-sm-2 messageButton am-padding-0">
             <a href="" class="am-center"></a>
@@ -177,6 +177,42 @@
     <!--
         嗨购贝贝
     -->
+    <div class="am-popup" id="searchModal">
+        <div class="am-popup-inner am-padding-top-xs">
+            <div class="am-popup-hd">
+                <h6 class="am-popup-title">搜索</h6>
+                <span data-am-modal-close class="am-close">&times;</span>
+            </div>
+            <div class="am-popup-bd am-padding-0" style="background-color: transparent;">
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-padding-top-sm">
+                        <div class="am-input-group am-input-group-sm">
+                            <input type="text" class="am-form-field am-round" id="searchInputTrue" placeholder="搜索你想要的内容">
+                            <span class="am-input-group-btn">
+                                <button class="am-btn am-btn-default am-round" type="button" id="searchSubmit"><span
+                                        class="am-icon-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-g am-margin-top-sm ">
+                    <div class="am-u-sm-12">
+                        <p class="am-text-sm am-margin-bottom-xs"><strong>历史搜索</strong></p>
+                    </div>
+                </div>
+                <div class="am-g historyArea">
+                    <div class="am-u-sm-12">
+                        <a href="">水杯</a>
+                        <a href="">好看的水杯</a>
+                        <a href="">不好看的水杯</a>
+                        <a href="">漂亮水杯</a>
+                        <a href="">喝水杯</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>
