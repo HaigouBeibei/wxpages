@@ -32,6 +32,7 @@ function loadList(page, condition, direction, isEmpty) {
         },
         success: function(data) {
             if (data.c == 0) {
+                console.log(data)
                 // 取数据
                 var datas = data.d.list;
                 // 写入页面
@@ -48,6 +49,10 @@ function loadList(page, condition, direction, isEmpty) {
 }
 
 function getGoodList(datas) {
+    var _text = document.querySelector('.wh-refresh')
+    if(datas.length<=0){
+        _text.innerText = '没有更多了';
+    }
     for (const key in datas) {
         if (datas.hasOwnProperty(key)) {
             var appendText = "";
@@ -69,3 +74,30 @@ function getGoodList(datas) {
         }
     }
 }
+
+  // 获取当前滚动条的位置 
+  function getScrollTop() {
+    var scrollTop = 0;
+    if (document.documentElement && document.documentElement.scrollTop) {
+        scrollTop = document.documentElement.scrollTop;
+    } else if (document.body) {
+        scrollTop = document.body.scrollTop;
+    }
+    return scrollTop;
+}
+  // 获取当前可视范围的高度 
+  function getClientHeight() {
+    var clientHeight = 0;
+    if (document.body.clientHeight && document.documentElement.clientHeight) {
+        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+    }
+    else {
+        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+    }
+    return clientHeight;
+}
+ // 获取文档完整的高度 
+ function getScrollHeight() {
+    return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+}
+

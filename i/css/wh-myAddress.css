@@ -11,7 +11,8 @@
     position: relative;
     display: block;
     background: #FFFF;
-    margin: 10px 0
+    margin: 0px 0px;
+    margin-bottom: 10px;
 }
 .wh-leftLable{
     float: left;
@@ -19,7 +20,6 @@
     font-size: 13px;
 }
 .wh-rightLable{
-  
     float: right;
     padding-left: 11%;
     margin-right: 0%;
@@ -32,8 +32,7 @@
 
 }
 .wh-content{
-    /* height: 56px; */
-    line-height: 36px;
+    line-height: 27px;
     margin-top: 2px;
     margin-left: 3%;
     margin-right: 3%;
@@ -49,54 +48,46 @@
 }
 .wh-customerEdit{
     float: right;
-    border-radius: 62px;
-    font-size: 1.1rem;
-    background-color: white;
     border: 1px solid gray;
-    line-height: 1.2;
-    color: gray;
-    padding: .5em 1em;
-    margin-top: -2px;
-    padding-top: 0.5rem;
-    text-align: center;
-    margin-right: 1rem;
+    color: black;
 }
 .wh-customerDelete{
     float: right;
-    /* height: 25px; */
-    padding: .5em 1em;
-    padding-top: 0.5rem;
-    border-radius: 62px;
+    color: #F0250F;
+    border: 1px solid #F0250F;
+}
+.wh-customerSize{
     font-size: 1.1rem;
     background-color: white;
-    color: #EB7BA5;
-    border: 1px solid#EB7BA5;
-    line-height: 1.2;
-    margin-top: -2px;
+    padding: .3em 0.8em;
+    padding-top: 0.3rem;
     text-align: center;
+    line-height: 1.2;
+    margin-top: 0px;
+    background-color: white;
+    border-radius: 57px;
     margin-right: 1rem;
 }
-.wh-adress{
-    /* bottom: 4%; */
+.wh-address{
     background: white;
     text-align: center;
     height: 50px;
     padding-top: 14px;
-    /* padding-top: 2%; */
+    display: block;
 }
-.wh-adress:hover{
-    color: #EB7BA5;
+.wh-address:hover{
+    color: #F0250F;
 }
 .wh-customerAddressBtn{
     background: #FFFF;
-    font-size: 15px;
-    color: #EB7BA5;
+    font-size: 13px;
+    color: #F0250F;
 }
 .wh-customerAddressBtn:hover{
-    color: #EB7BA5;
+    color:  #F0250F;
 }
 .wh-addIco{
-    width: 19px;
+    width: 17px;
     margin: auto;
     margin-top: -2px;  
 }
@@ -106,22 +97,21 @@
     font-size: 13px;
 }
 .wh-customerEdit:hover{
-    color: gray;
+    color: black;
 }
 .wh-customerDelete:hover{
-    color: #EB7BA5;
+    color: #F0250F;
 }
 
 .wh-div-tile{
-    width: 7rem;
+    width: 9rem;
     display: inline-block;
     padding-left: 0.3rem;
-    font-size: 11px;
+    color: black;
+    font-size: 13px;
     vertical-align: top;
 }
 .wh-div-item{
-    /* display: inline-block;
-    width: 68%; */
     position: absolute;
     width: 100%;
     margin-top: -20px;

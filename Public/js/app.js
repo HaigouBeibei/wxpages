@@ -1,10 +1,14 @@
 var appid = "wxf950c87150710871";
 var baseURL = "https://tongmeng.haigoubeibei.com/hiGou/";
-
+var myAddress;
 $.ajaxSetup({
     cache: false,
     xhrFields: {
         withCredentials: true
+    },
+    beforeSend: function() {
+        loadingModal = loading();
+        loadingModal.modal();
     },
     complete: function(XMLHttpRequest, textStatus) {
         var sessionstatus = XMLHttpRequest.getResponseHeader("sessionstatus");
@@ -15,6 +19,7 @@ $.ajaxSetup({
             }
             getCode();
         }
+        loadingModal.modal('close');
     }
 });
 //获取CODE
@@ -76,7 +81,6 @@ function handlePrice(price) {
 //重写alert
 function alert(content) {
     my_alert = $('#my-alert');
-    console.log(my_alert);
     if (my_alert.length != 0) {
         my_alert.remove();
     }
@@ -94,4 +98,33 @@ function alert(content) {
     appendContent += '</div>';
     $('body').append(appendContent);
     $('#my-alert').modal();
+}
+
+function loading() {
+    my_alert = $('#my-modal-loading');
+    if (my_alert.length != 0) {
+        my_alert.remove();
+    }
+    appendContent = '';
+    appendContent += '<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">';
+    appendContent += '<div class="am-modal-dialog">';
+    appendContent += '<div class="am-modal-hd">loading...</div>';
+    appendContent += '<div class="am-modal-bd">';
+    appendContent += '<span class="am-icon-spinner am-icon-spin"></span>';
+    appendContent += '</div>';
+    appendContent += '</div>';
+    appendContent += '</div>';
+    $('body').append(appendContent);
+    return $('#my-modal-loading');
+}
+
+function getMyAddress() {
+    $.ajax({
+        url: baseURL + 'action/auth/user/normal/HxCsUserDeliveryAddressAction/listOfMine',
+        async: false,
+        success: function(data) {
+            myAddress = data.d;
+        }
+    });
+    return myAddress;
 }

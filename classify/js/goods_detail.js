@@ -1,7 +1,6 @@
 var skus = null;
 var selectedSpecs = [];
 $(function() {
-
     initGoods();
     initPlusReduce();
     initBuy();
@@ -106,10 +105,7 @@ function initBuy() {
 function confirmButtonEvent() {
     $('#confirmButton').click(function() {
         that = $(this);
-        console.log('this');
-
         if (that.attr('action') == 'joinCart') {
-            console.log('joinCart');
             if (that.attr('skuid') != null && that.attr('skuid') != '') {
                 if (parseInt($('#sku_count_input').val()) > 0) {
                     $.ajax({
@@ -132,6 +128,8 @@ function confirmButtonEvent() {
                             }
                         }
                     });
+                } else {
+                    alert('该件商品库存不足');
                 }
             } else {
                 $('#my-actions').modal('close');
@@ -139,7 +137,39 @@ function confirmButtonEvent() {
             }
 
         } else if ($(this).attr('action') == 'buyNow') {
-            console.log('立即购买');
+            if (that.attr('skuid') != null && that.attr('skuid') != '') {
+                if (parseInt($('#sku_count_input').val()) > 0) {
+                    skuID = that.attr('skuid');
+                    count = $('#sku_count_input').val();
+                    //检测收货地址
+                    myAddress = getMyAddress();
+                    var addressID = '';
+                    console.log(myAddress);
+                    if (myAddress.list != null && myAddress.list != '') {
+                        //for (const x in myAddress.list) {
+                        //if (myAddress.list.hasOwnProperty(x)) {
+                        //if (myAddress.list[x].isDefault == "1") {
+                        addressID = myAddress.list[0].id;
+                        //}
+                        //}
+                        //}
+                        window.location.href = baseURL + 'wxpages/classify/orderPreview.html?skuID=' + skuID + '&count=' + count + '&deliveryAddressId=' + addressID;
+                    } else {
+                        $('#my-actions').modal('close');
+                        $('#address-prompt').modal({
+                            onConfirm: function(e) {
+                                window.location.href = baseURL + 'wxpages/i/wh-myAddress.html';
+                            }
+                        });
+                    }
+
+                } else {
+                    alert('该件商品库存不足');
+                }
+            } else {
+                $('#my-actions').modal('close');
+                alert('请选择规格');
+            }
         }
     });
 }

@@ -89,16 +89,15 @@
 }
 
 .wh-sliderBar{
-    position: fixed;
-    top: 41px;
-    bottom: 47px;
-    left: 0;
-    z-index: 1091;
-    width: 28%;
-    max-width: 100%;
+    position: absolute;
+    top:0px;
+    bottom:51px;
+    left:0;
     background: #F0F0F0;
     overflow-y: auto;
+    min-width: 88px;
     font-size: 13px;
+    z-index: 1000;
     -webkit-overflow-scrolling: touch;
     -webkit-transition: -webkit-transform .3s ease-in-out;
     transition: -webkit-transform .3s ease-in-out;
@@ -110,15 +109,14 @@
     color: white;
 }
 .wh-right-slider{
-    position: fixed;
-    top: 41px;
-    bottom: 47px;
-    left: 31%;
-    z-index: 1091;
-    width: 69%;
-    max-width: 100%;
+    position: absolute;
+    top:10px;
+    bottom:51px;
+    left: 86px;
+    min-width: 74%;
     overflow-y: auto;
     font-size: 13px;
+    z-index: 1000;
     -webkit-overflow-scrolling: touch;
     -webkit-transition: -webkit-transform .3s ease-in-out;
     transition: -webkit-transform .3s ease-in-out;
@@ -128,7 +126,7 @@
 }
 .wh-right-li{
     display: inline-flex;
-    width: 32%;
+    width: 33%;
     height: 10rem;
     color: #696969;
     padding: 0;
@@ -159,5 +157,16 @@
     border-radius: 2px;
 }
 .wh-overHidden{
-    overflow: hidden;height: 100%;
+    height: 100%;
+}
+.wh-search{
+    color: #808080;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    text-indent: 1.7em;
+    border: none;
+    background: url(../../Public/img/search.png) no-repeat 7px center;
+    background-color: white;
 }

@@ -46,7 +46,7 @@
   </div>
   <div class="wh-form-group">
     <label for="doc-vld-name-2">手机号码：</label>
-    <input class="wh-content" type="text" minlength="2" placeholder="请输入收货人手机号码" value="xiaocao" />
+    <input class="wh-content"  type="number" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入收货人手机号码" value="xiaocao" />
   </div>
   <div class="wh-form-group" id="localClass">
     <label for="doc-vld-name-2">所在地区：</label>
@@ -66,22 +66,7 @@
   </div>
 
 
-  <!-- <script>
-
-    // $("#localClass").address({
-    //   prov: "北京",
-    //   city: "北京",
-    //   district: "朝阳区",
-    //   scrollToCenter: true,
-    //   footer: true,
-    //   selectEnd: function (json) {
-    //     var provText = json.prov
-    //     var cityText = json.city
-    //     var districtText = json.district
-    //     getProviceId(provText, cityText, districtText)
-    //   }
-    // });
-  </script> -->
+  
 </body>
 
 </html>

@@ -37,7 +37,6 @@ function initBanner() {
 }
 //首页商品列表
 function initProduct() {
-    $(".recommendArea");
     // 请求数据
     $.ajax({
         url: baseURL + "action/MerchantGoodsAction/list",

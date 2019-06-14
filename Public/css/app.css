@@ -285,3 +285,11 @@ footer>.am-avg-sm-5>li>a.selected {
     border-radius: 15px;
     margin: 3px 6px;
 }
+  /* 页面为空的提示语 */
+.wh-empty{
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding-top:60%;
+}

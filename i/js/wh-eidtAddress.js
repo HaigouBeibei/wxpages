@@ -48,9 +48,7 @@ $(function() {
        })
        
    })  
-
  })
-
 function getProviceId(provice_name,city_name,district_name){
     var provId  = ""
     $.ajax({
@@ -64,6 +62,7 @@ function getProviceId(provice_name,city_name,district_name){
                        provSelectId  = element.id
                        //获取市的id
                        getCityId(city_name,district_name)
+                       //找到后立即结束循环，提高性能
                        break;
                    }
                    
@@ -94,7 +93,6 @@ function getCityId(city_name,district_name){
      }
     });
 }
-
 function getDistrictId(district_name){
     $.ajax({
         url: baseURL + "action/auth/user/normal/AdministrativeDivisionAction/listByPId",
@@ -113,9 +111,8 @@ function getDistrictId(district_name){
                 }
             }    
      }
-    });
-}
-
+    })
+}   
 function getAddressInfoData(addressId){
     $.ajax({
         url: baseURL + "action/auth/user/normal/HxCsUserDeliveryAddressAction/get",
@@ -125,7 +122,6 @@ function getAddressInfoData(addressId){
         success: function(data){
             if (data.c == 0) {
                var bean  = data.d.bean
-               console.log(bean);
                var detailStr = bean.provinceName + bean.cityName + bean.districtName
                provSelectId  = bean.province
                citySelectId = bean.city
@@ -142,7 +138,7 @@ function getAddressInfoData(addressId){
                 appendText += "</div>";
                 appendText += '<div class="wh-form-group">';
                 appendText += '<label for="doc-vld-name-2">手机号码：</label>';
-                appendText += '<input class="wh-content" id="addressPhoneNumber" type="text" minlength="2" placeholder="请输入收货人手机号码" value="'+bean.contactNumber +'" />';
+                appendText += '<input class="wh-content" id="addressPhoneNumber"  type="number" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入收货人手机号码" value="'+bean.contactNumber +'" />';
                 appendText += "</div>";
                 appendText += '<div class="wh-form-group" id="localClass">';
                 appendText += ' <label for="doc-vld-name-2">所在地区：</label>';

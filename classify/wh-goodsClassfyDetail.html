@@ -51,7 +51,7 @@
                 </a>
             </li>
         </ul>
-        <div class="am-g wrapper">
+        <div class="am-g wrapper" id="refreshContainer">
             <div class="am-u-sm-6">
                 <div class="am-thumbnail">
                     <a href="">
@@ -77,15 +77,23 @@
                 </div>
             </div>
         </div>
-        <div class="pull-action" id="pull-up">
+        <!-- <div class="pull-action" id="pull-up">
             <span class="wh-labelContaner am-icon-arrow-down pull-label" id="pull-up-label">
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;"> 上拉加载更多</font>
                 </font>
             </span>
-            <!-- <span class="am-icon-spinner am-icon-spin"></span> -->
-        </div>
+          
+        </div> -->
+        <p class="wh-refresh"></p>
     </div>
+    <div data-am-widget="gotop" class="wh-customerHeight am-gotop am-gotop-fixed">
+        <a href="#top" title="回到顶部">
+          <span class="am-gotop-title">回到顶部</span>
+ 
+          <i class="wh-icoHeight  am-gotop-icon am-icon-chevron-up"></i>
+        </a>
+      </div>
     <!--footer-->
     <footer class="am-topbar-fixed-bottom">
         <ul class="am-avg-sm-5">
@@ -98,11 +106,11 @@
         </ul>
     </footer>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             var page = 1;
             var condition = "time";
             var direction = "desc";
-
+            var _text = document.querySelector('.wh-refresh')
             function timeClick(isTime, type) {
                 page = 1;
                 if (isTime) {
@@ -122,14 +130,14 @@
                 $("ul.wh-nav li a img#priceDown").attr("src", "../Public/img/icon_down.png");
             }
             //时间排序
-            $("ul.wh-nav li a#timeItem").click(function(event) {
+            $("ul.wh-nav li a#timeItem").click(function (event) {
                 event.stopPropagation();
                 setCurrentSelectImag(); //初始化设置
                 $("ul.wh-nav li a img#timeUp").attr("src", "../Public/img/icon_up_cor.png")
                 timeClick(true, 'asc') //请求方法
 
             })
-            $("ul.wh-nav li a img#timeUp").click(function(event) {
+            $("ul.wh-nav li a img#timeUp").click(function (event) {
                 // 获取子点击
                 event.stopPropagation();
                 setCurrentSelectImag(); //初始化设置
@@ -137,17 +145,17 @@
                 //遍历获取除当前节点的所有子节点
                 timeClick(true, "asc");
             })
-            $("ul.wh-nav li a img#timeDown").click(function(event) {
-                    // 获取子点击
-                    event.stopPropagation();
-                    setCurrentSelectImag(); //初始化设置
-                    $(this).attr("src", "../Public/img/icon_down_cor.png");
-                    //遍历获取除当前节点的所有子节点
-                    timeClick(true, "desc");
+            $("ul.wh-nav li a img#timeDown").click(function (event) {
+                // 获取子点击
+                event.stopPropagation();
+                setCurrentSelectImag(); //初始化设置
+                $(this).attr("src", "../Public/img/icon_down_cor.png");
+                //遍历获取除当前节点的所有子节点
+                timeClick(true, "desc");
 
-                })
-                //价格排序
-            $("ul.wh-nav li a#priceItem").click(function(event) {
+            })
+            //价格排序
+            $("ul.wh-nav li a#priceItem").click(function (event) {
                 // 获取子点击
                 event.stopPropagation();
                 setCurrentSelectImag(); //初始化设置
@@ -156,7 +164,7 @@
 
 
             })
-            $("ul.wh-nav li a img#priceUp").click(function(event) {
+            $("ul.wh-nav li a img#priceUp").click(function (event) {
                 // 获取子点击
                 event.stopPropagation()
                 setCurrentSelectImag(); //初始化设置
@@ -165,7 +173,7 @@
                 //遍历获取除当前节点的所有子节点
 
             })
-            $("ul.wh-nav li a img#priceDown").click(function(event) {
+            $("ul.wh-nav li a img#priceDown").click(function (event) {
                 // 获取子点击
                 event.stopPropagation();
                 setCurrentSelectImag(); //初始化设置
@@ -173,11 +181,28 @@
                 timeClick(false, "desc");
                 //遍历获取除当前节点的所有子节点
             })
-            $(".pull-action").click(function() {
-                page = page + 1;
-                loadList(page, condition, direction, "0");
-            })
+              // 获取当前滚动条的位置 
+                var throttle = function (method, context) {
+                    clearTimeout(method.tId);
+                    method.tId = setTimeout(function () {
+                        method.call(context);
+                    }, 300);
+                }
+                window.onscroll = function () {
+                    if (getScrollTop() + getClientHeight() == getScrollHeight()) {
+                        _text.innerText = '加载中...';
+                        throttle(fetchData);
+                    }
+                };
+                function fetchData() {
+                setTimeout(function () {
+                 page ++;   
+                 loadList(page, condition, direction, "0");
+               }, 1000);
+}
+
         })
+            
     </script>
 </body>
 

@@ -44,3 +44,16 @@
    width: 100%;
   text-align: center;
 }
+.wh-refresh{
+    text-align: center;
+    font-size: 13px;
+}
+.wh-customerHeight{
+    bottom: 66px; 
+    width: 34px;
+    min-height: 34px;
+    border-radius: 17px;
+}
+.wh-icoHeight{
+    line-height: 34px !important;
+}

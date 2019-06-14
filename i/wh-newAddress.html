@@ -45,7 +45,8 @@
   </div>
   <div class="wh-form-group">
     <label for="doc-vld-name-2">手机号码：</label>
-    <input class="wh-content" id="addressPhoneNumber" type="text" minlength="2" placeholder="请输入收货人手机号码"  />
+    
+    <input class="wh-content" id="addressPhoneNumber" type="number" oninput="if(value.length>11)value=value.slice(0,11)"  placeholder="请输入收货人手机号码"  />
   </div>
   <div class="wh-form-group" id="localClass">
     <label for="doc-vld-name-2">所在地区：</label>
@@ -63,21 +64,8 @@
     <button type="button" class="container_content_save"> 保存 </button>
   </div>
   
-
   <script>
-    // var toggle = true;
-    // $(document).ready(function () {
-
-    //   $(".wh-defuatIco").click(function (event) {
-    //     if (toggle) {
-    //       $(this).attr("src", "../Public/img/ico_unAdd.png")
-    //     } else {
-    //       $(this).attr("src", "../Public/img/icon_mark.png")
-    //     }
-    //     toggle = !toggle;
-    //   })
-
-   // })
+    
   </script>
 </body>
 
