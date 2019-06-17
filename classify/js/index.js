@@ -38,7 +38,7 @@ function initLeftContaner() {
             getTypeWithData(element);
           }) 
         }else{
-          showError(data.m) 
+          showError(data.m);
         }
       }
     });

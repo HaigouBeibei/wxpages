@@ -23,7 +23,6 @@ function loadList(page, condition, direction, isEmpty) {
         },
         success: function(data) {
             if (data.c == 0) {
-                console.log(data)
                 // 取数据
                 var datas = data.d.list;
                 // 写入页面
@@ -33,7 +32,7 @@ function loadList(page, condition, direction, isEmpty) {
                 }
                 getGoodList(datas);
             } else {
-                console.log("initProduct error.");
+                showError(data.m);
             }
         }
     })

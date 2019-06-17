@@ -1,0 +1,20 @@
+.payment>div {
+    height: 40px;
+    line-height: 40px;
+}
+
+.payment>div img {
+    width: 25px;
+    height: 25px;
+}
+
+#confirmPayButton {
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    background-color: #F0250F;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    margin: 0px auto;
+}

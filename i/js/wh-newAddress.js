@@ -64,7 +64,7 @@ $(function() {
                     location.href="wh-myAddress.html"
                   }
              }else{
-                 alert(data.c.m)
+                showError(data.m);
              }
            }
        })

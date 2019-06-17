@@ -164,6 +164,8 @@ function getAddressInfoData(addressId){
                 appendText += '<span class="wh-default-name"> 默认地址 </span>';
                 appendText += "</div>";
                 $(".wh-editContaner").append(appendText); 
+            } else{
+                showError(data.m);
             }
             $("#localClass").address({
                 prov: provName,
