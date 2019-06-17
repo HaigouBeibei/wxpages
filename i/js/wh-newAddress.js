@@ -3,8 +3,11 @@ var provSelectId = ""
 var citySelectId = ""
 var districtSelectId = ""
 var toggle = true
+var toURL = ''
 $(function() {
-
+    var begin = window.location.href.indexOf('//////');
+    var end = window.location.href.indexOf('////////');
+    toURL = window.location.href.substring(begin + 6, end);
     $("#localClass").address({
             prov: "北京",
             city: "北京",
@@ -55,7 +58,11 @@ $(function() {
                contactNumber: contactNumber,
            },success:function(data){
              if (data.c ==0){
-                location.href="wh-myAddress.html"
+                if (toURL.length >0){
+                    location.href ="wh-myAddress.html?callback=" + '//////' + toURL + '////////'
+                  }else{
+                    location.href="wh-myAddress.html"
+                  }
              }else{
                  alert(data.c.m)
              }

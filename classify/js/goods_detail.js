@@ -153,7 +153,7 @@ function confirmButtonEvent() {
                         //}
                         //}
                         //}
-                        window.location.href = baseURL + 'wxpages/classify/orderPreview.html?skuID=' + skuID + '&count=' + count + '&deliveryAddressId=' + addressID;
+                        window.location.href = baseURL + 'wxpages/classify/orderPreview.html?skuID=' + skuID + '&count=' + count + '&deliveryAddressId=' + addressID + '&type=goodsDetail';
                     } else {
                         $('#my-actions').modal('close');
                         $('#address-prompt').modal({

@@ -1,11 +1,20 @@
 var baseURL = "https://tongmeng.haigoubeibei.com/hiGou/"
+var abloutUrl = ''
+var addressId  = ''
+var toURL = ''
 $(function() {
+      var begin = window.location.href.indexOf('//////');
+      var end = window.location.href.indexOf('////////');
+      toURL = window.location.href.substring(begin + 6, end);
      initAddressList()
      $(".wh-address").click(function (){
-      location.href="wh-newAddress.html"
+      if (toURL.length >0){
+        location.href ="wh-newAddress.html?callback=" + '//////' + toURL + '////////'
+      }else{
+        location.href="wh-newAddress.html"
+      }
    })
   });
-
 function initAddressList() {
     $.ajax({
       url: baseURL + "action/auth/user/normal/HxCsUserDeliveryAddressAction/listOfMine",
@@ -14,7 +23,7 @@ function initAddressList() {
         var list = data.d.list
         $(".wh-nav").empty()
         if (list.length<=0) {
-         emptyView()
+          emptyView()
         } else {
           filterDataWithList(list)
         }
@@ -27,7 +36,16 @@ function initAddressList() {
      })
      $(".wh-customerEdit").click(function(data){
         var currentId= $(this).attr('address_id') 
-        location.href="wh-eidtAddress.html?addressId="+currentId
+        if (toURL.length >0){
+          location.href ="wh-eidtAddress.html?addressId="+currentId+"&callback=" + '//////' + toURL + '////////'
+        }else{
+          location.href="wh-eidtAddress.html?addressId="+currentId
+        }
+     })
+     $(".wh-customerUseAddress").click(function(){
+      var address_id =$(this).attr('address_id')
+      abloutUrl  = toURL + "&deliveryAddressId=" + address_id
+      location.href= abloutUrl
      })
     }
     });
@@ -51,7 +69,6 @@ function filterDataWithList(list){
     }else{
       isAdd  =  false
     }
-    console.log(isAdd)
     var detailStr  = "收货地址: " + element.provinceName + element.cityName + element.districtName + element.detail
     var appendText = "";
      appendText += '<li>';
@@ -68,7 +85,7 @@ function filterDataWithList(list){
        appendText += '<img  src="" alt="" /> </div>'; 
      }
      if(isAdd){
-       appendText += '<a class="wh-customerEdit wh-customerSize" address_id="' + element.id + '"> 使用此地址 </a>';
+       appendText += '<a class="wh-customerUseAddress wh-customerSize" address_id="' + element.id + '"> 使用此地址 </a>';
      }
      appendText += '<a class="wh-customerDelete wh-customerSize" address_id="' + element.id + '">删除</a>';
      appendText += '<a class="wh-customerEdit wh-customerSize"  address_id="' + element.id + '"> 编辑 </a>';

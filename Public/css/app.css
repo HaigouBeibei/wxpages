@@ -293,3 +293,13 @@ footer>.am-avg-sm-5>li>a.selected {
     width: 100%;
     padding-top:60%;
 }
+.line-clamp{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+.wh-cleanFloat{
+    clear:both;
+}

@@ -46,6 +46,10 @@
   left: 0;
   top: 0;
 }
+.am-address-popup .am-list
+ { 
+  touch-action: none;
+ }
 .am-address-popup .am-popup-bd .am-address-list.am-address-list-footer {
   padding-bottom: 49px;
 }

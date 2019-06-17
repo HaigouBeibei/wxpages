@@ -32,9 +32,10 @@
     <script src="../Public/js/app.js"></script>
     <script src="js/orderPreview.js"></script>
     <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+    <link rel="stylesheet" href="css/orderPreview.css">
 </head>
 
-<body>
+<body style="background-color:#F4F4F4;">
     <!--[if lte IE 9]>
 <p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
   href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
@@ -49,14 +50,65 @@
     <!--
         嗨购贝贝
     -->
-    <!--Header-->
+    <!--address-->
+    <div class="addressArea am-g am-padding-top-xs am-padding-bottom-xs">
+        <div class="am-u-sm-2 am-vertical-align am-text-center">
+            <img src="images/orderPreview-location.png" class="am-vertical-align-middle" />
+        </div>
+        <div class="am-u-sm-8 addressInfo am-padding-0 ">
+            <p class="am-text-xs am-margin-0 am-vertical-align-middle" id="postMan">收货人：风一样的男人 13513739336</p>
+            <p class="am-text-xs am-margin-0 am-vertical-align-middle" id="postAddress">收货地址：河南省新乡市获嘉县 同盟庄园</p>
+        </div>
+        <div class="am-u-sm-2 am-vertical-align am-text-center">
+            <a id="postHref" class="am-vertical-align-middle am-link-muted"><span class="am-icon-chevron-right"></span></a>
+        </div>
+    </div>
+    <!--addressDivsion-->
+    <div class="am-g addressDivsion"></div>
+    <!--goodsList-->
+    <div id="goodsList">
+        <div class="am-g goodsInfo am-margin-top-sm am-padding-xs">
+            <h6 class="am-link-muted">蚂蚁旗舰店</h6>
+            <div class="am-u-sm-3 am-text-center am-padding-0">
+                <img src="https://tongmeng.haigoubeibei.com/hiGou/upload/2019/06/04/3299d7991456451f84acb65cba5799a8.jpg" class="am-img-responsive am-center" />
+            </div>
+            <div class="am-u-sm-9">
+                <p class="am-margin-0">美白防晒还补水的营养大面膜好用还美丽</p>
+                <p class="skuName am-margin-0">商品分类 ：XXX</p>
+                <p class="am-margin-0 am-text-right">运费 ：￥0</p>
+                <p class="price am-text-right am-margin-top-0 am-margin-bottom-sm">￥100 <span class="am-icon-remove"></span> 1</p>
+            </div>
+            <div class="am-cf"></div>
+            <div class="am-u-sm-12 divsion"></div>
+            <p class="am-text-right am-margin-xs am-margin-bottom-0">共2件商品，小计：<span class="am-text-danger">￥220</span></p>
+        </div>
+
+        <div class="am-g goodsInfo am-margin-top-sm am-padding-xs">
+            <h6 class="am-link-muted">蚂蚁旗舰店</h6>
+            <div class="am-u-sm-4 am-text-center">
+                <img src="images/orderPreview-location.png" class="am-img-responsive am-center" />
+            </div>
+            <div class="am-u-sm-8">
+                <p>美白防晒还补水的营养大面膜好用还美丽</p>
+                <p class="skuName">商品分类 ：XXX</p>
+                <p class="price am-text-right">￥100</p>
+                <p class="count am-text-right"><span class="am-icon-remove"></span>1</p>
+            </div>
+        </div>
+    </div>
+    <div class="am-g submitArea">
+        <div class="am-u-sm-8">
+            <p class="am-text-right">合计：<span id="finalCount">￥500</span></p>
+        </div>
+        <div class="am-u-sm-4 am-padding-0"><a href="" id="submitButton">提交订单</a></div>
+    </div>
 
     <!--footer-->
     <footer class="am-topbar-fixed-bottom am-g">
         <ul class="am-avg-sm-5">
-            <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm selected">首页</a></li>
+            <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm ">首页</a></li>
             <li><a href="" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
-            <li><a href="../classify/index.html" class="footer-class am-center am-text-center am-text-sm">分类</a></li>
+            <li><a href="../classify/index.html" class="footer-class am-center am-text-center am-text-sm selected">分类</a></li>
             <li><a href="../shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
             </li>
             <li><a href="../i/index.html" class="footer-i am-center am-text-center am-text-sm ">我的</a></li>
@@ -67,4 +119,5 @@
     -->
 
 </body>
+
 </html>

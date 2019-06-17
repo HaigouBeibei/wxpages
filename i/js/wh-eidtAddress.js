@@ -7,10 +7,14 @@ var addressId = ""
 var provName = ""
 var cityName = ""
 var districtName=""
+var toggle  = true
+var toURL = ''
 $(function() {
+    var begin = window.location.href.indexOf('//////');
+    var end = window.location.href.indexOf('////////');
+    toURL = window.location.href.substring(begin + 6, end);
      addressId = getQueryString("addressId");
      getAddressInfoData(addressId) //获取数据
-    
     $(".container_content_save").click(function(){
        var detailText = $("#addressDetail").val()
        var contactNumber = $("#addressPhoneNumber").val()
@@ -27,6 +31,7 @@ $(function() {
            alert("收货人不能为空!")
            return
        }
+       var isDefaultStr = toggle ? "1": "0"
        $.ajax({
            url:baseURL + "action/auth/user/normal/HxCsUserDeliveryAddressAction/saveOrUpdate",
            data:{
@@ -35,12 +40,16 @@ $(function() {
                city: citySelectId,
                district: districtSelectId,
                detail: detailText,
-               isDefault: isDefault,
+               isDefault: isDefaultStr,
                recipients: recipientText,
                contactNumber: contactNumber,
            },success:function(data){
              if (data.c ==0){
-                location.href="wh-myAddress.html"
+                if (toURL.length >0){
+                    location.href ="wh-myAddress.html?callback=" + '//////' + toURL + '////////'
+                  }else{
+                    location.href="wh-myAddress.html"
+                  }
              }else{
                  alert(data.c.m)
              }
@@ -127,9 +136,11 @@ function getAddressInfoData(addressId){
                citySelectId = bean.city
                districtSelectId= bean.district
                isDefault  = bean.isDefault
+               toggle  = isDefault== "0" ? false : true
                provName  = bean.provinceName
                cityName  = bean.cityName
                districtName= bean.districtName
+               var imgPath  = isDefault== "0" ? "../Public/img/ico_unAdd.png": "../Public/img/icon_mark.png"
                $(".wh-editContaner").empty()
                 var appendText = "";
                 appendText += '<div class="wh-form-group">';
@@ -148,6 +159,10 @@ function getAddressInfoData(addressId){
                 appendText += '<label for="doc-vld-name-2">详细地址：</label>';
                 appendText += '<input class="wh-content" id="addressDetail" type="text" minlength="2" placeholder="请输入街道,小区等" value="'+ bean.detail +'" />';
                 appendText += "</div>";
+                appendText += '<div class="wh-form-group">';
+                appendText += '<img class="wh-defuatIco" src="' + imgPath + '" alt="" />';
+                appendText += '<span class="wh-default-name"> 默认地址 </span>';
+                appendText += "</div>";
                 $(".wh-editContaner").append(appendText); 
             }
             $("#localClass").address({
@@ -162,7 +177,16 @@ function getAddressInfoData(addressId){
                    var  districtText  = json.district
                    getProviceId(provText,cityText,districtText)
                 }
-        });    
+        });  
+        $(".wh-defuatIco").click(function (event) {
+            console.log(toggle);
+           if (toggle) {
+             $(this).attr("src", "../Public/img/ico_unAdd.png")
+           } else {
+             $(this).attr("src", "../Public/img/icon_mark.png")
+           }
+           toggle = !toggle;
+       })  
      }
     });
 }

@@ -56,6 +56,14 @@
     color: #F0250F;
     border: 1px solid #F0250F;
 }
+.wh-customerUseAddress{
+    float: right;
+    border: 1px solid #F0250F;
+    color: #F0250F;
+}
+.wh-customerUseAddress:hover{
+    color: #F0250F;
+}
 .wh-customerSize{
     font-size: 1.1rem;
     background-color: white;

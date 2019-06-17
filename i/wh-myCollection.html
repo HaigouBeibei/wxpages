@@ -52,7 +52,7 @@
             <li>
                 <div class="am-text-middle wh-head-li">
                     <label class="am-checkbox am-warning">
-                        <input type="checkbox" value="" data-am-ucheck>
+                        <input type="checkbox" value="" data-am-ucheck class="singleSelect"/>
                     </label>
                 </div>
                 <div class="am-text-middle">
@@ -61,7 +61,7 @@
                             <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="70"
                                 height="70" alt="" />
                         </p>
-                        <p class="am-margin-0 am-text-sm">电脑桌台式家用简约小书桌书架组 合我是简易写字台</p>
+                        <p class="am-margin-0 am-text-sm">电脑桌台式家用简约小书桌书架组 合我是简易写字台 </p>
                         <div class="priceArea am-margin-top-xs">
                             <span class="am-fl am-margin-top-xs am-margin-right-xs am-text-danger">￥9999</span>
                         </div>
@@ -89,51 +89,62 @@
                 </div>
             </li>
         </ul>
-        
+
         <ul class="wh-shopList">
-                <li>
-                    <div class="am-text-middle wh-head-li">
-                        <label class="am-checkbox am-warning">
-                            <input type="checkbox" value="" data-am-ucheck>
-                        </label>
+            <li>
+                <div class="am-text-middle wh-head-li">
+                    <label class="am-checkbox am-warning">
+                        <input type="checkbox" value="N" data-am-ucheck class="singleSelect"/>
+                    </label>
+                </div>
+                <div class="am-text-middle">
+                    <div class="am-cf am-margin-top-xs am-margin-bottom-xs">
+                        <p class="am-align-left am-margin-bottom-0">
+                            <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="70"
+                                height="70" alt="" />
+                        </p>
                     </div>
-                    <div class="am-text-middle">
-                        <div class="am-cf am-margin-top-xs am-margin-bottom-xs">
-                            <p class="am-align-left am-margin-bottom-0">
-                                <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="70"
-                                    height="70" alt="" />
-                            </p>
-                        </div>
+                </div>
+                <div class="am-text-middle wh-shopSize">
+
+                    <p class="am-margin-0 am-text-sm">鹏鹏的小店</p>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="am-text-middle wh-head-li">
+                    <label class="am-checkbox am-warning">
+                        <input type="checkbox" value="N" data-am-ucheck class="singleSelect">
+                    </label>
+                </div>
+                <div class="am-text-middle">
+                    <div class="am-cf am-margin-top-xs am-margin-bottom-xs">
+                        <p class="am-align-left am-margin-bottom-0">
+                            <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="70"
+                                height="70" alt="" />
+                        </p>
                     </div>
-                    <div class="am-text-middle wh-shopSize">
-                           
-                            <p class="am-margin-0 am-text-sm">鹏鹏的小店</p>
-                     </div>
-                     
-                </li>
-    
-                <li>
-                    <div class="am-text-middle wh-head-li">
-                        <label class="am-checkbox am-warning">
-                            <input type="checkbox" value="" data-am-ucheck>
-                        </label>
-                    </div>
-                    <div class="am-text-middle">
-                        <div class="am-cf am-margin-top-xs am-margin-bottom-xs">
-                            <p class="am-align-left am-margin-bottom-0">
-                                <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="70"
-                                    height="70" alt="" />
-                            </p>
-                        </div>
-                    </div>
-                    <div class="am-text-middle  wh-shopSize">
-                            
-                        <p class="am-margin-0 am-text-sm">鹏鹏的小店</p>
-                              
-                    </div>
-                </li>
-            </ul>
+                </div>
+                <div class="am-text-middle  wh-shopSize">
+
+                    <p class="am-margin-0 am-text-sm">鹏鹏的小店</p>
+
+                </div>
+            </li>
+        </ul>
     </div>
+    <script>
+        $(document).ready(function () {
+           
+            $('.singleSelect').click(function(){
+                var varle  = $(this).attr('value')
+                varle = (varle == "N") ? "Y" : "N"
+                $(this).attr('value' , varle)
+            })
+
+        })  
+    </script>
 
 </body>
 

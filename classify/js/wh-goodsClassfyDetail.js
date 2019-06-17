@@ -3,15 +3,6 @@ $(function(goodtyep) {
     intiContaner();
 });
 
-
-//   function getQueryString(name) {
-//     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-//     var r = window.location.search.substr(1).match(reg);
-//     if (r != null) {
-//         return unescape(r[2]);
-//     }
-//     return null;
-// }
 // 初始化数据
 function intiContaner() {
     // 请求数据
@@ -59,16 +50,17 @@ function getGoodList(datas) {
             appendText += '<div class="am-u-sm-6">';
             appendText += '<div class="am-thumbnail">';
             appendText += '<a href="' + baseURL + 'wxpages/classify/goods_detail.html?gid=' + datas[key].id + '">';
-            appendText += '<img src="' + baseURL + datas[key].imgListPage + '" alt="" /></a>';
+            appendText += '<img class="wh-imgHeight" src="' + baseURL + datas[key].imgListPage + '" alt="" /></a>';
             appendText += '<a href="' + baseURL + 'wxpages/classify/goods_detail.html?gid=' + datas[key].id + '" class="am-link-muted">'
             appendText += '<div class="am-thumbnail-caption am-padding-xs">';
-            appendText += '<h4 class="am-margin-bottom-0">' + datas[key].name + "</h4>";
+            appendText += '<h4 class="am-margin-bottom-0  line-clamp">' + datas[key].name + "</h4>";
             appendText += '<span class="price am-text-lg">￥' + datas[key].listPagePriceCurrent + "</span>";
             appendText += '<span class="oldPrice am-text-xs"><del>￥' + datas[key].listPagePriceOriginal + "</del></span>";
             appendText += '<a class="am-badge am-badge-warning am-round">包邮</a>';
             appendText += "</div>";
             appendText += "</a>";
             appendText += "</div>";
+            appendText += '<div class="wh-cleanFloat"></div>'
             appendText += "</div>";
             $(".am-g").append(appendText);
         }

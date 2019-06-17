@@ -1,6 +1,29 @@
 $(function() {
     init();
+    initSettleButton();
 });
+
+//初始化结算按钮
+function initSettleButton() {
+    $('#settleButton').off('click').click(function() {
+        myAddress = getMyAddress();
+        var addressID = '';
+        console.log(myAddress);
+        if (myAddress.list.length != 0) {
+            console.log('1')
+            addressID = myAddress.list[0].id;
+            window.location.href = baseURL + 'wxpages/classify/orderPreview.html?type=cart' + '&deliveryAddressId=' + addressID;
+        } else {
+            console.log('2')
+            $('#my-actions').modal('close');
+            $('#address-prompt').modal({
+                onConfirm: function(e) {
+                    window.location.href = baseURL + 'wxpages/i/wh-myAddress.html';
+                }
+            });
+        }
+    });
+}
 
 function init() {
     $.ajax({

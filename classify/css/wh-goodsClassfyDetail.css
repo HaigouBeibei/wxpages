@@ -17,6 +17,9 @@
     text-align: center;
     color: gray;
 }
+.wh-tip:hover,.wh-tip:active,.wh-tip:focus{
+    color: gray;
+}
 
 .wh-nav{
     margin-bottom: 0;
@@ -25,6 +28,9 @@
 }
 .wh-nav>li>a:hover{
   color: gray;
+}
+.wh-nav>li>a:active{
+    color: gray;
 }
 .wh-nav>li>img{
     width: 60;
@@ -56,4 +62,7 @@
 }
 .wh-icoHeight{
     line-height: 34px !important;
+}
+.wh-imgHeight{
+    height: 160px !important;
 }

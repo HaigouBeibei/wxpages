@@ -98,8 +98,8 @@ function alert(content) {
     appendContent += '</div>';
     $('body').append(appendContent);
     $('#my-alert').modal();
+    $('.am-modal-btn').modal('close');
 }
-
 function loading() {
     my_alert = $('#my-modal-loading');
     if (my_alert.length != 0) {
