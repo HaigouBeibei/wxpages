@@ -57,4 +57,17 @@
 }
 .wh-orderFooter-leftMargin{
     margin-left: 1rem;
+}
+.wh-footerBar-color{
+    background-color:#FFF;
+}
+.wh-footerbarCustomer{
+    margin: auto;
+    padding: 10px;
+    padding-top: 14px;
+    font-size: 10px;
+    font-family:SourceHanSansCN-Regular;
+}
+.wh-itemSize{
+    padding: 0px 6px !important
 }    

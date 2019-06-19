@@ -234,6 +234,10 @@ footer>.am-avg-sm-5>li>a.selected {
     background: url(../img/personalTools-myAddress.png) no-repeat center 6px;
 }
 
+.personalTools>.am-avg-sm-4>li>a.personalTools-forGoods {
+    background: url(../img/personalTools-forGoods.png) no-repeat center 6px;
+}
+
 .settle {
     height: 50px;
     line-height: 50px;
@@ -285,21 +289,26 @@ footer>.am-avg-sm-5>li>a.selected {
     border-radius: 15px;
     margin: 3px 6px;
 }
-  /* 页面为空的提示语 */
-.wh-empty{
+
+
+/* 页面为空的提示语 */
+
+.wh-empty {
     font-weight: 700;
     position: absolute;
     text-align: center;
     width: 100%;
-    padding-top:60%;
+    padding-top: 60%;
 }
-.line-clamp{
-    overflow : hidden;
+
+.line-clamp {
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; 
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-.wh-cleanFloat{
-    clear:both;
+
+.wh-cleanFloat {
+    clear: both;
 }

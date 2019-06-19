@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>嗨购贝贝-支付</title>
+    <title>嗨购贝贝-首页</title>
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
     <!-- No Baidu Siteapp-->
@@ -30,12 +30,8 @@
     <script src="../Public/js/jquery-1.12.4.min.js"></script>
     <!--<![endif]-->
     <script src="../Public/js/app.js"></script>
+    <script src="../Public/js/index.js"></script>
     <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
-    <link rel="stylesheet" href="css/index.css" />
-    <script src="js/index.js"></script>
-    <script src="js/weixin.js"></script>
-    <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-    
 </head>
 
 <body>
@@ -53,56 +49,22 @@
     <!--
         嗨购贝贝
     -->
-    <div class="am-g am-margin-top-sm">
-        <div class="am-u-sm-9 ">
-            <p class="am-text-lg">支付金额</p>
-        </div>
-        <div class="am-u-sm-3 ">
-            <p class="am-text-lg">￥99</p>
-        </div>
-    </div>
-    <div class="am-g">
-        <div class="am-u-sm-12">
-            <p>选择支付方式</p>
-        </div>
-    </div>
-    <div class="am-g payment">
-        <div class="am-u-sm-2 am-vertical-align">
-            <img src="images/wechatPay.png" class="am-vertical-align-middle" />
-        </div>
-        <div class="am-u-sm-8">
-            微信支付
-        </div>
-        <div class="am-u-sm-2 am-text-middle">
-            <label class="am-checkbox am-danger">
-                    <input type="checkbox" value="wechatJsApi" data-am-ucheck>
-             </label>
-        </div>
-    </div>
-    <div class="am-g payment">
-        <div class="am-u-sm-2 am-vertical-align">
-            <img src="images/mbPay.png" class="am-vertical-align-middle" />
-        </div>
-        <div class="am-u-sm-8">
-            钱包余额支付
-        </div>
-        <div class="am-u-sm-2 am-text-middle">
-            <label class="am-checkbox am-danger">
-                        <input type="checkbox" value="balance" data-am-ucheck>
-            </label>
-        </div>
-    </div>
-    <div class="am-g am-margin-top-xl">
-        <div class="am-u-sm-12 am-text-center">
-            <button id="confirmPayButton">确认支付</button>
-        </div>
-    </div>
 
+    <!--footer-->
+    <footer class="am-topbar-fixed-bottom am-g">
+        <ul class="am-avg-sm-5">
+            <li><a href="index.html" class="footer-home am-center am-text-center am-text-sm selected">首页</a></li>
+            <li><a href="" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
+            <li><a href="classify/index.html" class="footer-class am-center am-text-center am-text-sm">分类</a></li>
+            <li><a href="shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
+            </li>
+            <li><a href="i/index.html" class="footer-i am-center am-text-center am-text-sm ">我的</a></li>
+        </ul>
+    </footer>
     <!--
         嗨购贝贝
     -->
 
-    </div>
 </body>
 
 </html>
