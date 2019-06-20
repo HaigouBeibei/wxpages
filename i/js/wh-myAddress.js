@@ -19,7 +19,7 @@ function initAddressList() {
     $.ajax({
       url: baseURL + "action/auth/user/normal/HxCsUserDeliveryAddressAction/listOfMine",
       success: function(data) {
-        if (data.c == 0) {
+        if (data.c == "0") {
         var list = data.d.list
         $(".wh-nav").empty()
         if (list.length<=0) {
@@ -34,6 +34,7 @@ function initAddressList() {
         var currentId= $(this).attr('address_id') 
         showDeltePop("删除地址","是否删除当前地址?",currentId)
      })
+     
      $(".wh-customerEdit").click(function(data){
         var currentId= $(this).attr('address_id') 
         if (toURL.length >0){

@@ -40,7 +40,7 @@ function loadList(page, condition, direction, isEmpty) {
 
 function getGoodList(datas) {
     var _text = document.querySelector('.wh-refresh')
-    if(datas.length<=0){
+    if (datas.length <= 0) {
         _text.innerText = '没有更多了';
     }
     for (const key in datas) {
@@ -53,9 +53,9 @@ function getGoodList(datas) {
             appendText += '<a href="' + baseURL + 'wxpages/classify/goods_detail.html?gid=' + datas[key].id + '" class="am-link-muted">'
             appendText += '<div class="am-thumbnail-caption am-padding-xs">';
             appendText += '<h4 class="am-margin-bottom-0  line-clamp">' + datas[key].name + "</h4>";
-            appendText += '<span class="price am-text-lg">￥' + datas[key].listPagePriceCurrent + "</span>";
-            appendText += '<span class="oldPrice am-text-xs"><del>￥' + datas[key].listPagePriceOriginal + "</del></span>";
-            appendText += '<a class="am-badge am-badge-warning am-round">包邮</a>';
+            appendText += '<span class="price am-text-lg">￥' + handlePrice(datas[key].listPagePriceCurrent) + "</span>";
+            appendText += '<span class="oldPrice am-text-xs"><del>￥' + handlePrice(datas[key].listPagePriceOriginal) + "</del></span>";
+            appendText += '<br /><a class="am-badge am-badge-warning am-round">包邮</a>';
             appendText += "</div>";
             appendText += "</a>";
             appendText += "</div>";
@@ -66,8 +66,8 @@ function getGoodList(datas) {
     }
 }
 
-  // 获取当前滚动条的位置 
-  function getScrollTop() {
+// 获取当前滚动条的位置 
+function getScrollTop() {
     var scrollTop = 0;
     if (document.documentElement && document.documentElement.scrollTop) {
         scrollTop = document.documentElement.scrollTop;
@@ -76,19 +76,17 @@ function getGoodList(datas) {
     }
     return scrollTop;
 }
-  // 获取当前可视范围的高度 
-  function getClientHeight() {
+// 获取当前可视范围的高度 
+function getClientHeight() {
     var clientHeight = 0;
     if (document.body.clientHeight && document.documentElement.clientHeight) {
         clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
-    }
-    else {
+    } else {
         clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
     }
     return clientHeight;
 }
- // 获取文档完整的高度 
- function getScrollHeight() {
+// 获取文档完整的高度 
+function getScrollHeight() {
     return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
 }
-

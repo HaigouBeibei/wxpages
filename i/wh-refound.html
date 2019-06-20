@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta name="keywords" content="">
-    <title>我的订单</title>
+    <title>退款</title>
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
     <!-- No Baidu Siteapp-->
@@ -27,20 +27,17 @@
     <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
     <link rel="stylesheet" href="../Public/css/app.css">
     <link rel="stylesheet" href="./css/wh-myOrderList.css">
+    <link rel="stylesheet" href="css/wh-refound.css">
     <!--[if (gte IE 9)|!(IE)]><!-->
     <script src="../Public/js/jquery-1.12.4.min.js"></script>
     <script src="../Public/js/app.js"></script>
-    <script src="./js/wh-myOrderList.js"></script>
     <!--<![endif]-->
     <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
 
 </head>
 
 <body style="background-color:#F3F3F3">
-    <nav class="wh-headerContaner">
-        <span class="wh-headSection" id="income">全部</span>
-    </nav>
-    <div id="orderList" class="wh-listContaner wh-footer-fontSet">
+    <div>
         <table
             class="wh-orderHeader wh-priceSize cartProductArea am-table am-table-centered am-table-compact am-center am-margin-top-xs">
             <thead>
@@ -49,71 +46,38 @@
                         <img src="https://tongmeng.haigoubeibei.com/hiGou/upload/2019/06/03/90780ea0808e487ea7578d87753bf3ae.png"
                             style="width:23px;height:23px;margin-top:-4px;" />某某旗舰店 <span style="text-indent: 0em;"
                             class="am-icon-chevron-right"></span>
-                        <span class="am-fr wh-footer-customer am-margin-right-xs am-text-danger">待收货</span>    
+                    
                         </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="wh-tdHeight am-text-middle wh-cancelBorder">
+                    <td class="wh-tdHeight am-text-middle wh-cancelBorder wh-td-margin">
                         <div class="wh-th-postion am-cf am-margin-top-xs am-margin-bottom-xs">
                             <p class="am-align-left am-margin-bottom-0">
-                                <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="70"
-                                    height="70" alt="" />
+                                <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="90"
+                                    height="90" alt="" />
                             </p>
                             <div class="wh-contentSet">
                                 <p class="wh-textalign line-clamp am-margin-0 am-text-sm">电脑桌台式家用简约小书桌书架组 合我是简易写字台</p>
                                 <p class="wh-textalign wh-th-customerSize am-margin-0 am-text-sm">款式:咖啡色</p>
+                                <!-- <div class="priceArea ">
+                                    <span class="am-fl am-margin-top-xs am-margin-right-xs am-text-danger">￥9999</span>
+                                    <span class="am-fr am-margin-top-xs am-margin-right-xs wh-th-color">x1</span>
+                                </div> -->
                             </div>
                             <div class="wh-rightContaner">
                                     <p class="wh-footer-marigin am-text-danger">￥99</p>
                                     <p class="wh-footer-marigin wh-th-color">x1</p>
+                                    <span class="wh-footer-status wh-th-color">退款完成</span>
                             </div>   
                           
                         </div>  
                     </td>
                 </tr>
-                <tr>
-                        <td class="wh-tdHeight am-text-middle wh-cancelBorder">
-                                <div class="wh-th-postion am-cf am-margin-top-xs am-margin-bottom-xs">
-                                    <p class="am-align-left am-margin-bottom-0">
-                                        <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="70"
-                                            height="70" alt="" />
-                                    </p>
-                                    <div class="wh-contentSet">
-                                        <p class="wh-textalign line-clamp am-margin-0 am-text-sm">电脑桌台式家用简约小书桌书架组 合我是简易写字台</p>
-                                        <p class="wh-textalign wh-th-customerSize am-margin-0 am-text-sm">款式:咖啡色</p>
-                                    
-                                    </div>
-                                    <div class="wh-rightContaner">
-                                            <p class="wh-footer-marigin am-text-danger">￥99</p>
-                                            <p class="wh-footer-marigin wh-th-color">x1</p>
-                                    </div>   
-                                </div>  
-                            </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td class="am-text-middle wh-cancelBorder wh-cancelBorder">
-                        <div class="priceArea  am-margin-top-xs">
-                            <span class="am-fr  am-margin-right-xs am-text-danger">￥9999</span>
-                            <span class="am-fr  am-margin-right-xs ">共3件商品 实付:</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="am-text-middle wh-cancelBorder wh-customer-height">
-                        <div class="priceArea am-margin-top-xs">
-                            <span class="am-fr wh-buttonCustomer am-margin-right-xs am-text-danger">确认收货</span>
-                            <span class="am-fr wh-buttonCustomer am-margin-right-xs am-text-danger">评价</span>
-                            <span class="am-fr wh-buttonCustomer am-margin-right-xs am-text-danger">查看物流</span>
-                            <!-- <span class="am-fr wh-footer-customer am-margin-right-xs am-text-danger">待收货</span> -->
-                        </div>
-                    </td>
-                </tr>
-            </tfoot>
+            </tbody>   
         </table>
+
     </div>
 </body>
 

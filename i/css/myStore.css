@@ -1,0 +1,17 @@
+.storeArea div {
+    height: 80px;
+}
+
+.divsion {
+    height: 5px;
+    background-color: #F3F3F3;
+}
+
+.p_light {
+    color: #999999;
+    margin-bottom: 0px;
+}
+
+.storeInfo td {
+    border: none !important;
+}

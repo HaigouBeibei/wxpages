@@ -62,7 +62,6 @@ menu {
 }
 
 
-body,
 th,
 td {
     font-family: arial;
@@ -193,18 +192,21 @@ td {
 }
 
 #mohe-kuaidi_new .mh-list-wrap .mh-list {
-    border-top: 1px solid #eee;
-    margin: 0 15px;
+    /* border-top: 1px solid #eee; */
+    margin: 10px 15px;
     padding: 15px 0;
+    padding-bottom: 1px;
+    background-color: #fff;
+    border-radius: 6px;
 }
 
 #mohe-kuaidi_new .mh-list-wrap .mh-list ul {
-    max-height: 255px;
-    _height: 255px;
+    /* max-height: 255px; */
+    /* _height: 255px; */
     padding-left: 75px;
     padding-right: 20px;
-    --overflow: auto;
-    height: 626px;
+    /* --overflow: auto; */
+    /* height: 626px; */
 }
 
 #mohe-kuaidi_new .mh-list-wrap .mh-list li {
@@ -426,4 +428,33 @@ td {
 
 #mohe-kuaidi_new .mh-identcode .mh-btn-install:hover {
     text-decoration: none;
+}
+
+.wh-header-empty{
+    color: #333333;
+    background-color: white; 
+    margin: 10px 15px;
+    border-radius: 6px
+}
+.wh-imgSet{
+    width:26px;
+    height:26px
+}
+.wh-headerHeight{
+    height: 79px;
+}
+.wh-headLable{
+    line-height: 7px;
+    font-size: 13px;
+}
+.wh-header-contentSize{
+    margin-left: -4px;
+    margin-top: 25px;
+}
+.wh-head-setion{
+    padding-top: 16px;
+    padding-left: 16px
+}
+.wh-headlable-set{
+    font-size: 11px;
 }

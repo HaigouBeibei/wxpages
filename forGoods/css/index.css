@@ -1,0 +1,21 @@
+#goodsList,
+#goodsList div {
+    height: 120px;
+}
+
+#goodsList div p.title {
+    color: #424242;
+    line-height: 1.1;
+}
+
+#goodsList div p.sku {
+    color: #999999;
+    height: 30px;
+    line-height: 30px;
+}
+
+#goodsList div p.price {
+    color: #F0250F;
+    height: 30px;
+    line-height: 30px;
+}

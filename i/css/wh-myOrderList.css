@@ -7,8 +7,8 @@
     z-index: 100;
     margin-top: -43px;
     margin-bottom: 0px;
-    background-color: white;
-    /* border-bottom: 1px solid lightgray; */
+    background-color: #F3F3F3;
+    border-bottom: 1px solid lightgray;
 }
 .wh-header:hover, .wh-header:focus{
     color: black;
@@ -41,14 +41,18 @@
     line-height: 1.7rem !important;
 }
 .wh-th-customerSize{
-    color: lightgray;
-    padding-top: 3px;
+    color: #999999;
+    background-color: #E8E8E8;
+    margin-top: 7px !important;
+    padding-left: 10px;
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
 }
 .wh-th-color{
     color: lightgray;
 }
 .wh-priceSize{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 .wh-customerTr{
   border: 0px;
@@ -61,14 +65,14 @@
     border: 0px !important;
 }
 .wh-contentSet{
-    background: aquamarine;
     margin-right: 1rem;
 }
 .wh-rightContaner{
     float: right;
     padding: 0px;
     text-align: right;
-    background: rebeccapurple;
+    width: 9.2rem;
+    padding-right: 7px;
 }
 .wh-th-postion
 {
@@ -76,7 +80,7 @@
 }
 .wh-buttonCustomer{
     border: 1px solid #dd514c;
-    padding: 1px 3px;
+    padding: 1px 7px;
     border-radius: 7px;
     margin-left: 1rem;
 }
@@ -90,4 +94,43 @@
     font-size: 12px;
     font-family: SourceHanSansCN-Regular;
     font-weight: 400;
+}
+.wh-footer-marigin{
+    margin: 0px;
+}
+.wh-nav-selectColor{
+    border-bottom: 1px solid red;
+}
+.wh-table-footer-priceHeight{
+    padding: 0px !important;
+    padding-right: 7px !important;
+    line-height: 1 !important;
+}
+.wh-table-footerHeight{
+    padding: 0px !important;
+    padding-right: 7px !important;
+}
+.wh-table-footLine{
+    line-height: 1 !important;
+}
+.wh-header-imgSet{
+    width: 23px;
+    height: 23px;
+    margin-top: -3px;
+    margin-left: 10px;
+    border-radius: 11px;
+}
+.wh-goodImg_set{
+    margin-left: 10px;
+}
+.wh-sm-text{
+    font-size: 1.2rem;
+}
+.wh-headContaner-margin{
+    padding-top: 11px !important;  
+    padding-bottom: 0px !important;
+}
+.wh-td-margin{
+    padding-bottom: 1.2rem !important;
+    padding-top: 0px !important;
 }

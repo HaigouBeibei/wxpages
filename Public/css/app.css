@@ -81,6 +81,11 @@
     background-color: #f3f3f3;
 }
 
+.recommendArea .am-thumbnail {
+    height: 245px;
+    overflow: hidden;
+}
+
 .recommendArea span.price {
     color: red;
 }

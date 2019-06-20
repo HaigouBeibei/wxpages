@@ -65,9 +65,9 @@ function initProduct() {
                         appendText += '<a href="' + baseURL + 'wxpages/classify/goods_detail.html?gid=' + datas[key].id + '" class="am-link-muted">'
                         appendText += '<div class="am-thumbnail-caption am-padding-xs">';
                         appendText += '<h4 class="am-margin-bottom-0 line-clamp">' + datas[key].name + "</h4>";
-                        appendText += '<span class="price am-text-lg">￥' + datas[key].listPagePriceCurrent + "</span>";
-                        appendText += '<span class="oldPrice am-text-xs"><del>￥' + datas[key].listPagePriceOriginal + "</del></span>";
-                        appendText += '<a class="am-badge am-badge-warning am-round">包邮</a>';
+                        appendText += '<span class="price am-text-lg">￥' + handlePrice(datas[key].listPagePriceCurrent) + "</span>";
+                        appendText += '<span class="oldPrice am-text-xs"><del>￥' + handlePrice(datas[key].listPagePriceOriginal) + "</del></span>";
+                        appendText += '<br /><a class="am-badge am-badge-warning am-round">包邮</a>';
                         appendText += "</div>";
                         appendText += "</a>";
                         appendText += "</div>";
