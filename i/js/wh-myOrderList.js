@@ -1,5 +1,13 @@
 var baseURL = "https://tongmeng.haigoubeibei.com/hiGou/"
-var page = 1
+var page = 1;
+var currentType = '';
+var Node = {
+  　　　　　PAYMENT_NODE: "0", //付款
+  　　　　　EVALUATE_NODE: "4", //评价
+　　　　　　DELETE_NODE: "1", //删除
+　　　　　　CONFIRM_NODE: "3", //确认收货
+　　　　　　LOGISTICS_NODE: "2", //查看物流　　　　　　　　　　　
+} 
 $(function () {
  initHeaderList()
     
@@ -7,7 +15,7 @@ $(function () {
 //初始化顶部菜单
  function initHeaderList(){
     $.ajax({
-        url: baseURL + "action/auth/user/normal/MerchantShopOrderAction/getColumns",
+        url: baseURL + "action/auth/user/normal/MerchantShopOrderAction/getColumnsInOrderList",
         success: function(data) {
           if (data.c == "0") {
           var list  = data.d;
@@ -18,7 +26,7 @@ $(function () {
             if (index==0){
                 appendText += '<span class="wh-headSection" id ="fristId" value="'+ element.type +'" >'+ element.name + '</span>';
             }else{
-                appendText += '<span class="wh-headSection" id ="fristId" value="'+ element.type +'" >'+ element.name + '</span>';
+                appendText += '<span class="wh-headSection"  value="'+ element.type +'" >'+ element.name + '</span>';
             }
           }
           //动态计算高度
@@ -27,13 +35,13 @@ $(function () {
           let itemWidth = iwidth* (1/list.length)
           $(".wh-headSection").width(itemWidth)
           //初始化数据
-           getFristData()
+           getFristData(0)
            //点击事件方法
           $(".wh-headSection").click(function(){
             $(this).addClass("wh-nav-selectColor")
             $(this).siblings().removeClass("wh-nav-selectColor")
-            var type  =  $(this).attr('value') 
-            getListWithType(type)
+            currentType  =  $(this).attr('value') 
+            getListWithType(Number(currentType))
            })
           }
         else{
@@ -44,20 +52,21 @@ $(function () {
  }  
  
  //初始化默认数据
-function getFristData(){
-    var list = $("#fristId")
-    var type  = list.attr('value') 
+function getFristData(index){
+     var typyList = $(".wh-headSection")
+    var list = typyList.eq(index)
+    currentType  = list.attr('value') 
     list.addClass("wh-nav-selectColor")
     list.siblings().removeClass("wh-nav-selectColor")
-    getListWithType(type)
+    getListWithType()
    
 }
 //获取订单数据
-function getListWithType(type){
+function getListWithType(){
     $.ajax({
         url: baseURL + "action/auth/user/normal/MerchantShopOrderAction/list",
         data:{
-         type: type,
+         type: currentType,
          page: page,
          limit:'20',
         },
@@ -65,12 +74,11 @@ function getListWithType(type){
          if(data.c == '0'){
             var list  = data.d
             console.log(list);
-            
             parseViewWithData(list)
          }else{
           showError(data.m) 
          }
-     }
+      }
     })
 }
 //根据数据重构视图
@@ -125,7 +133,7 @@ function parseViewWithData(data){
       appendText +='<div class="priceArea am-margin-top-xs">';
       for (let j = 0; j < element.buttons.length; j++) {
         const button = element.buttons[j];
-        appendText +='<span class="am-fr wh-buttonCustomer am-margin-right-xs  am-text-danger" value="'+ button.action +'">'+button.text+'</span>';
+        appendText +='<span class="am-fr wh-buttonCustomer am-margin-right-xs  am-text-danger" id="'+ element.id +'"  value="'+ button.type +'">'+button.text+'</span>';
       }
       appendText +='</div>';
       appendText +='</td>';
@@ -134,5 +142,39 @@ function parseViewWithData(data){
       appendText +=' </table>';
     }
     $("#orderList").append(appendText);
+
+    $(".wh-buttonCustomer").click(function(){
+      console.log(1);
+       var valueStr = $(this).attr('value'); 
+       var orderId  = $(this).attr('id'); 
+       console.log(valueStr,orderId,Node.CONFIRM_NODE);
+      //  deleteCancelOrder(orderId);
+      checkLogistics(orderId)
+  })
+    
 }
+
+//删除订单
+function deleteCancelOrder(order_id){
+  $.ajax({
+    url: baseURL + "action/auth/user/normal/MerchantShopOrderAction/delete",
+    data:{
+     id : order_id,
+    },
+    success: function(data) {
+     if(data.c == '0'){
+        var list  = data.d;
+        page = 1;
+        getListWithType()
+     }else{
+        showError(data.m) 
+     }
+  }
+})
+} 
+//查看物流
+function checkLogistics(order_id){
+  location.href="wh-locationAddress.html?order_id="  + order_id
+}
+
   

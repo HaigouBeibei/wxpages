@@ -26,7 +26,7 @@
     text-align: left;
 }
 .wh-content-label{
-    line-height: 2.4rem;
+    line-height: 3.6rem;;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -46,4 +46,18 @@
 .wh-phoneText{
     padding-top: 0.8rem;
     font-size: 11px;
+}
+
+.wh-coutmerLi{
+    border: 1px solid white;
+    /* padding: 0px; */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.wh-itemtColorSet{
+    color: #999999;
 }

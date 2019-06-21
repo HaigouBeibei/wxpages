@@ -30,36 +30,36 @@
   <!--[if (gte IE 9)|!(IE)]><!-->
   <script src="../Public/js/jquery-1.12.4.min.js"></script>
   <script src="../Public/js/app.js"></script>
+  <script src="./js/wh-myMembers.js"> </script>
   <!--<![endif]-->
   <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
- 
+
 </head>
 
 <body style="background-color:white">
-  <ul class="am-list">
-    <li class="wh-contaner">
-      <a class="wh-color">一星会员</a>
-      <div class="wh-setting" id="firstTest">
-        <img class="am-fr wh-imgfloat" alt="" src="../Public/img/invite_friends_next.png" width="15" height="15" />
-        <a class="am-fr wh-color">0人</a>
-      </div>
-    </li>
-    <li class="wh-contaner">
-      <a class="wh-color">二星会员</a>
-      <div class="wh-setting">
-        <a class="am-fr wh-rightAlign wh-color">0人</a>
-      </div>
-    </li>
-    <li class="wh-contaner">
-      <a class="wh-color"> 三星会员</a>
-      <div class="wh-setting">
-        <a class="am-fr wh-rightAlign wh-color">0人</a>
-      </div>
-    </li>
-  </ul>
   <div>
+    <ul class="am-list" id="myIdList">
+      <li class="wh-contaner">
+        <a class="wh-color">一星会员</a>
+        <div class="wh-setting" id="firstTest">
+          <img class="am-fr wh-imgfloat" alt="" src="../Public/img/invite_friends_next.png" width="15" height="15" />
+          <a class="am-fr wh-color">0人</a>
+        </div>
+      </li>
+      <li class="wh-contaner">
+        <a class="wh-color">二星会员</a>
+        <div class="wh-setting">
+          <a class="am-fr wh-rightAlign wh-color">0人</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <div id="newAddTotalPerson">
       <h3 class="wh-addMembers"> 今日新增(0人) </h3>
-      <ul class="am-list">
+    </div>  
+      <div>
+        <ul class="am-list" id="myAddList">
           <li class="wh-contaner">
             <a class="wh-color">一星会员</a>
             <div class="wh-setting">
@@ -72,23 +72,9 @@
               <a class="am-fr wh-rightAlign wh-color">0人</a>
             </div>
           </li>
-          <li class="wh-contaner">
-            <a class="wh-color"> 三星会员</a>
-            <div class="wh-setting">
-              <a class="am-fr wh-rightAlign wh-color">0人</a>
-            </div>
-          </li>
-  </div>
+      </div>
 
 
-  <script>
-    $(document).ready(function () {
-      $(".wh-setting#firstTest").click(function () {
-        location.href="wh-myHighStarMembers.html"
-      })
-
-    }) 
-  </script>
 </body>
 
 </html>
