@@ -7,7 +7,9 @@ var toURL = ''
 $(function() {
     var begin = window.location.href.indexOf('//////');
     var end = window.location.href.indexOf('////////');
-    toURL = window.location.href.substring(begin + 6, end);
+    if (begin>-1){
+        toURL = window.location.href.substring(begin + 6, end); 
+    }
     $("#localClass").address({
             prov: "北京",
             city: "北京",

@@ -1,5 +1,5 @@
 var baseURL = "https://tongmeng.haigoubeibei.com/hiGou/"
-var page = 1;
+var page = 0;
 var currentType = '';
 var Node = {
   　　　　　PAYMENT_NODE: "0", //付款
@@ -10,8 +10,24 @@ var Node = {
 } 
 $(function () {
  initHeaderList()
-    
 })
+function scroll() {
+  $('#upLoading').scrollspy({
+      animation: 'slide-bottom',
+      delay: 200,
+      repeat: true
+  });
+  $('#upLoading').on('inview.scrollspy.amui', function() {
+      page++;
+    console.log(page);
+    
+      getListWithType()
+  }).on('outview.scrollspy.amui', function() {
+      $('#upLoading').html('<p class="am-text-center am-link-muted">上拉加载更多...</p>');
+  });
+}
+
+
 //初始化顶部菜单
  function initHeaderList(){
     $.ajax({
@@ -35,7 +51,8 @@ $(function () {
           let itemWidth = iwidth* (1/list.length)
           $(".wh-headSection").width(itemWidth)
           //初始化数据
-           getFristData(0)
+           var orderType = getQueryString("orderType")
+           getFristData(Number(orderType))
            //点击事件方法
           $(".wh-headSection").click(function(){
             $(this).addClass("wh-nav-selectColor")
@@ -58,7 +75,7 @@ function getFristData(index){
     currentType  = list.attr('value') 
     list.addClass("wh-nav-selectColor")
     list.siblings().removeClass("wh-nav-selectColor")
-    getListWithType()
+    scroll()
    
 }
 //获取订单数据
@@ -73,7 +90,6 @@ function getListWithType(){
         success: function(data) {
          if(data.c == '0'){
             var list  = data.d
-            console.log(list);
             parseViewWithData(list)
          }else{
           showError(data.m) 
@@ -83,7 +99,15 @@ function getListWithType(){
 }
 //根据数据重构视图
 function parseViewWithData(data){
+  if(page==1){
     $("#orderList").empty();
+  }
+  if (data.length < 20){
+    $('#upLoading').html('<p class="am-text-center am-link-muted">我是有底线的！</p>');
+  }
+  if ((data.length <= 0) && (page ==1)){
+    $("#emptyOrderList").show()
+  } else{
     var appendText = "";
     for (let index = 0; index < data.length; index++) {
       const element = data[index];
@@ -144,14 +168,32 @@ function parseViewWithData(data){
     $("#orderList").append(appendText);
 
     $(".wh-buttonCustomer").click(function(){
-      console.log(1);
        var valueStr = $(this).attr('value'); 
        var orderId  = $(this).attr('id'); 
-       console.log(valueStr,orderId,Node.CONFIRM_NODE);
-      //  deleteCancelOrder(orderId);
-      checkLogistics(orderId)
-  })
+       actionButtonClickWithType(orderId,valueStr)
     
+   })
+  }
+    
+}
+//根据按钮类型判断跳转事件
+function actionButtonClickWithType( orderId ,value,skus){
+      if (value == Node.PAYMENT_NODE){
+        //去付款
+           goPay(orderId)
+      } else  if (value == Node.DELETE_NODE){
+        //删除
+        deleteCancelOrder(orderId)      
+      }else if (value == Node.LOGISTICS_NODE){
+         //查看物流
+        checkLogistics(orderId)
+
+      }else if (value == Node.CONFIRM_NODE){
+        //确认收货
+
+      }else if (value == Node.EVALUATE_NODE){
+        // 评价
+      }
 }
 
 //删除订单
@@ -175,6 +217,15 @@ function deleteCancelOrder(order_id){
 //查看物流
 function checkLogistics(order_id){
   location.href="wh-locationAddress.html?order_id="  + order_id
+}
+
+//去付款
+function goPay(orderId) {
+  var ids  = [];
+  ids.push(orderId)
+  var idStr = ids.join(',')
+  window.location.href = baseURL + "wxpages/pay/index.html?ids=" + idStr;   
+      
 }
 
   

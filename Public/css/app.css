@@ -179,9 +179,9 @@ footer>.am-avg-sm-5>li>a.selected {
     font-size: 1rem;
 }
 
-.orderArea>.am-avg-sm-5>li>a.orderArea-allOrder {
+/* .orderArea>.am-avg-sm-5>li>a.orderArea-allOrder {
     background: url(../img/orderArea-allOrder.png) no-repeat center 6px;
-}
+} */
 
 .orderArea>.am-avg-sm-5>li>a.orderArea-unPay {
     background: url(../img/orderArea-unPay.png) no-repeat center 6px;

@@ -106,7 +106,8 @@ function initSubmitButton() {
             url: baseURL + 'action/auth/user/normal/MerchantShopOrderAction/orderGenerate',
             data: {
                 deliveryAddressId: getQueryString('deliveryAddressId'),
-                skus: skus
+                skus: skus,
+                isFromCart:"Y",
             },
             success: function(data) {
                 datas = data.d;

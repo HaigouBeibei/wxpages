@@ -1,6 +1,7 @@
-
+var baseURL = "https://tongmeng.haigoubeibei.com/hiGou/";
 $(function() {
     getPersonalInfo();
+    getOrderList();
 });
 
 //获取个人信息
@@ -28,4 +29,49 @@ function getPersonalInfo() {
             }
         }
     });
+}
+
+//获取订单信息
+function getOrderList() {
+    $.ajax({
+        url: baseURL + "action/auth/user/normal/MerchantShopOrderAction/getColumnsInPersonalCenter",
+        success: function(data) {
+            console.log(data)
+            if (data.c == "0") {
+                var list = data.d
+                parseDataWithView(list)
+            }
+        }
+    });
+}
+
+function parseDataWithView(list) {
+    var appendText = '';
+    $("#orderList").empty()
+    for (let index = 0; index < list.length; index++) {
+        const element = list[index];
+        imgUrl = baseURL + element.img
+        appendText += '<li>';
+        if (element.count) {
+            appendText += '<a class="orderArea-allOrder am-center am-text-center am-text-sm" value="'+ element.type +'" style="background: url(' + imgUrl + ') no-repeat center 6px;">' + element.name + '<strong class="am-text-danger">' + '(' + element.count + ')' + '</strong></a>';
+        } else {
+            appendText += '<a class="orderArea-allOrder am-center am-text-center am-text-sm" value="'+ element.type +'" style="background: url(' + imgUrl + ') no-repeat center 6px;" >' + element.name + '</a>';
+        }
+        appendText += '</li>';
+    }
+    // 动态计算高度
+    $("#orderList").append(appendText)
+    let iwidth = screen.width;
+    let itemWidth = iwidth*(1/list.length)*0.95
+    $("#orderList>li").width(itemWidth)
+    //点击跳转事件
+    $("#orderList>li>a").click(function(){
+        var valueStr = $(this).attr('value'); 
+        if (Number(valueStr)<4){
+         location.href ="wh-myOrderList.html?orderType=" + valueStr 
+        }else{
+            
+        }
+      
+    })
 }

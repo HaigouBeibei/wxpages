@@ -12,7 +12,9 @@ var toURL = ''
 $(function() {
     var begin = window.location.href.indexOf('//////');
     var end = window.location.href.indexOf('////////');
-    toURL = window.location.href.substring(begin + 6, end);
+    if (begin>-1){
+        toURL = window.location.href.substring(begin + 6, end); 
+    }
      addressId = getQueryString("addressId");
      getAddressInfoData(addressId) //获取数据
     $(".container_content_save").click(function(){

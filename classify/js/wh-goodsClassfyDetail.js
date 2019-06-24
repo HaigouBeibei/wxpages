@@ -40,7 +40,7 @@ function loadList(page, condition, direction, isEmpty) {
 
 function getGoodList(datas) {
     var _text = document.querySelector('.wh-refresh')
-    if (datas.length <= 0) {
+    if (datas.length <= 20) {
         _text.innerText = '没有更多了';
     }
     for (const key in datas) {
@@ -53,7 +53,7 @@ function getGoodList(datas) {
             appendText += '<a href="' + baseURL + 'wxpages/classify/goods_detail.html?gid=' + datas[key].id + '" class="am-link-muted">'
             appendText += '<div class="am-thumbnail-caption am-padding-xs">';
             appendText += '<h4 class="am-margin-bottom-0  line-clamp">' + datas[key].name + "</h4>";
-            appendText += '<span class="price am-text-lg">￥' + handlePrice(datas[key].listPagePriceCurrent) + "</span>";
+            appendText += '<span class="price am-text-lg wh-priceColor" >￥' + handlePrice(datas[key].listPagePriceCurrent) + "</span>";
             appendText += '<span class="oldPrice am-text-xs"><del>￥' + handlePrice(datas[key].listPagePriceOriginal) + "</del></span>";
             appendText += '<br /><a class="am-badge am-badge-warning am-round">包邮</a>';
             appendText += "</div>";

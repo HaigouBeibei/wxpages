@@ -5,10 +5,15 @@ var toURL = ''
 $(function() {
       var begin = window.location.href.indexOf('//////');
       var end = window.location.href.indexOf('////////');
-      toURL = window.location.href.substring(begin + 6, end);
+      if (begin > -1){
+        toURL = window.location.href.substring(begin + 6, end);
+        console.log(toURL)
+      }
+     
      initAddressList()
      $(".wh-address").click(function (){
-      if (toURL.length >0){
+      if (toURL.length > 0){
+        console.log(2)
         location.href ="wh-newAddress.html?callback=" + '//////' + toURL + '////////'
       }else{
         location.href="wh-newAddress.html"
@@ -45,7 +50,11 @@ function initAddressList() {
      })
      $(".wh-customerUseAddress").click(function(){
       var address_id =$(this).attr('address_id')
-      abloutUrl  = toURL + "&deliveryAddressId=" + address_id
+      if(toURL.indexOf("orderPreview.html")>-1){
+        abloutUrl  = toURL + "&deliveryAddressId=" + address_id
+      }else {
+        abloutUrl  = toURL
+      }
       location.href= abloutUrl
      })
     }

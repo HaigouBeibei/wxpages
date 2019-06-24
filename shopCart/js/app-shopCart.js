@@ -18,7 +18,7 @@ function initSettleButton() {
             $('#my-actions').modal('close');
             $('#address-prompt').modal({
                 onConfirm: function(e) {
-                    window.location.href = baseURL + 'wxpages/i/wh-myAddress.html';
+                    window.location.href = baseURL + "wxpages/i/wh-myAddress.html?callback=" + '//////' + "https://tongmeng.haigoubeibei.com/hiGou/wxpages/shopCart/index.html" + '////////';
                 }
             });
         }
