@@ -34,6 +34,7 @@
     <script src="../Public/js/app.js"></script>
     <!--<![endif]-->
     <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+    <script src="./js/wh-orderDetail.js"></script>
 </head>
 
 <body style="background-color:#F3F3F3">
@@ -41,8 +42,8 @@
         <div class="am-u-sm-2 am-vertical-align am-text-center am-vertical-align-middle wh-headerHeight">
             <img src="../Public/img/order_personCenter.png" class="wh-imgSet" />
         </div>
-        <div class="am-text-center am-vertical-align-middle">
-            <label class="wh-headLable"> xiaocao </label>
+        <div class="am-text-center am-vertical-align-middle wh-headerMargin">
+            <label class="wh-headLable" id="locationStatus"> xiaocao </label>
         </div>
     </div>
     <!--address-->
@@ -51,45 +52,42 @@
             <img src="images/orderPreview-location.png" class="am-vertical-align-middle" />
         </div>
         <div class="am-u-sm-8 addressInfo am-padding-0 wh-leftmargin">
-            <p class="am-text-xs am-margin-0 am-vertical-align-middle" id="postMan">收货人：风一样的男人 13513739336</p>
-            <p class="am-text-xs am-margin-0 am-vertical-align-middle" id="postAddress">收货地址：河南省新乡市获嘉县 同盟庄园</p>
+            <p class="am-text-xs am-margin-0 am-vertical-align-middle" id="postMan"></p>
+            <p class="am-text-xs am-margin-0 am-vertical-align-middle" id="postAddress"></p>
         </div>
     </div>
     <!-- orderList  -->
-    <div>
-        <table
-            class="wh-orderHeadtable wh-priceSize  am-table am-table-centered am-table-compact am-center am-margin-top-xs">
+    <div id="orderList" class="wh-listContaner wh-footer-fontSet wh-bodyContaner">
+            <table
+            class="wh-orderHeader wh-priceSize cartProductArea am-table am-table-centered am-table-compact am-center am-margin-top-xs wh-tableConaner-customerSet">
             <thead>
                 <tr>
                     <th class="am-text-middle am-text-left wh-cancelBorder">
                         <img src="https://tongmeng.haigoubeibei.com/hiGou/upload/2019/06/03/90780ea0808e487ea7578d87753bf3ae.png"
-                            style="width:23px;height:23px;margin-top:-4px;" />某某旗舰店 <span style="text-indent: 0em;"
+                            class="wh-header-imgSet wh-headerImgSet"/>某某旗舰店 <span style="text-indent: 0em;"
                             class="am-icon-chevron-right"></span>
-                    </th>
+                        <!-- <span class="am-fr wh-footer-customer am-margin-right-xs am-text-danger">待收货</span>     -->
+                        </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="wh-tdHeight am-text-middle wh-cancelBorder">
+                    <td class="wh-tdHeight am-text-middle wh-cancelBorder wh-td-margin">
                         <div class="wh-th-postion am-cf am-margin-top-xs am-margin-bottom-xs">
-                            <p class="am-align-left am-margin-bottom-0">
+                            <p class="am-align-left am-margin-bottom-0 wh-bodyImgSet">
                                 <img src="../Public/img/shopcart-product.png" class="am-margin-top-xs" width="70"
                                     height="70" alt="" />
                             </p>
                             <div class="wh-contentSet">
                                 <p class="wh-textalign line-clamp am-margin-0 am-text-sm">电脑桌台式家用简约小书桌书架组 合我是简易写字台</p>
                                 <p class="wh-textalign wh-th-customerSize am-margin-0 am-text-sm">款式:咖啡色</p>
-                                <!-- <div class="priceArea ">
-                                    <span class="am-fl am-margin-top-xs am-margin-right-xs am-text-danger">￥9999</span>
-                                    <span class="am-fr am-margin-top-xs am-margin-right-xs wh-th-color">x1</span>
-                                </div> -->
                             </div>
                             <div class="wh-rightContaner">
-                                <span class="am-fl  am-text-danger">￥9999</span>
-                                <span class="am-fr  wh-th-color">x1</span>
-                            </div>
-
-                        </div>
+                                    <p class="wh-footer-marigin am-text-danger">￥99</p>
+                                    <p class="wh-footer-marigin wh-th-color">x1</p>
+                            </div>   
+                          
+                        </div>  
                     </td>
                 </tr>
                 <tr>
@@ -98,7 +96,7 @@
                                 <span class="am-fr wh-table-buttonCustomer am-margin-right-xs ">退款</span>
                             </div>
                         </td>
-                    </tr>
+                </tr>
             </tbody>
             <tfoot>
                 <tr>
@@ -126,16 +124,16 @@
       <div class="wh-orderFooter">
              <h5 class="wh-orderFooter-header">订单信息 </h5>
             <div >
-                    <span class="am-fl wh-orderFooter-height am-margin-right-xs ">订单编号:</span>
-                    <span class="wh-orderFooter-leftMargin">￥9999</span>
+                    <span class="am-fl wh-orderFooter-height am-margin-right-xs" >订单编号:</span>
+                    <span class="wh-orderFooter-leftMargin" id='order_sn'>￥9999</span>
             </div>
             <div >
-                    <span class="am-fl wh-orderFooter-height am-margin-right-xs ">订单时间:</span>
-                    <span class="wh-orderFooter-leftMargin">￥9999</span>
+                    <span class="am-fl wh-orderFooter-height am-margin-right-xs ">下单时间:</span>
+                    <span class="wh-orderFooter-leftMargin"id ='order_time'></span>
             </div>
       </div>
       <footer class="am-topbar-fixed-bottom wh-footerBar-color">
-            <div class="priceArea am-margin-top-xs am-text-middle wh-footerbarCustomer ">
+            <div class="priceArea am-margin-top-xs am-text-middle wh-footerbarCustomer" id='footerBtnList'>
                     <span class="am-fr wh-buttonCustomer am-margin-right-xs am-text-danger wh-itemSize">确认收货</span>
                     <span class="am-fr wh-buttonCustomer am-margin-right-xs am-text-danger wh-itemSize">评价</span>
                     <span class="am-fr wh-buttonCustomer am-margin-right-xs am-text-danger wh-itemSize">查看物流</span>

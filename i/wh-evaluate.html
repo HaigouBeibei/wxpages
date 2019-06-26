@@ -37,7 +37,8 @@
 
 
 <body style="background-color:white">
-    <div>
+    <ul id="evaluateList">
+    <li>
         <div class="wh-listContaner">
             <img class="am-fl wh-header-imgSet" alt="" src="../Public/img/portrait_loading.png" />
             <div class="am-vertical-align-middle wh-header-contentSize">
@@ -68,67 +69,75 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <input id="takepicture" type="file"  name="file" onchange="fileup(event)"  style="display: none">
-    <!-- <input id="takepicture" type="file"  name="file" onchange="fileup(event)" > -->
-    <script>
-        // $(function () {
-        //     var wjx_none = '☆'; // 空心五角星
-        //     var wjx_sel = '★'; // 实心五角星
-        //     //鼠标移进变实星
-        //     $(".comment li").on("mouseover", function () {
-        //         $(this).text(wjx_sel).prevAll("li").
-        //             text(wjx_sel).end().nextAll().text(wjx_none);
-        //         // $("#aaa").val($(this).val());
+    </li>
+    <li>
+        <div class="wh-listContaner">
+            <img class="am-fl wh-header-imgSet" alt="" src="../Public/img/portrait_loading.png" />
+            <div class="am-vertical-align-middle wh-header-contentSize">
+                <p class="wh-titleSet"> 描述相符:</p>
+            </div>
+            <div class="box">
+                <ul class="comment" name="xingji">
+                    <li value="1">☆</li>
+                    <li value="2">☆</li>
+                    <li value="3">☆</li>
+                    <li value="4">☆</li>
+                    <li value="5">☆</li>
+                </ul>
+                <!-- <input type="text" value="" id="aaa"> -->
+            </div>
+        </div>
+        <div class="wh-inputContaner">
+            <div>
+                <textarea class="wh-inputContent" cols="8" rows="20"
+                    placeholder="宝贝满足你的期待吗？说说你的使用心得，分享结想买的朋友们！"></textarea>
+            </div>
+            <div class="wh-addImgContaner">
+                <ul class="wh-addImg-ul">
+                    <li class="wh-img-li">
+                        <img alt="" src="../Public/img/takePhoto.png" class="wh-img-li" />  
+                    </li>
 
-        //     });
-        //     //鼠标移出变空星
-        //     $(".comment li").on("mouseout", function () {
-        //         if ($("li.current").length === 0) {
-        //             $(".comment li").text(wjx_none);
-        //         } else {
-        //             $("li .current").text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
-        //         }
-        //     });
-        //     //鼠标点击保持当前状态
-        //     $(".comment li").on("click", function () {
-        //         $(this).attr("class", "current").siblings().removeClass("current");
-        //         $("#aaa").val($(this).val());
-        //     });
-        //     $(".wh-addImg-ul>li").click(function () {
-        //         var takePicture = document.getElementById('takepicture');
-        //         takePicture.click();
-        //         takePicture.onchange = fileup(event)
-
-        //         // $(".wh-addImg-ul").prepend('<li> <img alt="" src="../Public/img/takePhoto.png" class="wh-img-li" /> </li>');
-           // })
-            // $(".updateFile").click(function(){
-
-            // })
-            
-            // function fileup(e) {
-            //     var formData = new FormData();
-            //     formData.append('file', e.target.files[0]);　
-            //     $.ajax({
-            //         url: '/api/User/avatarUpload',
-            //         type: 'POST',
-            //         cache: false,
-            //         data: formData,
-            //         processData: false,
-            //         contentType: false
-            //     }).done(function (res) {
-            //         console.log(res.data.domain);
-            //         console.log(res.data.filepath);
-
-            //         $('#layui-layer-shade1,.layui-layer.layui-layer-loading').remove();  //去掉加载loading
-            //         $('#ticket2').attr('src', res.data.filepath);  //给图片添加路径
-
-            //     }).fail(function (res) {
-            //         $('#layui-layer-shade1,#layui-layer1').remove();
-            //     });
-            // }
-
-        // });
-    </script>
-
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="wh-listContaner">
+            <img class="am-fl wh-header-imgSet" alt="" src="../Public/img/portrait_loading.png" />
+            <div class="am-vertical-align-middle wh-header-contentSize">
+                <p class="wh-titleSet"> 描述相符:</p>
+            </div>
+            <div class="box">
+                <ul class="comment" name="xingji">
+                    <li value="1">☆</li>
+                    <li value="2">☆</li>
+                    <li value="3">☆</li>
+                    <li value="4">☆</li>
+                    <li value="5">☆</li>
+                </ul>
+                <!-- <input type="text" value="" id="aaa"> -->
+            </div>
+        </div>
+        <div class="wh-inputContaner">
+            <div>
+                <textarea class="wh-inputContent" cols="8" rows="20"
+                    placeholder="宝贝满足你的期待吗？说说你的使用心得，分享结想买的朋友们！"></textarea>
+            </div>
+            <div class="wh-addImgContaner">
+                <ul class="wh-addImg-ul">
+                    <li class="wh-img-li">
+                        <img alt="" src="../Public/img/takePhoto.png" class="wh-img-li" />  
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+ </ul>
+ <div class="wh-saveBtn">
+    <button type="button" class="container_content_save"> 发布 </button>
+ </div>
+  <input id="takepicture" type="file"  name="file" accept="image/*" capture="camera" onchange="fileup(event)"  style="display: none">
+  <!-- <input id="takepicture" type="file"  name="file" accept="image/*" capture="camera" onchange="fileup(event)"  style="display: none"> -->
+    
 </html>

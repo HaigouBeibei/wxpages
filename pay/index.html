@@ -35,7 +35,9 @@
     <script src="js/index.js"></script>
     <script src="js/weixin.js"></script>
     <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-    
+    <link rel="stylesheet" href="../Public/css/keyboard.css">
+    <script src="../Public/js/jquery.md5.js"></script>
+
 </head>
 
 <body>
@@ -54,11 +56,11 @@
         嗨购贝贝
     -->
     <div class="am-g am-margin-top-sm">
-        <div class="am-u-sm-9 ">
+        <div class="am-u-sm-8 ">
             <p class="am-text-lg">支付金额</p>
         </div>
-        <div class="am-u-sm-3 ">
-            <p class="am-text-lg">￥99</p>
+        <div class="am-u-sm-4 ">
+            <p class="am-text-lg" id="payCount">￥99</p>
         </div>
     </div>
     <div class="am-g">
@@ -75,7 +77,7 @@
         </div>
         <div class="am-u-sm-2 am-text-middle">
             <label class="am-checkbox am-danger">
-                    <input type="checkbox" value="wechatJsApi" data-am-ucheck>
+                    <input type="checkbox" value="wechatJsApi" data-am-ucheck checked>
              </label>
         </div>
     </div>
@@ -101,8 +103,32 @@
     <!--
         嗨购贝贝
     -->
-
+    <div class="am-modal-actions" id="keyboard">
+        <div class="content">
+            请输入支付密码，用于支付验证
+        </div>
+        <!-- <div class="am-cf"></div> -->
+        <div class="am-g" style="background-color: white;padding-bottom: 10px;">
+            <div class="password">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <ul class="keyboard clearfix">
+            <li class="bottom_border right_border top_border">1</li>
+            <li class="bottom_border right_border top_border">2</li>
+            <li class="bottom_border top_border">3</li>
+            <li class="bottom_border right_border ">4</li>
+            <li class="bottom_border right_border">5</li>
+            <li class="bottom_border ">6</li>
+            <li class="bottom_border right_border">7</li>
+            <li class="bottom_border right_border">8</li>
+            <li class="bottom_border ">9</li>
+            <li style="background-color: #d5d8db;"> </li>
+            <li>0</li>
+            <li style="background-color: #d5d8db;">删除</li>
+        </ul>
     </div>
+
 </body>
 
 </html>

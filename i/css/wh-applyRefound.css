@@ -15,10 +15,11 @@
     text-align: left;
 }
 .wh-content{
-    margin-left: 40px;
+    margin-left:40px;
+    outline: none;
 }
 .wh-content-color{
-    color: #999999
+    color:#999999
 }
 .wh-contant-blackColor{
     color: black;
@@ -46,4 +47,22 @@
     width: 100%;
     text-align: center;
     padding: 0px;
+}
+
+.wh-tableConaner-customerSet{
+    width: 100% !important;
+    border-radius: 0px !important;
+    margin-left: 0px !important;
+}
+.wh-bodyImgSet{
+    margin-left: 10px !important; 
+}
+.wh-headerImgSet{
+    margin-top: -1px!important;
+}
+.wh-contanerList{
+    margin-bottom: 23px 
+}
+.wh-table-topMargin{
+    margin-top: 0px;
 }

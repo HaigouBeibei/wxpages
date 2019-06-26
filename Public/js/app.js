@@ -49,7 +49,7 @@ function isWeiXin() {
 }
 
 //显示错误信息
-function showError(showMessage) {
+function showError(showMessage, tipsMessage = '刷新页面', toURL = 'reload') {
     var errorForm = "";
     errorForm += '<div class="am-modal am-modal-confirm" tabindex="-1" id="errorForm">';
     errorForm += '<div class="am-modal-dialog">';
@@ -59,13 +59,17 @@ function showError(showMessage) {
     errorForm += "</div>";
     errorForm += '<div class="am-modal-footer">';
     errorForm += '<span class="am-modal-btn" data-am-modal-cancel>返回上一页</span>';
-    errorForm += '<span class="am-modal-btn" style="background-color:#f0250f;color:white" data-am-modal-confirm>刷新页面</span>';
+    errorForm += '<span class="am-modal-btn" style="background-color:#f0250f;color:white" data-am-modal-confirm>' + tipsMessage + '</span>';
     errorForm += "</div></div></div>";
     $("body").append(errorForm);
     $("#errorForm").modal({
         relatedTarget: this,
         onConfirm: function(options) {
-            window.location.reload();
+            if (toURL == 'reload') {
+                window.location.reload();
+            } else {
+                window.location.href = toURL;
+            }
         },
         onCancel: function() {
             history.back(-1);
@@ -75,7 +79,18 @@ function showError(showMessage) {
 
 //处理价格
 function handlePrice(price) {
-    return Math.floor(parseInt(price)) / 100;
+    var value= Math.floor(parseInt(price)) / 100;
+    var xsd=value.toString().split(".");
+    if(xsd.length==1){
+    value=value.toString()+".00";
+    return value;
+    }
+    if(xsd.length>1){
+        if(xsd[1].length<2){
+        value=value.toString()+"0";
+        }
+    return value;
+  }  
 }
 
 //重写alert
@@ -100,6 +115,7 @@ function alert(content) {
     $('#my-alert').modal();
     $('.am-modal-btn').modal('close');
 }
+//loading动画
 function loading() {
     my_alert = $('#my-modal-loading');
     if (my_alert.length != 0) {
@@ -118,6 +134,7 @@ function loading() {
     return $('#my-modal-loading');
 }
 
+//获取我的收货地址
 function getMyAddress() {
     $.ajax({
         url: baseURL + 'action/auth/user/normal/HxCsUserDeliveryAddressAction/listOfMine',

@@ -100,27 +100,28 @@ function writeData(data) {
 //初始化提交订单按钮
 function initSubmitButton() {
     $('#submitButton').click(function() {
-        console.log(skus);
-        console.log(getQueryString('deliveryAddressId'));
+        //console.log(skus);
+        //console.log(getQueryString('deliveryAddressId'));
         $.ajax({
             url: baseURL + 'action/auth/user/normal/MerchantShopOrderAction/orderGenerate',
             data: {
                 deliveryAddressId: getQueryString('deliveryAddressId'),
                 skus: skus,
-                isFromCart:"Y",
+                isFromCart: "Y",
             },
             success: function(data) {
+                //console.log(data);
                 datas = data.d;
                 ids = [];
                 if (data.c == 0) {
-                    for (const key in datas) {
-                        if (datas.hasOwnProperty(key)) {
-                            ids.push(datas[key]);
+                    for (const key in datas.ids) {
+                        if (datas.ids.hasOwnProperty(key)) {
+                            ids.push(datas.ids[key]);
                         }
                     }
                     ids = ids.join(',');
-                    //console.log(baseURL + "wxpages/pay/index.html?ids=" + ids);
-                    window.location.href = baseURL + "wxpages/pay/index.html?ids=" + ids;
+                    //console.log("..//pay/index.html?ids=" + ids);
+                    window.location.href = "../pay/index.html?ids=" + ids + '&payCount=' + datas.amount;
                 }
             },
             error: function(data) {

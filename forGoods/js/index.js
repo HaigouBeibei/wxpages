@@ -26,18 +26,18 @@ function initData() {
 function writeData(data) {
     appendContent = '';
     if (data != null) {
-        if (data.list.length > 0) {
-            for (const key in data.list) {
-                if (data.list.hasOwnProperty(key)) {
+        if (data.length > 0) {
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
                     appendContent += '<div class="am-g">';
                     appendContent += '<div class="am-u-sm-5 am-vertical-align">';
-                    appendContent += '<a href="detail.html?id=' + data.list[key].id + '"><img src="' + data.list[key].img + '" class="am-img-responsive am-vertical-align-middle" /></a>';
+                    appendContent += '<a href="detail.html?id=' + data[key].id + '"><img src="' + data[key].img + '" class="am-img-responsive am-vertical-align-middle" /></a>';
                     appendContent += '</div>';
                     appendContent += '<div class="am-u-sm-7">';
-                    appendContent += '<a href="detail.html?id=' + data.list[key].id + '">';
-                    appendContent += '<p class="title am-text-sm am-margin-bottom-0 am-text-middle am-margin-top-sm">' + data.list[key].name + '</p>';
-                    appendContent += '<p class="sku am-text-xs am-margin-0 am-text-middle">库存：' + data.list[key].stockQuantity + '个（' + data.list[key].minimumPiecesPerOrder + '个起售）</p>';
-                    appendContent += '<p class="price am-text-sm am-margin-0 am-text-middle">￥' + handlePrice(data.list[key].price) + '</p>';
+                    appendContent += '<a href="detail.html?id=' + data[key].id + '">';
+                    appendContent += '<p class="title am-text-sm am-margin-bottom-0 am-text-middle am-margin-top-sm">' + data[key].name + '</p>';
+                    appendContent += '<p class="sku am-text-xs am-margin-0 am-text-middle">库存：' + data[key].stockQuantity + '个（' + data[key].minimumPiecesPerOrder + '个起售）</p>';
+                    appendContent += '<p class="price am-text-sm am-margin-0 am-text-middle">￥' + handlePrice(data[key].price) + '</p>';
                     appendContent += '</a>';
                     appendContent += '</div>';
                     appendContent += '</div>';
@@ -59,6 +59,7 @@ function getData(page) {
         },
         async: false,
         success: function(data) {
+            console.log(data);
             if (data.c == "0") {
                 writeData(data.d);
             }

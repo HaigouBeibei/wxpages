@@ -54,7 +54,8 @@ ul{
 }
 .wh-inputContaner{
     margin: 10px;
-    padding-bottom: 30px;
+    margin-top: -6px;
+    padding-bottom: 4px;
     background-color: #F3F3F3;
     border-radius: 15px;
 }
@@ -69,14 +70,31 @@ ul{
     width: 100%;
 }
 .wh-addImg-ul>li{
-    margin-left:1%;
-    margin-right:1%;
+    /* margin-left:1%;
+    margin-right:1%; */
     margin-bottom: 15px;
-    width:30%;
+    width:32%;
     display: inline-flex;
 }
 .wh-img-li{
     width: 80px;
     height: 80px;
     margin: auto; 
+}
+.container_content_save {
+    width: 80%;
+    height: 34px;
+    background: #F0250F;
+    text-align: center;
+    border-radius: 10px;
+    color: #FFFFFF;
+    outline: none;
+    margin-top: 13%;
+    border: 0px;
+    font-size: 13px;
+}
+.wh-saveBtn{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
 }

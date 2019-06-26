@@ -31,7 +31,7 @@
 }
 .wh-table-buttonCustomer {
     border: 1px solid lightgray;
-    padding: 3px 17px;
+    padding: 3px 8px;
     border-radius: 11px;
     margin-left: 1rem;
     color: #333333;
@@ -60,6 +60,7 @@
 }
 .wh-footerBar-color{
     background-color:#FFF;
+    border-top: 1px solid lightgray
 }
 .wh-footerbarCustomer{
     margin: auto;
@@ -70,4 +71,21 @@
 }
 .wh-itemSize{
     padding: 0px 6px !important
+}
+.wh-headerMargin{
+   margin-left: -10px;
+}
+.wh-tableConaner-customerSet{
+    width: 100% !important;
+    border-radius: 0px !important;
+    margin-left: 0px !important;
+}
+.wh-bodyImgSet{
+    margin-left: 10px !important; 
+}
+.wh-headerImgSet{
+    margin-top: -1px!important;
+}
+.wh-bodyContaner{
+    margin-top: 0px !important;
 }    

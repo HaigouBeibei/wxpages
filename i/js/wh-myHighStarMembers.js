@@ -1,27 +1,51 @@
 var baseURL = "https://tongmeng.haigoubeibei.com/hiGou/";
-      
+var  page = 0;      
 $(function () {
-    initDataList()
+    // initDataList()
+    scroll()
 })
+function scroll() {
+    $('#upLoading').scrollspy({
+        animation: 'slide-bottom',
+        delay: 200,
+        repeat: true
+    });
+    $('#upLoading').on('inview.scrollspy.amui', function() {
+        page++;
+        console.log(page);
+        initDataList()
+    }).on('outview.scrollspy.amui', function() {
+        $('#upLoading').html('<p class="am-text-center am-link-muted">上拉加载更多...</p>');
+    });
+}
 
 //初始化数据
 function initDataList(){
         $.ajax({
-            url:baseURL + "action/auth/user/normal/HxCsUserAction/infoOfMyFirstLevel",
-            success:function(data){
-              console.log(data);    
+            url:baseURL + "action/auth/user/normal/HxCsUserAction/listSon",
+            data:{
+              page:page,
+              limit:'20',
+            },
+            success:function(data){   
               if (data.c =="0"){
-                  var list = data.d.list;
+                  console.log(data);
+                  var list = data.d;
                   parseDataWithView(list)
               }else{
                  showError(data.m)
               }
             }
-        })
+     })
 }
 
 function parseDataWithView(list){
-    $(".am-list").empty()
+    if(page==1){
+        $(".am-list").empty()  
+    }
+    if (list.length < 20) {
+        $('#upLoading').html('<p class="am-text-center am-link-muted">我是有底线的！</p>');
+    }
     for (let index = 0; index < list.length; index++) {
         const element = list[index];
         var appendText = "";
