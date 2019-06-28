@@ -68,6 +68,8 @@ ul{
 }
 .wh-addImg-ul{
     width: 100%;
+    padding:0rem;
+    margin:0rem;
 }
 .wh-addImg-ul>li{
     /* margin-left:1%;

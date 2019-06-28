@@ -1,8 +1,76 @@
+var page = 1;
 $(function() {
     initBanner();
     initProduct();
     initSearch();
+    scroll();
 });
+
+
+function scroll() {
+    $('#upLoading').scrollspy({
+        animation: 'slide-bottom',
+        delay: 200,
+        repeat: true
+    });
+    $('#upLoading').on('inview.scrollspy.amui', function() {
+        page++;
+        getData(page);
+    }).on('outview.scrollspy.amui', function() {
+        $('#upLoading').html('<p class="am-text-center am-link-muted">上拉加载更多...</p>');
+    });
+}
+
+function getData(page) {
+
+    // 请求数据
+    $.ajax({
+        url: baseURL + "action/MerchantGoodsAction/list",
+        data: {
+            page: page,
+            limit: 20,
+            condition: "time",
+            direction: "desc"
+        },
+        async: false,
+        success: function(data) {
+            //console.log(data);
+            //data = $.parseJSON(data);
+            if (data.c == 0) {
+                if (data.d.list != null) {
+                    if (data.d.list.length > 0) {
+                        // 取数据
+                        var datas = data.d.list;
+                        // 写入页面
+                        // 清空内容
+                        for (const key in datas) {
+                            if (datas.hasOwnProperty(key)) {
+                                var appendText = "";
+                                appendText += '<div class="am-u-sm-6">';
+                                appendText += '<div class="am-thumbnail">';
+                                appendText += '<a href="' + baseURL + 'wxpages/classify/goods_detail.html?gid=' + datas[key].id + '">';
+                                appendText += '<img src="' + baseURL + datas[key].imgListPage + '" alt=""  /></a>';
+                                appendText += '<a href="' + baseURL + 'wxpages/classify/goods_detail.html?gid=' + datas[key].id + '" class="am-link-muted">'
+                                appendText += '<div class="am-thumbnail-caption am-padding-xs">';
+                                appendText += '<h4 class="am-margin-bottom-0 line-clamp">' + datas[key].name + "</h4>";
+                                appendText += '<span class="price am-text-lg">￥' + handlePrice(datas[key].listPagePriceCurrent) + "</span>";
+                                appendText += '<span class="oldPrice am-text-xs"><del>￥' + handlePrice(datas[key].listPagePriceOriginal) + "</del></span>";
+                                appendText += '<br /><a class="am-badge am-badge-warning am-round">包邮</a>';
+                                appendText += "</div>";
+                                appendText += "</a>";
+                                appendText += "</div>";
+                                appendText += "</div>";
+                                $(".recommendArea").append(appendText);
+                            }
+                        }
+                    } else {
+                        $('#upLoading').html('<p class="am-text-center am-link-muted">我是有底线的！</p>');
+                    }
+                }
+            }
+        }
+    });
+}
 // 初始化Banner
 function initBanner() {
     // 请求数据
@@ -41,13 +109,13 @@ function initProduct() {
     $.ajax({
         url: baseURL + "action/MerchantGoodsAction/list",
         data: {
-            page: 1,
+            page: page,
             limit: 20,
             condition: "time",
             direction: "desc"
         },
         success: function(data) {
-            console.log(data);
+            //console.log(data);
             //data = $.parseJSON(data);
             if (data.c == 0) {
                 // 取数据

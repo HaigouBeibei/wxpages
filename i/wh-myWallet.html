@@ -32,47 +32,42 @@
   <script src="../Public/js/app.js"></script>
   <!--<![endif]-->
   <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+  <script src="./js/wh-myWallet.js"></script>
 </head>
 
 <body style="background-color:white">
     <div class="am-text-center wh-topAlign"> 
      <p> 钱包余额(元) </p>
-     <p class="wh-fontSet"> 61.26.90 </p>
+     <p class="wh-fontSet"id='walletPrice'>  </p>
     </div> 
     <div class="am-cf">
-      <button  type="button" class="wh-leftSet wh-customerBtn am-fl">转赠</button>
+      <button  type="button" class="wh-leftSet wh-customerBtn am-fl" id='walletPresent'>转赠</button>
       <button  type="button" class="wh-rightSet wh-customerBtn am-fr">提现</button>
     </div>
     <div class="wh-headerContaner"> 
-       <a class="wh-header" id="income">收入</a>
-       <a class="wh-header" id ="expend">支出</a>
+       <a class="wh-header" value="1">收入</a>
+       <a class="wh-header" value ="0">支出</a>
     </div>
-    <div>
+    <div class="wh-listMargin">
       <ul class="wh-nav am-list">
         <li> 
-          <p class="wh-leftLi">红包收入</p>
-          <div class="wh-originContaner">
+          <p class="wh-leftLi wh-rightSize">红包收入</p>
+          <!-- <div class="wh-originContaner">
             <p class="wh-orignline">来源:15637135203 </p>
             <p class="wh-orignline">ID:12703 </p>
-          </div>
+          </div> -->
           <div class="wh-rightLi"> 
-             <p class="wh-rightLine">+0.25</p>
+             <p class="wh-rightLine wh-rightSize">+0.25</p>
              <p class="wh-rightLine">2019.04.05 11:55</p>
           </div>
        </li> 
        </ul> 
+       <div class="am-margin-bottom-xs am-g" id="upLoading">
+        <p class="am-text-center am-link-muted">上拉加载更多...</p>
+      </div>
      </div>
 <script>
-    $(document).ready(function(){
-        $("#income").click(function(){
-            $(this).addClass("wh-headerRadio")
-            $("#expend").removeClass("wh-headerRadio")
-        })
-        $("#expend").click(function(){
-          $(this).addClass("wh-headerRadio")
-          $("#income").removeClass("wh-headerRadio")
-        })
-    })
+    
 </script>
 </body>
 

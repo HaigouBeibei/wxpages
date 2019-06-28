@@ -34,9 +34,6 @@
     text-align: center;
     color: black;
 }
-.wh-headerRadio{
-    border-bottom: 1px solid red;
-}
 .wh-headerContaner{
     margin-top: 10px;
     width: 100%;
@@ -79,18 +76,30 @@
 }
 .wh-rightLi{
     font-size: xx-small;
+    padding: 0px;
+    right: 0px;
+    position: absolute;
+    margin-right: 1rem;
 }
 .wh-rightLine{
     margin: 3px 12px;
     margin-right: 0px;
-    float: right;
     text-align: right;
-    width: 11rem;
     text-overflow: ellipsis;
     white-space: nowrap;
+
 }
 .wh-leftContaner{
     width: 4rem;
     height: 100%;
     background: red
+}
+.wh-headerBorder{
+    border-bottom: 2px solid red;
+}
+.wh-listMargin{
+    margin-top: 13px;
+}
+.wh-rightSize{
+    font-weight: 600;
 }

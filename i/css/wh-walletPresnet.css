@@ -1,0 +1,66 @@
+
+.wh-form-group {
+    height: 4.5rem;
+    padding-top: 11px;
+    border-bottom: 1px solid #DDDDDD;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.wh-form-group>label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+   
+    text-align: left;
+}
+.wh-content {
+    border: 0px;
+    outline: none;
+    color: black;
+    font-size: 1.4rem;
+    margin-top: -2px;
+    max-width: 17rem;
+    margin-left: 10px;
+}
+input::-webkit-input-placeholder{
+    color: lightgray;
+}
+
+.wh-content-group {
+    height: 3.5rem;
+    padding-top: 7px;
+    margin: 6px 20px;
+    font-size: 1.3rem;
+}
+.wh-footerContaner{
+    margin-top: 17px;
+    font-size: 1.3rem;
+}
+.wh-balanceTitle{
+    margin-left: 17px;
+}
+.wh-balanceAmount{
+    margin-left: -9px;
+    color: red;
+}
+.wh-blanceBtn{
+    margin-left: 31px;
+    color: deepskyblue;
+}
+.container_content_save {
+    width: 80%;
+    height: 34px;
+    background: #F0250F;
+    text-align: center;
+    border-radius: 10px;
+    color: #FFFFFF;
+    outline: none;
+    margin-top: 13%;
+    border: 0px;
+    font-size: 13px;
+}
+.wh-saveBtn{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+}

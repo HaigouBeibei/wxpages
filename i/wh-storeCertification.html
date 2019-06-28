@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
+  <meta name="keywords" content="">
+  <title>店铺认证</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+  <link rel="stylesheet" href="../Public/css/app.css">
+  <link rel="stylesheet" href="./css/wh-storeCertification.css">
+  <!--[if (gte IE 9)|!(IE)]><!-->
+  <script src="../Public/js/jquery-1.12.4.min.js"></script>
+  <script src="../Public/js/app.js"></script>
+  <!--<![endif]-->
+  <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+  <script src="./js/wh-storeCertification.js">  </script>
+
+</head>
+
+<body style="background-color:#F3F3F3">
+  <div class="wh-contaner">
+    <a class="wh-color wh-topMargin">店铺分类</a>
+    <div class="wh-setting" id='wh-settingCategery'>
+      <img class="am-fr wh-imgfloat" alt="" src="../Public/img/invite_friends_next.png" width="15" height="15" />
+      <a class="am-fr wh-color wh-rightMargin" id="wh-chooseStore">请先选择店铺分类</a>
+    </div>
+  </div>
+  <div class="wh-cardSet">
+    <div class="wh-form-group">
+      <label for="doc-vld-name-2">真实姓名:</label>
+      <input class="wh-content" id="realName" type="text" placeholder="请填写真实姓名" />
+    </div>
+    <div class="wh-form-group">
+      <label for="doc-vld-name-2">身份证号:</label>
+      <input class="wh-content" id="realNumber" type="text" placeholder="请填写身份证号码" />
+    </div>
+    <div class="wh-form-group">
+      <label for="doc-vld-name-2">店铺名称:</label>
+      <input class="wh-content" id="realShopName" type="text" placeholder="请填写店铺名称" />
+    </div>
+  </div>
+  <div class="wh-contentSet">
+    <p class="wh-titleClass"> 手持身份证照 </p>
+    <div class="wh-addImgContaner">
+      <ul class="wh-addImg-ul">
+        <li class="wh-img-li">
+          <img alt="" src="../Public/img/positive_picture.png" id='identityCardFront' class="wh-img-li" />
+        </li>
+        <li class="wh-img-li">
+          <img alt="" src="../Public/img/reverse_photograph.png" id='identityCardBack' class="wh-img-li" />
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="wh-contentSet">
+      <p class="wh-titleClass"> 食品营业许可证 </p>
+      <div class="wh-addImgContaner">
+        <img alt="" src="../Public/img/business_license.png" id="shopImg" class="wh-img-li" />
+  </div>
+  </div> 
+
+  <div class="wh-contentSet">
+    <p class="wh-titleClass"> 营业执照 </p>
+    <div class="wh-addImgContaner">
+      <img alt="" src="../Public/img/business_license.png" id="shopImg" class="wh-img-li" />
+    </div>
+    <p class="wh-tip"> *若是线下实体店商户，请上传营业许可证</p>
+  </div>
+
+  <div class="wh-saveBtn">
+    <button type="button" class="container_content_save"> 保存 </button>
+  </div>
+  <input id="takepicture" type="file" name="file" accept="image/*" onchange="fileup(event)" style="display: none">
+</body>
+
+</html>

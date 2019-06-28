@@ -1,0 +1,31 @@
+ul{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none; 
+}
+.wh-contaner{
+    padding-left: 10px;
+    justify-content: space-between;
+    display: flex !important;
+    background-color: white !important;
+    font-size: 13px;
+}
+.wh-color{
+    color: black;
+}
+.wh-color:focus ,.wh-color:hover{
+    color: black;
+}
+.wh-setting{
+    padding-top:1.2rem;
+}
+.wh-setting >span:focus,.wh-setting >span:hover{
+    color: #8a8a8a;
+}
+.wh-imgfloat{
+    margin-top: -3px;
+    margin-right: 18px;
+    width: 18px;
+    height: 18px;
+}

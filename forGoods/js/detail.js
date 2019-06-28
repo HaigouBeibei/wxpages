@@ -10,12 +10,12 @@ $(function() {
 function initGoods() {
     // 请求数据
     $.ajax({
-        url: baseURL + "action/MerchantGoodsAction/getGoodsDetail",
+        url: baseURL + "action/auth/user/normal/PurchasingAreaGoodsAction/get",
         data: {
-            id: getQueryString("gid")
+            id: getQueryString("id")
         },
         error: function(data) {
-            showError("唔。。。服务器开了个小差，导致页面载入失败，放心，当你看到这个提示的时候，那个可怜的程序员小哥哥又被扣钱了，嘻嘻。");
+            showError(data.m);
         },
         success: function(data) {
             console.log(data);

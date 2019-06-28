@@ -71,9 +71,9 @@ function parseDataWithView(list) {
     $("#orderList>li>a").click(function() {
         var valueStr = $(this).attr('value');
         if (Number(valueStr) < 4) {
-            location.href = "wh-myOrderList.html?orderType=" + valueStr
+            location.href = baseURL +"wxpages/i/wh-myOrderList.html?orderType=" + valueStr
         } else {
-
+            window.location.href = baseURL + "wxpages/i/wh-refound.html"
         }
 
     })

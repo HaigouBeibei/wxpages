@@ -82,12 +82,16 @@
 }
 
 .recommendArea .am-thumbnail {
-    height: 245px;
+    height: 255px;
     overflow: hidden;
 }
 
 .recommendArea span.price {
     color: red;
+}
+
+.recommendArea img {
+    height: 135px !important;
 }
 
 footer {
@@ -178,6 +182,7 @@ footer>.am-avg-sm-5>li>a.selected {
     color: #333333;
     font-size: 1rem;
 }
+
 
 /* .orderArea>.am-avg-sm-5>li>a.orderArea-allOrder {
     background: url(../img/orderArea-allOrder.png) no-repeat center 6px;

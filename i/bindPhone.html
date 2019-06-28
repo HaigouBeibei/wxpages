@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>嗨购贝贝-进货区</title>
+    <title>嗨购贝贝-绑定手机号</title>
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
     <!-- No Baidu Siteapp-->
@@ -29,13 +29,13 @@
     <!--[if (gte IE 9)|!(IE)]><!-->
     <script src="../Public/js/jquery-1.12.4.min.js"></script>
     <!--<![endif]-->
-    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
     <script src="../Public/js/app.js"></script>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js"></script>
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+    <link rel="stylesheet" href="css/password.css">
+    <script src="js/bindPhone.js"></script>
 </head>
 
-<body>
+<body style="background-color:#F3F3F3">
     <!--[if lte IE 9]>
 <p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
   href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
@@ -50,53 +50,34 @@
     <!--
         嗨购贝贝
     -->
-    <div class="am-g tab am-margin-top-xs">
-        <div class="am-u-sm-12">
-            <ul class="am-nav am-nav-tabs am-nav-justify">
-                <li class="am-active">
-                    <a href="index.html" style="color:#F0250F">商品</a>
-                </li>
-                <li>
-                    <a href="order.html" style="color: #333333">已购买商品</a>
-                </li>
-            </ul>
-        </div>
+
+
+    <div class="am-input-group am-u-sm-12 am-margin-top-xl">
+        <input type="text" class="am-form-field" placeholder="手机号" id="phone">
     </div>
-    <div id="goodsList">
-        <div class="am-g">
-            <div class="am-u-sm-5 am-vertical-align">
-                <a href="detail.html"><img src="../Public/img/good-default.png" class="am-img-responsive am-vertical-align-middle" /></a>
-            </div>
-            <div class="am-u-sm-7">
-                <a href="detail.html">
-                    <p class="title am-text-sm am-margin-bottom-0 am-text-middle am-margin-top-sm">
-                        英国代购产品某某某系列XXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-                    <p class="sku am-text-xs am-margin-0 am-text-middle">库存：500个（20个起售）</p>
-                    <p class="price am-text-sm am-margin-0 am-text-middle">￥900</p>
-                </a>
-            </div>
-        </div>
+    <div class="am-input-group am-margin-top-xs am-u-sm-12">
+        <input type="text" class="am-form-field" placeholder="短信验证码" id="verifyCode">
+        <span class="am-input-group-btn">
+              <button class="am-btn am-btn-success" type="button" id="getVerifyCode">获取验证码</button>
+            </span>
     </div>
     <div class="am-cf"></div>
-    <div class="am-margin-bottom-xs am-g am-margin-top-xl" id="upLoading">
-        <p class="am-text-center am-link-muted">上拉加载更多...</p>
-    </div>
+    <button class="am-btn am-btn-danger am-center am-margin-top-sm" id="confirmButton" disabled>确认</button>
 
     <!--footer-->
     <footer class="am-topbar-fixed-bottom am-g">
         <ul class="am-avg-sm-5">
             <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm ">首页</a></li>
             <li><a href="" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
-            <li><a href="../classify/index.html" class="footer-class am-center am-text-center am-text-sm selected">分类</a></li>
+            <li><a href="../classify/index.html" class="footer-class am-center am-text-center am-text-sm">分类</a></li>
             <li><a href="../shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
             </li>
-            <li><a href="../i/index.html" class="footer-i am-center am-text-center am-text-sm ">我的</a></li>
+            <li><a href="index.html" class="footer-i am-center am-text-center am-text-sm selected">我的</a></li>
         </ul>
     </footer>
     <!--
         嗨购贝贝
     -->
-
 </body>
 
 </html>

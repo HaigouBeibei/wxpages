@@ -35,9 +35,10 @@ function initConfirmPayButtonEvent() {
                 console.log(data);
                 if (data.c == 0) {
                     if (payment == 'balance') {
-                        console.log('keyboard');
+                        // console.log('keyboard');
                         orderSn = data.d.orderSn
                         $('#keyboard').modal('open');
+                        // $('.am-dimmer').removeAttr('style');
                     } else if (payment == 'wechatJsApi') {
                         wx.chooseWXPay({
                             // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符

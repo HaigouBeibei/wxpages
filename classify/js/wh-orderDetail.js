@@ -77,20 +77,25 @@ function parseBodyDataWithView(list){
       appendText +='</div>';
       appendText +='</td>';
       appendText +='</tr>';
+      appendText +='<tr>';
+      appendText +='<td class="am-text-middle wh-cancelBorder wh-customer-height">';
+      appendText +='<div class="priceArea am-margin-top-xs">';
       if(good.buttons){
-        appendText +='<tr>';
-        appendText +='<td class="am-text-middle wh-cancelBorder wh-customer-height">';
-        appendText +='<div class="priceArea am-margin-top-xs">';
         for (let index = 0; index < good.buttons.length; index++) {
           const button = good.buttons[index];
           appendText +='<span class="am-fr wh-table-buttonCustomer am-margin-right-xs " id='+good.id+' value='+ button.type+' >'+button.text+'</span>';
         }
-        appendText +='</div>';
-        appendText +='</td>';
-        appendText +='</tr>';
+      }else{
+        if (isStringEmpty(good.state)){
+          good.state  = ''
+        }
+         appendText +='<span class="am-fr wh-table-refoundCustomer am-margin-right-xs" >'+ good.state +'</span>'
       }
       
     }
+    appendText +='</div>';
+    appendText +='</td>';
+    appendText +='</tr>';
     appendText += '</tbody>';
     appendText +='<tfoot>';
     appendText +='<tr>';
@@ -129,13 +134,15 @@ function parseOrderDetailDataWithView(list){
 //设置底部按钮
 function parseFooterDataWithView(list){
   $("#footerBtnList").empty()
-  if(list.order.buttons){
+
+  if(list.order.buttons && list.order.buttons.length > 0){
     var appendText ='';
     for (let index = 0; index < list.order.buttons.length; index++) {
         const element = list.order.buttons[index];
        appendText +='<span class="am-fr wh-buttonCustomer am-margin-right-xs am-text-danger wh-itemSize"  price='+ list.order.goodsAmount+' id='+ list.order.id +' value='+ element.type+'>'+element.text+'</span>'; 
     }
     $("#footerBtnList").append(appendText)
+    $(".wh-footerBar-color").show()
     $(".wh-buttonCustomer").click(function() {
       var valueStr = $(this).attr('value');
       var orderId = $(this).attr('id');
@@ -143,6 +150,9 @@ function parseFooterDataWithView(list){
       actionButtonClickWithType(orderId, valueStr,price)
   
    })
+  }else{
+    console.log(222);
+    $(".wh-footerBar-color").hide()
   }
 }
 

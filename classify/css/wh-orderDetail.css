@@ -37,6 +37,14 @@
     color: #333333;
     font-size: 11px;
 }
+.wh-table-refoundCustomer{
+    padding: 3px 8px;
+    border-radius: 11px;
+    margin-left: 1rem;
+    color: #333333;
+    font-size: 11px;
+}
+
 .wh-footerTable-height{
     padding-bottom: 16px !important;
 }

@@ -35,7 +35,8 @@ function getCode() {
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]);
+    // if (r != null) return unescape(r[2]); //中文会乱码
+    if (r != null) return decodeURI(r[2]);
     return null;
 }
 // 判断是否微信浏览器
@@ -64,6 +65,7 @@ function showError(showMessage, tipsMessage = '刷新页面', toURL = 'reload') 
     $("body").append(errorForm);
     $("#errorForm").modal({
         relatedTarget: this,
+        closeViaDimmer: false,
         onConfirm: function(options) {
             if (toURL == 'reload') {
                 window.location.reload();
@@ -79,18 +81,18 @@ function showError(showMessage, tipsMessage = '刷新页面', toURL = 'reload') 
 
 //处理价格
 function handlePrice(price) {
-    var value= Math.floor(parseInt(price)) / 100;
-    var xsd=value.toString().split(".");
-    if(xsd.length==1){
-    value=value.toString()+".00";
-    return value;
+    var value = Math.floor(parseInt(price)) / 100;
+    var xsd = value.toString().split(".");
+    if (xsd.length == 1) {
+        value = value.toString() + ".00";
+        return value;
     }
-    if(xsd.length>1){
-        if(xsd[1].length<2){
-        value=value.toString()+"0";
+    if (xsd.length > 1) {
+        if (xsd[1].length < 2) {
+            value = value.toString() + "0";
         }
-    return value;
-  }  
+        return value;
+    }
 }
 
 //重写alert
@@ -144,4 +146,12 @@ function getMyAddress() {
         }
     });
     return myAddress;
+}
+
+function isStringEmpty(string) {
+    var isEmpty = false;
+    if (typeof string == "undefined" || string == null || string == "") {
+        isEmpty = true;
+    }
+    return isEmpty;
 }

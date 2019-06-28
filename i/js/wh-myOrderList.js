@@ -2,8 +2,8 @@ var baseURL = "https://tongmeng.haigoubeibei.com/hiGou/"
 var page = 0;
 var currentType = '';
 var Node = {　　　　　
-    PAYMENT_NODE: "0", //付款
-    　　　　　EVALUATE_NODE: "4", //评价
+              PAYMENT_NODE: "0", //付款
+    　　　　　  EVALUATE_NODE: "4", //评价
     　　　　　　DELETE_NODE: "1", //删除
     　　　　　　CONFIRM_NODE: "3", //确认收货
     　　　　　　LOGISTICS_NODE: "2", //查看物流　　　　　　　　　　　
@@ -58,7 +58,7 @@ function initHeaderList() {
                     $(this).addClass("wh-nav-selectColor")
                     $(this).siblings().removeClass("wh-nav-selectColor")
                     currentType = $(this).attr('value')
-                    getListWithType(Number(currentType))
+                    getListWithType()
                 })
             } else {
                 showError(data.m)
@@ -102,6 +102,7 @@ function getListWithType() {
 function parseViewWithData(data) {
     if (page == 1) {
         $("#orderList").empty();
+        $("#emptyOrderList").hide()
     }
     if (data.length < 20) {
         $('#upLoading').html('<p class="am-text-center am-link-muted">我是有底线的！</p>');
@@ -112,7 +113,7 @@ function parseViewWithData(data) {
         var appendText = "";
         for (let index = 0; index < data.length; index++) {
             const element = data[index];
-            appendText += '<table class="wh-orderHeader wh-priceSize cartProductArea am-table am-table-centered am-table-compact am-center am-margin-top-xs ">';
+            appendText += '<table class="wh-orderHeader wh-priceSize cartProductArea am-table am-table-centered am-table-compact am-center am-margin-top-xs">';
             appendText += '<thead>';
             appendText += ' <tr>';
             appendText += '<th class="am-text-middle wh-headContaner-margin am-text-left wh-cancelBorder">';

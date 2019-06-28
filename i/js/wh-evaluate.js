@@ -78,8 +78,7 @@ function fileup(e) {
                     ids.push(imgListStr)
                     ids.push(data.d)
                     var idStr = ids.join(',')
-                    currentCapture.parents("#evaluateList li").attr("imgs",idStr)
-                    
+                    currentCapture.parents("#evaluateList li").attr("imgs",idStr)    
                 } else{
                     currentCapture.parents("#evaluateList li").attr("imgs",data.d)  
                 }
