@@ -1,0 +1,114 @@
+a,
+body,
+center,
+cite,
+code,
+dd,
+del,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+html,
+img,
+input,
+label,
+legend,
+li,
+mark,
+ol,
+p,
+section,
+span,
+strong,
+textarea,
+time,
+ul,
+var input {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-style: normal;
+    color: #323232;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox /
+-webkit-box-sizing:border-box; / Safari */
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.content {
+    /* margin: 60px 0 20px; */
+    padding: 10px 0px;
+    text-align: center;
+    background-color: white;
+}
+
+.password {
+    height: 40px;
+    line-height: 40px;
+    width: 240px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.password span {
+    float: left;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.password span {
+    border-right: none;
+}
+
+.password span:last-child {
+    border-right: 1px solid #ccc;
+}
+
+.keyboard {
+    /* position: absolute; */
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.keyboard>li {
+    float: left;
+    line-height: 50px;
+    width: 33.3%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.bottom_border {
+    border-bottom: 1px solid #ccc;
+}
+
+.top_border {
+    border-top: 1px solid #ccc;
+}
+
+.right_border {
+    border-right: 1px solid #ccc;
+}

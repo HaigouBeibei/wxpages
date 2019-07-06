@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
+  <meta name="keywords" content="">
+  <title>新增收货地址</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+  <link rel="stylesheet" href="../Public/Addons/AmazeUI/css//amazeui.address.css" />
+  <link rel="stylesheet" href="../Public/css/app.css">
+  <link rel="stylesheet" href="./css/wh-newAddress.css">
+  <!--[if (gte IE 9)|!(IE)]><!-->
+  <script src="../Public/js/jquery-1.12.4.min.js"></script>
+  <!--<![endif]-->
+  <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+  <script src="../Public/dist/iscroll.min.js"></script>
+  <script src="../Public/dist/address.js"></script>
+  <script src="../Public/js/app.js"></script>
+  <script src="./js/wh-newAddress.js"></script>
+</head>
+
+<body style="background-color:#F3F3F3">
+  <div class="wh-form-group">
+    <label for="doc-vld-name-2">收货人：</label>
+    <input class="wh-content"  id="addressRecipients" type="text" placeholder="请输入名称"  />
+  </div>
+  <div class="wh-form-group">
+    <label for="doc-vld-name-2">手机号码：</label>
+    
+    <input class="wh-content" id="addressPhoneNumber" type="number" oninput="if(value.length>11)value=value.slice(0,11)"  placeholder="请输入收货人手机号码"  />
+  </div>
+  <div class="wh-form-group" id="localClass">
+    <label for="doc-vld-name-2">所在地区：</label>
+    <input class="wh-content" type="text" minlength="2" placeholder="请点击选择送货区域" readonly  />
+  </div>
+  <div class="wh-form-group">
+    <label for="doc-vld-name-2">详细地址：</label>
+    <input class="wh-content" id="addressDetail" type="text" minlength="2" placeholder="请输入街道,小区等"  />
+  </div>
+  <div class="wh-form-group">
+    <img class="wh-defuatIco" src="../Public/img/icon_mark.png">
+    <span class="wh-default-name"> 默认地址 </span>
+  </div>
+  <div class="wh-saveBtn"> 
+    <button type="button" class="container_content_save"> 保存 </button>
+  </div>
+  
+  <script>
+     
+  </script>
+</body>
+
+</html>

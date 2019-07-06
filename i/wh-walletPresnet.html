@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
+  <meta name="keywords" content="">
+  <title>转赠</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+  <link rel="stylesheet" href="../Public/css/app.css">
+  <link rel="stylesheet" href="./css/wh-walletPresnet.css">
+  <link rel="stylesheet" href="../Public/css/keyboard.css">
+  <!--[if (gte IE 9)|!(IE)]><!-->
+  <script src="../Public/js/jquery-1.12.4.min.js"></script>
+  <script src="../Public/js/app.js"></script>
+  <!--<![endif]-->
+  <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+  <script src="./js/wh-walletPresnet.js"></script>
+  <script src="../Public/js/jquery.md5.js"></script>
+
+</head>
+
+<body style="background-color:white">
+    <div class="wh-form-group">
+        <label for="doc-vld-name-2">获赠人手机号:</label>
+        <input class="wh-content"  id="presentNumber" type="number" oninput="if(value.length>11)value=value.slice(0,11)"  placeholder="请输入手机号"  />
+    </div>
+    <div class="wh-content-group"> 
+        <p id='accountName'> </p>
+    </div>
+    <div class="wh-form-group">
+        <label for="doc-vld-name-2">转赠金额(元):</label>
+        <input class="wh-content"  id="presentPrice" type="number"   placeholder="请输入转赠金额" />
+    </div>
+    <div class="wh-footerContaner"> 
+       <span class="wh-balanceTitle">余额：</span>  
+       <span class="wh-balanceAmount" id="totalAccount">  </span> 
+       <span class="wh-blanceBtn">全部转赠</span>
+    </div>
+    <div class="wh-saveBtn"> 
+        <button type="button" class="container_content_save"> 确定 </button>
+      </div>
+    <div class="am-modal-actions " id="keyboard">
+        <div class="content">
+            请输入支付密码，用于支付验证
+        </div>
+        <!-- <div class="am-cf"></div> -->
+        <div class="am-g" style="background-color: white;padding-bottom: 10px;">
+            <div class="password">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <ul class="keyboard clearfix">
+            <li class="bottom_border right_border top_border">1</li>
+            <li class="bottom_border right_border top_border">2</li>
+            <li class="bottom_border top_border">3</li>
+            <li class="bottom_border right_border ">4</li>
+            <li class="bottom_border right_border">5</li>
+            <li class="bottom_border ">6</li>
+            <li class="bottom_border right_border">7</li>
+            <li class="bottom_border right_border">8</li>
+            <li class="bottom_border ">9</li>
+            <li style="background-color: #d5d8db;"> </li>
+            <li>0</li>
+            <li style="background-color: #d5d8db;">删除</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+.header {
+    height: 50px;
+    background-color: #f0250f;
+}
+
+.header .cameraButton,
+.header .searchInput,
+.header .messageButton,
+.header .cameraButton a,
+.header .messageButton a {
+    height: 50px;
+    color: white;
+}
+
+.header>.cameraButton {
+    background: url(../img/header-cameraButton.png) center center no-repeat;
+}
+
+.header>.messageButton {
+    background: url(../img/header-messageButton.png) center center no-repeat;
+}
+
+.header>.cameraButton,
+.header>.messageButton {
+    background-size: 28px 28px;
+}
+
+.header .searchInput input {
+    color: #808080;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    text-indent: 1.7em;
+    border: none;
+    background: url(../img/search.png) no-repeat 7px center;
+    background-color: white;
+}
+
+.am-slider-default {
+    margin: 0px;
+}
+
+.notice {
+    background-color: #c5c5c5;
+    height: 40px;
+    line-height: 40px;
+}
+
+.notice>.title {
+    color: #e82d01;
+    padding-left: 1em;
+}
+
+.notice>.content {
+    color: black;
+}
+
+.classNav {
+    background-color: #f3f3f3;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    /* border-bottom: 1px dashed #BABABA; */
+}
+
+.classNav>.am-avg-sm-2>li>img.am-thumbnail {
+    margin-bottom: 0px;
+}
+
+.classNav>.am-u-sm-6>.am-thumbnail {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.recommendArea {
+    background: url(../img/recommend.png) no-repeat center 10px;
+    background-size: 60%;
+    padding-top: 40px;
+    background-color: #f3f3f3;
+}
+
+.recommendArea .am-thumbnail {
+    height: 230px;
+    overflow: hidden;
+}
+
+.recommendArea span.price {
+    color: red;
+}
+
+.recommendArea img {
+    height: 135px !important;
+}
+
+footer {
+    background-color: #f7f7f7;
+    height: 50px;
+}
+
+footer>.am-avg-sm-5>li>a {
+    height: 50px;
+    line-height: 80px;
+    background-size: 25px 25px;
+    color: #1e1e1e;
+}
+
+footer>.am-avg-sm-5>li>a.selected {
+    color: #f0250f;
+}
+
+.footer-home {
+    background: url(../img/footer-home.png) no-repeat center 4px;
+}
+
+.footer-customer {
+    background: url(../img/footer-customer.png) no-repeat center 4px;
+}
+
+.footer-class {
+    background: url(../img/footer-class.png) no-repeat center 4px;
+}
+
+.footer-shoppingcat {
+    background: url(../img/footer-shoppingcat.png) no-repeat center 4px;
+}
+
+.footer-i {
+    background: url(../img/footer-i.png) no-repeat center 4px;
+}
+
+.i-header {
+    height: 120px;
+    background: url(../img/i-background.png) repeat-x;
+    background-size: 100% 100%;
+}
+
+.i-header>.settings {
+    height: 20px;
+    line-height: 20px;
+}
+
+.i-header>.settings a {
+    color: white;
+}
+
+.settingsButton {
+    width: 20px;
+    height: 20px;
+    background: url(../img/settings.png) center center no-repeat;
+    background-size: 18px 18px;
+}
+
+.i-header>.personal {
+    height: 85px;
+}
+
+.i-header>.personal>.headimg img {
+    width: 60px;
+    height: 60px;
+}
+
+.i-header>.personal>.personalInfo ul li {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.orderArea,
+.personalTools {
+    width: 95%;
+    background-color: white;
+    border-radius: 15px;
+    height: 65px;
+}
+
+.orderArea>.am-avg-sm-5>li>a {
+    height: 80px;
+    line-height: 100px;
+    background-size: 30px 30px !important;
+    color: #333333;
+    font-size: 1rem;
+}
+
+
+/* .orderArea>.am-avg-sm-5>li>a.orderArea-allOrder {
+    background: url(../img/orderArea-allOrder.png) no-repeat center 6px;
+} */
+
+.orderArea>.am-avg-sm-5>li>a.orderArea-unPay {
+    background: url(../img/orderArea-unPay.png) no-repeat center 6px;
+}
+
+.orderArea>.am-avg-sm-5>li>a.orderArea-unTake {
+    background: url(../img/orderArea-unTake.png) no-repeat center 6px;
+}
+
+.orderArea>.am-avg-sm-5>li>a.orderArea-unAppraise {
+    background: url(../img/orderArea-unAppraise.png) no-repeat center 6px;
+}
+
+.orderArea>.am-avg-sm-5>li>a.orderArea-afterSale {
+    background: url(../img/orderArea-afterSale.png) no-repeat center 6px;
+}
+
+.personalTools {
+    height: 170px;
+}
+
+.personalTools>.am-avg-sm-4>li>a {
+    height: 90px;
+    line-height: 120px;
+    background-size: 40px 40px !important;
+    color: #333333;
+    font-size: 1rem;
+}
+
+.personalTools>.am-avg-sm-4>li>a.personalTools-collect {
+    background: url(../img/modifyPassWord.png) no-repeat center 6px;
+}
+
+.personalTools>.am-avg-sm-4>li>a.personalTools-iWant {
+    background: url(../img/personalTools-iWant.png) no-repeat center 6px;
+}
+
+.personalTools>.am-avg-sm-4>li>a.personalTools-mySubordinate {
+    background: url(../img/personalTools-mySubordinate.png) no-repeat center 6px;
+}
+
+.personalTools>.am-avg-sm-4>li>a.personalTools-myWallet {
+    background: url(../img/personalTools-myWallet.png) no-repeat center 6px;
+}
+
+.personalTools>.am-avg-sm-4>li>a.personalTools-myCard {
+    background: url(../img/modifyPhoneNumber.png) no-repeat center 6px;
+}
+
+.personalTools>.am-avg-sm-4>li>a.personalTools-myQR {
+    background: url(../img/personalTools-myQR.png) no-repeat center 6px;
+}
+
+.personalTools>.am-avg-sm-4>li>a.personalTools-myAddress {
+    background: url(../img/personalTools-myAddress.png) no-repeat center 6px;
+}
+
+.personalTools>.am-avg-sm-4>li>a.personalTools-forGoods {
+    background: url(../img/personalTools-forGoods.png) no-repeat center 6px;
+}
+
+.settle {
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    bottom: 50px;
+    background-color: white;
+    z-index: 999 !important;
+}
+
+.settle>div {
+    height: 50px;
+}
+
+.settle>div>a {
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    background-color: #f0250f;
+    border: none;
+}
+
+.cartProductArea {
+    background-color: white;
+    border-radius: 15px;
+    width: 95%;
+}
+
+.cartProductArea th,
+.cartProductArea td {
+    color: #333333;
+}
+
+.cartProductArea .storeIcon {
+    background: url(../img/shopcart-store.png) no-repeat left center;
+    background-size: 18px 18px;
+    text-align: left;
+    text-indent: 1.2em;
+}
+
+.cartProductArea .priceArea .am-input-group {
+    width: 120px;
+}
+
+.historyArea a {
+    float: left;
+    padding: 4px 9px;
+    color: #333333;
+    background-color: #F8F8F8;
+    border-radius: 15px;
+    margin: 3px 6px;
+}
+
+
+/* 页面为空的提示语 */
+
+.wh-empty {
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding-top: 60%;
+}
+
+.line-clamp {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.wh-cleanFloat {
+    clear: both;
+}
+
+.wh-bindPhone {
+    text-align: center;
+    margin-top: 10px;
+}

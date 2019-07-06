@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="keywords" content="">
+    <title>商品分类详情</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../Public/css/app.css">
+    <link rel="stylesheet" href="./css/wh-categery.css">
+    <link rel="stylesheet" href="./css/wh-goodsClassfyDetail.css">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-1.12.4.min.js"></script>
+    <script src="../Public/js/app.js"></script>
+    <script src="./js/wh-categery.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
+    <!--<![endif]-->
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="divscroller">
+        <ul class="box123">
+            <li>
+                <span></span>
+            </li>
+
+        </ul>
+    </div>
+    <p id='specialPrice' style="text-align: center;margin-top: 0px;">
+        <p>
+            <div style="margin-top: -20px">
+                <ul class="wh-nav am-nav-pills">
+                    <li class="wh-width">
+                        <a id='timeItem' class="wh-tip" href="#">按时间排序
+                    <img id='timeUp' class="wh-imgSelect" src="../Public/img/icon_up.png" alt="" />
+                    <img id='timeDown' class="wh-imgSelect" src="../Public/img/icon_down.png" alt="" />
+                </a>
+                    </li>
+                    <li class="wh-width">
+                        <a id='priceItem' class="wh-tip" href="#">按价格排序
+                    <img id='priceUp' class="wh-imgSelect" src="../Public/img/icon_up.png" alt="" />
+                    <img id='priceDown' class="wh-imgSelect" src="../Public/img/icon_down.png" alt="" />
+                </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="am-g wrapper" id="refreshContainer">
+                <div class="am-u-sm-6">
+                    <div class="am-thumbnail">
+                        <a href="">
+                            <img class="wh-imgHeight" src="../Public/img/product.png" alt="" />
+                            <div class="am-thumbnail-caption">
+                                <h4 class="wh-height  line-clamp">英国代购英国代购英国代购英国代购</h4>
+                                <span class="wh-price am-text-lg">￥9.9</span>
+                                <span class="oldPrice am-text-sm"><del>￥19.9</del></span>
+                                <a class="am-badge am-badge-warning am-round">包邮</a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="am-u-sm-6">
+                    <div class="am-thumbnail">
+                        <img src="../Public/img/product.png" alt="" />
+                        <div class="am-thumbnail-caption">
+                            <h4 class="wh-height">英国代购英国代购英国代购英国代购</h4>
+                            <span class="wh-price am-text-lg">￥9.9</span>
+                            <span class="oldPrice am-text-sm"><del>￥19.9</del></span>
+                            <a class="am-badge am-badge-warning am-round">包邮</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div data-am-widget="gotop" class="wh-customerHeight am-gotop am-gotop-fixed">
+                <a href="#top" title="回到顶部">
+                    <span class="am-gotop-title">回到顶部</span>
+
+                    <i class="wh-icoHeight  am-gotop-icon am-icon-chevron-up"></i>
+                </a>
+            </div>
+            <div class="am-margin-bottom-xs am-g" id="upLoading">
+                <p class="am-text-center am-link-muted">上拉加载更多...</p>
+            </div>
+            <!--footer-->
+            <footer class="am-topbar-fixed-bottom">
+                <ul class="am-avg-sm-5">
+                    <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm ">首页</a></li>
+                    <li><a href="../cs.html" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
+                    <li><a href="index.html" class="footer-class am-center am-text-center am-text-sm selected">分类</a></li>
+                    <li><a href="../shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
+                    </li>
+                    <li><a href="../i/index.html" class="footer-i am-center am-text-center am-text-sm ">我的</a></li>
+                </ul>
+            </footer>
+            <script>
+                var u = navigator.userAgent;
+                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端  
+                var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端  
+                if (isAndroid && isiOS) {     /*注释5*/
+                    $('.box123').on('touchstart', function() {
+                        $(document).on('touchmove', function(e) {
+                            e.preventDefault();
+                        });
+                        $(document).on('touchend', function() {
+                            $(document).unbind();
+                        });
+                    });
+                }
+            </script>
+
+</body>
+
+</html>

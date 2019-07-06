@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>嗨购贝贝-评论</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="../Public/css/app.css">
+    <link rel="stylesheet" href="css/goods_detail.css" />
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-1.12.4.min.js"></script>
+    <!--<![endif]-->
+    <script src="../Public/js/app.js"></script>
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+    <script src="js/comment.js"></script>
+</head>
+
+<body style="padding-bottom: 80px;">
+    <!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
+  href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="Addons/AmazeUI/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+    <!--
+        嗨购贝贝
+    -->
+
+    <!--price-->
+    <!--skuTouch-->
+    <!-- <div class="am-g skuTouch">
+        规格
+        <span class="am-icon-chevron-right am-fr"></span>
+    </div> -->
+    <!--divsion-->
+    <!-- <div class="division am-g"></div> -->
+    <!--comment-->
+    <!-- <div class="ag-g comment am-center" id="commentTitle">
+        评论
+        <a class="am-fr">查看全部&nbsp;<span class="am-icon-chevron-right"></span></a>
+    </div> -->
+    <!--commentList-->
+    <div class="am-g commentList">
+        <ul class="am-comments-list am-comments-list-flip" id="commentList">
+            <p class="am-text-center">暂无评论</p>
+            <li class="am-comment">
+                <a href="">
+                    <img class="am-comment-avatar" src="../Public/img/headimg.png" />
+                </a>
+                <div class="am-comment-main">
+                    <header class="am-comment-hd">
+                        <div class="am-comment-meta">
+                            <a href="#link-to-user" class="am-comment-author">AAA</a>
+                            <time datetime="">2019-06-01 09:10:50</time>
+                            <br />
+                            <time datetime="">规格：XXX</time>
+                            <br />
+                            <span class="am-icon-star" style="color: #F0250F"></span>
+                            <span class="am-icon-star" style="color: #F0250F"></span>
+                            <span class="am-icon-star" style="color: #F0250F"></span>
+                            <span class="am-icon-star" style="color: #F0250F"></span>
+                            <span class="am-icon-star" style="color: #F0250F"></span>
+                            <span class="am-icon-star"></span>
+                        </div>
+                    </header>
+                    <div class="am-comment-bd">
+                        <p>棒棒哒</p>
+                        <ul class="am-avg-sm-3">
+                            <li><img src="../Public/img/product.png" class="am-img-responsive am-thumbnail"></li>
+                            <li><img src="../Public/img/product.png" class="am-img-responsive am-thumbnail"></li>
+                            <li><img src="../Public/img/product.png" class="am-img-responsive am-thumbnail"></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="am-cf"></div>
+    <div class="am-margin-bottom-xs am-g" id="upLoading">
+        <p class="am-text-center am-link-muted">上拉加载更多...</p>
+    </div>
+    <footer class="am-topbar-fixed-bottom am-g">
+        <ul class="am-avg-sm-5">
+            <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm ">首页</a></li>
+            <li><a href="../cs.html" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
+            <li><a href="index.html" class="footer-class am-center am-text-center am-text-sm">分类</a></li>
+            <li><a href="../shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
+            </li>
+            <li><a href="../index.html" class="footer-i am-center am-text-center am-text-sm selected">我的</a></li>
+        </ul>
+    </footer>
+
+    <!--
+        嗨购贝贝
+    -->
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+.wh-enquiry-customer{
+    color: white;
+    background-color: red;
+    margin-top: 7px !important;
+    padding: 3px 8px;
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
+    width: 58px;
+    display: block;
+}
+
+.wh-headerMargin{
+    height: 30px !important;
+    min-width: 76px;
+}
+.wh-rightMargin{
+    min-width: 10rem;
+}

@@ -1,0 +1,202 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>商品二级分类详情</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="../Public/css/app.css">
+    <link rel="stylesheet" href="./css/wh-goodsClassfyDetail.css">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-1.12.4.min.js"></script>
+    <script src="../Public/js/app.js"></script>
+    <script src="./js/wh-goodsClassfyDetail.js"></script>
+    <!--<![endif]-->
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+</head>
+
+<body>
+    <div class="wh-uiContaneter">
+        <ul class="wh-nav am-nav-pills">
+            <li class="wh-width">
+                <a id='timeItem' class="wh-tip" href="#">按时间排序
+                    <img id='timeUp' class="wh-imgSelect" src="../Public/img/icon_up.png" alt="" />
+                    <img id='timeDown' class="wh-imgSelect" src="../Public/img/icon_down.png" alt="" />
+                </a>
+            </li>
+            <li class="wh-width">
+                <a id='priceItem' class="wh-tip" href="#">按价格排序
+                    <img id='priceUp' class="wh-imgSelect" src="../Public/img/icon_up.png" alt="" />
+                    <img id='priceDown' class="wh-imgSelect" src="../Public/img/icon_down.png" alt="" />
+                </a>
+            </li>
+        </ul>
+        <div class="am-g wrapper" id="refreshContainer">
+            <div class="am-u-sm-6">
+                <div class="am-thumbnail">
+                    <a href="">
+                        <img class="wh-imgHeight" src="../Public/img/product.png" alt="" />
+                        <div class="am-thumbnail-caption">
+                            <h4 class="wh-height  line-clamp">英国代购英国代购英国代购英国代购</h4>
+                            <span class="wh-price am-text-lg">￥9.9</span>
+                            <span class="oldPrice am-text-sm"><del>￥19.9</del></span>
+                            <a class="am-badge am-badge-warning am-round">包邮</a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="am-u-sm-6">
+                <div class="am-thumbnail">
+                    <img src="../Public/img/product.png" alt="" />
+                    <div class="am-thumbnail-caption">
+                        <h4 class="wh-height">英国代购英国代购英国代购英国代购</h4>
+                        <span class="wh-price am-text-lg">￥9.9</span>
+                        <span class="oldPrice am-text-sm"><del>￥19.9</del></span>
+                        <a class="am-badge am-badge-warning am-round">包邮</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="wh-refresh">加载中...</p>
+    </div>
+    <div data-am-widget="gotop" class="wh-customerHeight am-gotop am-gotop-fixed">
+        <a href="#top" title="回到顶部">
+            <span class="am-gotop-title">回到顶部</span>
+
+            <i class="wh-icoHeight  am-gotop-icon am-icon-chevron-up"></i>
+        </a>
+    </div>
+    <!--footer-->
+    <footer class="am-topbar-fixed-bottom">
+        <ul class="am-avg-sm-5">
+            <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm ">首页</a></li>
+            <li><a href="../cs.html" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
+            <li><a href="index.html" class="footer-class am-center am-text-center am-text-sm selected">分类</a></li>
+            <li><a href="../shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
+            </li>
+            <li><a href="../i/index.html" class="footer-i am-center am-text-center am-text-sm ">我的</a></li>
+        </ul>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            var page = 1;
+            var condition = "time";
+            var direction = "desc";
+            var _text = document.querySelector('.wh-refresh')
+
+            function timeClick(isTime, type) {
+                page = 1;
+                if (isTime) {
+                    condition = "time";
+                    direction = type;
+                } else {
+                    condition = "price";
+                    direction = type;
+                }
+                loadList(page, condition, direction, "1");
+            }
+
+            function setCurrentSelectImag() {
+                $("ul.wh-nav li a img#timeUp").attr("src", "../Public/img/icon_up.png");
+                $("ul.wh-nav li a img#timeDown").attr("src", "../Public/img/icon_down.png");
+                $("ul.wh-nav li a img#priceUp").attr("src", "../Public/img/icon_up.png");
+                $("ul.wh-nav li a img#priceDown").attr("src", "../Public/img/icon_down.png");
+            }
+            //时间排序
+            $("ul.wh-nav li a#timeItem").click(function(event) {
+                event.stopPropagation();
+                setCurrentSelectImag(); //初始化设置
+                $("ul.wh-nav li a img#timeUp").attr("src", "../Public/img/icon_up_cor.png")
+                timeClick(true, 'asc') //请求方法
+
+            })
+            $("ul.wh-nav li a img#timeUp").click(function(event) {
+                // 获取子点击
+                event.stopPropagation();
+                setCurrentSelectImag(); //初始化设置
+                $(this).attr("src", "../Public/img/icon_up_cor.png");
+                //遍历获取除当前节点的所有子节点
+                timeClick(true, "asc");
+            })
+            $("ul.wh-nav li a img#timeDown").click(function(event) {
+                    // 获取子点击
+                    event.stopPropagation();
+                    setCurrentSelectImag(); //初始化设置
+                    $(this).attr("src", "../Public/img/icon_down_cor.png");
+                    //遍历获取除当前节点的所有子节点
+                    timeClick(true, "desc");
+
+                })
+                //价格排序
+            $("ul.wh-nav li a#priceItem").click(function(event) {
+                // 获取子点击
+                event.stopPropagation();
+                setCurrentSelectImag(); //初始化设置
+                $("ul.wh-nav li a img#priceUp").attr("src", "../Public/img/icon_up_cor.png");
+                timeClick(false, "asc");
+
+
+            })
+            $("ul.wh-nav li a img#priceUp").click(function(event) {
+                // 获取子点击
+                event.stopPropagation()
+                setCurrentSelectImag(); //初始化设置
+                $(this).attr("src", "../Public/img/icon_up_cor.png");
+                timeClick(false, "asc");
+                //遍历获取除当前节点的所有子节点
+
+            })
+            $("ul.wh-nav li a img#priceDown").click(function(event) {
+                    // 获取子点击
+                    event.stopPropagation();
+                    setCurrentSelectImag(); //初始化设置
+                    $(this).attr("src", "../Public/img/icon_down_cor.png");
+                    timeClick(false, "desc");
+                    //遍历获取除当前节点的所有子节点
+                })
+                // 获取当前滚动条的位置 
+            var throttle = function(method, context) {
+                clearTimeout(method.tId);
+                method.tId = setTimeout(function() {
+                    method.call(context);
+                }, 300);
+            }
+            window.onscroll = function() {
+                if (getScrollTop() + getClientHeight() == getScrollHeight()) {
+                    _text.innerText = '加载中...';
+                    throttle(fetchData);
+                }
+            };
+
+            function fetchData() {
+                setTimeout(function() {
+                    page++;
+                    loadList(page, condition, direction, "0");
+                }, 1000);
+            }
+
+        })
+    </script>
+</body>
+
+</html>

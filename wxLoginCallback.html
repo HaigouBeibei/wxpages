@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="misapplication-tap-highlight" content="no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<title></title>
+		<script type="text/javascript" src="../plugins/jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		<script src="../config.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				userInit();
+			});
+			function userInit() {
+				$.getJSON(__requestUrl + "action/WeiXinLogin/userInit", {
+					"code": gp()["code"]
+				}, function(data, state, xhr) {
+					if(data.state) {
+						var url = data.url == "" ? "../wxpages/auth/user/scan.html": data.url;
+						window.location.href = url;
+					} else {
+						if(data.errcode == "40163") { // 用户在wxLoginCallBack.html网速慢，点了刷新按钮
+							window.location.href = "../wxpages/wxLogin.html";
+						} else if(data.errcode == "40029") {
+							window.location.href = "../wxpages/wxLogin.html";
+						} else {
+							window.history.go(-2);
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,44 @@
+.storeArea div {
+    height: 80px;
+}
+
+.divsion {
+    height: 5px;
+    background-color: #F3F3F3;
+}
+
+.p_light {
+    color: #999999;
+    margin-bottom: 0px;
+}
+
+.storeInfo td {
+    border: none !important;
+}
+.wh-shopStatus{
+    color: red;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.container_content_save {
+    width: 80%;
+    height: 34px;
+    background: #F0250F;
+    text-align: center;
+    border-radius: 10px;
+    color: #FFFFFF;
+    outline: none;
+    margin-top: 14px;
+    border: 0px;
+    font-size: 13px;
+}
+.wh-saveBtn{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+    margin-bottom: 9px;
+}
+.wh-clickUrl{
+    text-align: center;
+    color: red;
+}

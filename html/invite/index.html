@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>嗨购贝贝</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../../Public/Addons/AmazeUI/i/favicon.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="../../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="../../Public/css/app.css">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../../Public/js/jquery-1.12.4.min.js"></script>
+    <!--<![endif]-->
+    <script src="../../Public/js/app.js"></script>
+    <script src="../../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
+  href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="Addons/AmazeUI/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+    <!--
+        嗨购贝贝
+    -->
+    <!--Header-->
+    <div class="am-container">
+        <div class="am-panel am-panel-success am-margin-xl am-hide" id="errorArea">
+            <div class="am-panel-hd">嗨购贝贝温馨提示</div>
+            <div class="am-panel-bd">
+                请在微信客户端中进行本操作
+            </div>
+        </div>
+        <div class="am-panel am-panel-success am-margin-xl am-hide" id="successArea">
+            <div class="am-panel-hd">嗨购贝贝温馨提示</div>
+            <div class="am-panel-bd">
+                绑定成功！
+            </div>
+        </div>
+    </div>
+    <!--
+        嗨购贝贝
+    -->
+</body>
+
+</html>
+<script>
+    if (isWeiXin()) {
+        if ($.trim(getQueryString('code')) == '' || getQueryString('code') == null) {
+            var jummpURL = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + encodeURI(window.location.href) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+            window.location.href = jummpURL;
+            //$.getJSON(baseURL + "action/WeiXinLogin/getLoginUrl", {}, function(data, state, xhr) {
+            //if (state == 'success' && data.c == 0) {
+            //window.location.href = data.d.url;
+            //}
+            //});
+        } else {
+            $.getJSON(baseURL + "action/WeiXinLogin/bindPrimaryUserOfficialAccount", {
+                "code": getQueryString('code'),
+                "parentId": getQueryString('parentid')
+            }, function(data, state, xhr) {
+                console.log(getQueryString('parentid'));
+                console.log('----------------------------------');
+
+                console.log(data);
+                $('#successArea .am-panel-bd').text(data.m);
+                $('#successArea').removeClass('am-hide');
+
+
+                // if (data.state) {
+                //     var url = data.url == "" ? "../wxpages/auth/user/scan.html" : data.url;
+                //     window.location.href = url;
+                // } else {
+                //     if (data.errcode == "40163") { // 用户在wxLoginCallBack.html网速慢，点了刷新按钮
+                //         window.location.href = "../wxpages/wxLogin.html";
+                //     } else if (data.errcode == "40029") {
+                //         window.location.href = "../wxpages/wxLogin.html";
+                //     } else {
+                //         window.history.go(-2);
+                //     }
+                // }
+            });
+        }
+    } else {
+        $('#errorArea').removeClass('am-hide');
+    }
+</script>

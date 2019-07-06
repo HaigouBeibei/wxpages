@@ -1,0 +1,33 @@
+
+#divscroller{
+    width:100%; 
+    max-width: 2000px;
+}
+#divscroller .box123{
+    white-space: nowrap;
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+    color: aqua;
+}
+
+#divscroller .box123 li{
+    display: inline-block;
+    margin-bottom: 20px;
+    color: lightgray;
+    margin: 8px 20px;
+    align-items: center;
+    text-align: center;
+}
+.box123::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    display: none;
+}
+.wh-selectLi{
+    border-bottom:1px solid red !important;
+    color: black !important;
+}
+.wh-contaner-set{
+    margin-top: -5px;
+}

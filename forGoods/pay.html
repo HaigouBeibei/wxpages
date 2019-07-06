@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>嗨购贝贝-支付</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="../Public/css/app.css">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-1.12.4.min.js"></script>
+    <!--<![endif]-->
+    <script src="../Public/js/app.js"></script>
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script src="../pay/js/weixin.js"></script>
+    <script src="js/pay.js"></script>
+    <link rel="stylesheet" href="../Public/css/keyboard.css">
+    <script src="../Public/js/jquery.md5.js"></script>
+    <link rel="stylesheet" href="css/pay.css">
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
+  href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="Addons/AmazeUI/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+    <!--
+        嗨购贝贝
+    -->
+    <div class="am-g am-margin-top-sm">
+        <div class="am-u-sm-8 ">
+            <p class="am-text-lg">支付金额</p>
+        </div>
+        <div class="am-u-sm-4 ">
+            <p class="am-text-lg" id="payCount">￥99</p>
+        </div>
+    </div>
+    <div class="am-g">
+        <div class="am-u-sm-12">
+            <p>选择支付方式</p>
+        </div>
+    </div>
+    <div class="am-g payment">
+        <div class="am-u-sm-2 am-vertical-align">
+            <img src="images/wechatPay.png" class="am-vertical-align-middle" />
+        </div>
+        <div class="am-u-sm-8">
+            微信支付
+        </div>
+        <div class="am-u-sm-2 am-text-middle">
+            <label class="am-checkbox am-danger">
+                    <input type="checkbox" value="wechatJsApi" data-am-ucheck checked>
+             </label>
+        </div>
+    </div>
+    <div class="am-g payment">
+        <div class="am-u-sm-2 am-vertical-align">
+            <img src="images/mbPay.png" class="am-vertical-align-middle" />
+        </div>
+        <div class="am-u-sm-8">
+            钱包余额支付
+        </div>
+        <div class="am-u-sm-2 am-text-middle">
+            <label class="am-checkbox am-danger">
+                        <input type="checkbox" value="balance" data-am-ucheck>
+            </label>
+        </div>
+    </div>
+    <div class="am-g am-margin-top-xl">
+        <div class="am-u-sm-12 am-text-center">
+            <button id="confirmPayButton">确认支付</button>
+        </div>
+    </div>
+
+    <!--
+        嗨购贝贝
+    -->
+    <div class="am-modal-actions " id="keyboard">
+        <div class="content">
+            请输入支付密码，用于支付验证
+        </div>
+        <!-- <div class="am-cf"></div> -->
+        <div class="am-g" style="background-color: white;padding-bottom: 10px;">
+            <div class="password">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <ul class="keyboard clearfix">
+            <li class="bottom_border right_border top_border">1</li>
+            <li class="bottom_border right_border top_border">2</li>
+            <li class="bottom_border top_border">3</li>
+            <li class="bottom_border right_border ">4</li>
+            <li class="bottom_border right_border">5</li>
+            <li class="bottom_border ">6</li>
+            <li class="bottom_border right_border">7</li>
+            <li class="bottom_border right_border">8</li>
+            <li class="bottom_border ">9</li>
+            <li style="background-color: #d5d8db;"> </li>
+            <li>0</li>
+            <li style="background-color: #d5d8db;">删除</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

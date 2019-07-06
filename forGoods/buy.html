@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>嗨购贝贝-商品</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="../Public/css/app.css">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-1.12.4.min.js"></script>
+    <!--<![endif]-->
+    <script src="../Public/js/app.js"></script>
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+    <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script src="../Public/js/jquery.md5.js"></script>
+    <link rel="stylesheet" href="css/buy.css">
+    <script src="js/buy.js"></script>
+    <script src="../pay/js/weixin.js"></script>
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
+  href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="Addons/AmazeUI/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+    <!--
+        嗨购贝贝
+    -->
+    <div class="am-g am-margin-top-sm">
+        <div class="am-u-sm-12">
+            <img src="../Public/img/good-default.png" id="goodsThumb" class="am-img-responsive am-thumbnail am-margin-bottom-0 am-center">
+        </div>
+    </div>
+    <p class="am-margin-0 am-text-center am-text-sm am-padding-sm" id="goodsTitle">花飘万家雪在要工工要在地一工要在有地</p>
+    <p class="price am-text-xl am-padding-left-sm am-padding-right-sm am-margin-0" id="price">￥199</p>
+    <p class="am-text-sm am-padding-left-sm am-padding-right-sm" id="stock">库存：</p>
+    <div class="am-g">
+        <div class="plusReduceCount">
+            <button id="sku_count_reduce"><i class="am-icon-minus"></i></button>
+            <input type="number" value="1" id="stockInput" max-value="" />
+            <button id="sku_count_plus"><i class="am-icon-plus"></i></button>
+        </div>
+    </div>
+    <div class="am-g am-topbar-fixed-bottom">
+        <button id="confirmButton" class="am-btn am-btn-block" action="joinCart">确定</button>
+    </div>
+
+    <!-- <button class="am-btn am-btn-danger" data-am-modal="{target: '#success-popup'}">Popup</button> -->
+
+    <div class="am-popup" id="success-popup">
+        <div class="am-popup-inner">
+            <div class="am-popup-hd">
+                <h4 class="am-popup-title">购买成功！</h4>
+                <span data-am-modal-close class="am-close">&times;</span>
+            </div>
+            <div class="am-popup-bd" id="goodsInfo">
+                <p class="am-margin-0">商品名称：111</p>
+                <p class="am-margin-0">购买数量：222</p>
+                <p class="am-margin-0">总金额：333</p>
+                <p class="am-text-success am-text-center am-margin-xs"><span class="am-text-danger"><strong>请将此页面展示给店主</strong></span></p>
+                <img src="../Public/img/product.png" class="am-img-responsive am-u-sm-6 am-u-sm-offset-3">
+                <p class="am-u-sm-12 am-text-center am-text-primary am-text-xs am-margin-xs">长按下方二维码关注公众号，获取更多优惠资讯</p>
+                <img src="images/qr.jpg" class="am-img-responsive am-u-sm-6 am-u-sm-offset-3">
+                <div class="am-cf"></div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

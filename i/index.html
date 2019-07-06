@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>嗨购贝贝-我的</title>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../Public/Addons/AmazeUI/i/favicon.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="apple-touch-icon-precomposed" href="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../Public/Addons/AmazeUI/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" href="../Public/Addons/AmazeUI/css/amazeui.min.css">
+    <link rel="stylesheet" href="../Public/css/app.css">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../Public/js/jquery-1.12.4.min.js"></script>
+    <!--<![endif]-->
+    <script src="../Public/js/app.js"></script>
+    <script src="js/index.js"></script>
+    <script src="../Public/Addons/AmazeUI/js/amazeui.min.js"></script>
+</head>
+
+<body style="background-color:#F3F3F3">
+    <!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，本站不支持。 请 <a
+  href="http://www.haigoubeibei.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="Addons/AmazeUI/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+    <!--
+        嗨购贝贝
+    -->
+    <!--Header-->
+    <div class="i-header am-padding-top-xs">
+        <div class="settings">
+            <!-- <a href="" class="am-fr settingsButton am-margin-right-sm"> </a> -->
+            <a href="" class="am-fr am-margin-right-sm"></a>
+        </div>
+        <div class="personal am-g am-margin-top-sm">
+            <div class="am-u-sm-3 headimg">
+                <img src="../Public/img/headimg.jpg" class="am-center am-circle" id="avatar" />
+            </div>
+            <div class="am-u-sm-9 personalInfo">
+                <ul class="am-list">
+                    <li><strong id="nickName">Requiem</strong></li>
+                    <li><strong id="merchantState">会员等级：普通会员</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Order-->
+    <div class="orderArea am-g am-margin-top-sm">
+        <ul class="am-avg-sm-5" id="orderList">
+            <li><a href="wh-myOrderList.html" class="orderArea-allOrder am-center am-text-center am-text-sm ">全部订单<strong
+                        class="am-text-danger">(66)</strong></a></li>
+            <li><a href="" class="orderArea-unPay am-center am-text-center am-text-sm">未付款</a></li>
+            <li><a href="" class="orderArea-unTake am-center am-text-center am-text-sm">待收货</a></li>
+            <li><a href="" class="orderArea-unAppraise am-center am-text-center am-text-sm">待评价</a></li>
+            <li><a href="" class="orderArea-afterSale am-center am-text-center am-text-sm selected">退款/售后</a></li>
+        </ul>
+    </div>
+
+    <!--personalTools-->
+    <div class="personalTools am-g am-margin-top-sm">
+        <ul class="am-avg-sm-4" id='actionList'>
+            <li><a class="personalTools-iWant am-center am-text-center am-text-sm" id="storeState" value='2'>我要开店</a></li>
+            <li><a class="personalTools-mySubordinate am-center am-text-center am-text-sm" value='3'>我的会员</a></li>
+            <li><a class="personalTools-myWallet am-center am-text-center am-text-sm" value='4'>个人钱包</a></li>
+            <li><a class="personalTools-myQR am-center am-text-center am-text-sm" value='6'>我的推广码</a></li>
+            <li><a class="personalTools-myAddress am-center am-text-center am-text-sm selected" value='7'>收货地址</a></li>
+            <li id="forGoods" class="am-hide"><a class="personalTools-forGoods am-center am-text-center am-text-sm selected" value='8'>进货区</a></li>
+            <li><a class="personalTools-collect am-center am-text-center am-text-sm" value='1'>设置支付密码</a></li>
+            <li><a class="personalTools-myCard am-center am-text-center am-text-sm selected" value='5'>绑定手机号</a></li>
+        </ul>
+    </div>
+
+
+
+    <!--footer-->
+    <footer class="am-topbar-fixed-bottom am-g">
+        <ul class="am-avg-sm-5">
+            <li><a href="../index.html" class="footer-home am-center am-text-center am-text-sm ">首页</a></li>
+            <li><a href="../cs.html" class="footer-customer am-center am-text-center am-text-sm">客服</a></li>
+            <li><a href="../classify/index.html" class="footer-class am-center am-text-center am-text-sm">分类</a></li>
+            <li><a href="../shopCart/index.html" class="footer-shoppingcat am-center am-text-center am-text-sm">购物车</a>
+            </li>
+            <li><a href="index.html" class="footer-i am-center am-text-center am-text-sm selected">我的</a></li>
+        </ul>
+    </footer>
+    <!--
+        嗨购贝贝
+    -->
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+.wh-topAlign{
+    margin-top:2rem;
+    font-size:1.5rem;
+    color:black;
+}
+.wh-fontSet{
+    font-weight:600;
+}
+.wh-customerBtn{
+    background-color: white;
+    font-size: 1.2rem;
+    border-radius: 1.2rem;
+    border: 1px solid ;
+    padding: .3em 2em;
+    outline: none;
+}
+.wh-leftSet{
+    margin-left: 1rem;
+    border-color: black;
+    color: black;
+}
+.wh-rightSet{
+    margin-right: 1rem;
+    border-color: #EB7BA5;
+    color: #EB7BA5;
+}
+.wh-header{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 11px;
+    /* margin-bottom: 17px; */
+    height: 25px;
+    line-height: 20px;
+    text-align: center;
+    color: black;
+}
+.wh-headerContaner{
+    margin-top: 10px;
+    width: 100%;
+    height: 41px;
+    display: flex;
+}
+.wh-header:hover, .wh-header:focus{
+    color: black;
+}
+.wh-nav{
+    width: 100%;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+}
+.wh-nav>li{
+    height: 5rem;
+    color: black;
+    display: flex;
+}
+.wh-leftLi{
+    width: 7rem;
+    text-align: center;
+    margin-top: 1.4rem;
+    font-size: small;
+    line-height: 2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wh-originContaner{
+    width: 14rem;
+    font-size: small;
+    color: gray;
+}
+.wh-orignline{
+    margin: 3px 12px;
+    width: 13rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wh-rightLi{
+    font-size: xx-small;
+    padding: 0px;
+    right: 0px;
+    position: absolute;
+    margin-right: 1rem;
+}
+.wh-rightLine{
+    margin: 3px 12px;
+    margin-right: 0px;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.wh-leftContaner{
+    width: 4rem;
+    height: 100%;
+    background: red
+}
+.wh-headerBorder{
+    border-bottom: 2px solid red;
+}
+.wh-listMargin{
+    margin-top: 13px;
+}
+.wh-rightSize{
+    font-weight: 600;
+}
+
