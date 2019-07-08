@@ -65,7 +65,7 @@ function loadListData(){
             }
             appendText += '</p>';
             appendText += '<div class="wh-contentSet">';
-            appendText += '<p class="wh-textalign line-clamp am-margin-0 wh-sm-text wh-headerMargin">' + element.goodsName + '</p>';
+            appendText += '<p class="wh-textalign line-clamp5 am-margin-0 wh-sm-text wh-headerMargin">' + element.goodsName + '</p>';
             appendText += '<p class="wh-textalign  am-margin-0 wh-sm-text" >' + element.createdTime + '</p>';  
             if(element.state ==2  && element.countRemain>0){
                 appendText += '<span class="wh-textalign wh-enquiry-customer am-margin-0 wh-sm-text" id ="showAction" value='+ element.id  +'>' + '核销码' + '</span>';  

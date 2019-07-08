@@ -127,11 +127,11 @@ function confirmButtonEvent() {
                         },
                         cancel: function(res) {
                             //confirm(JSON.stringify(res))
-                            showError(res);
+                            showError('支付失败！您已取消支付！请刷新页面重新支付！');
                         },
                         fail: function(res) {
                             //confirm(JSON.stringify(res))
-                            showError(res.errMsg);
+                            showError('支付失败！请刷新页面重新支付！');
                         }
                     });
 
